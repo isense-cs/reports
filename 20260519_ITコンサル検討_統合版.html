@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>5/19 ITコンサル検討（統合版）— 事前アジェンダ＋キックオフ結果</title>
+<style>
+  /* ===== COMMON RESET / BASE ===== */
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #f7f8fb; color: #1f2937; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", "Noto Sans JP", -apple-system, "Segoe UI", sans-serif; line-height: 1.7; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 32px 24px 80px; }
+
+  /* ===== STICKY TAB NAV ===== */
+  .tab-nav-wrap { position: sticky; top: 0; z-index: 100; background: rgba(247,248,251,.92); backdrop-filter: blur(10px); border-bottom: 1px solid #e5e7eb; }
+  .tab-nav { max-width: 1080px; margin: 0 auto; padding: 12px 24px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .tab-nav .title { font-size: 13px; color: #6b7280; margin-right: 12px; font-weight: 600; }
+  .tab-btn { padding: 9px 18px; background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; font-size: 13px; cursor: pointer; transition: all .2s; font-family: inherit; color: #4b5563; }
+  .tab-btn:hover { background: #f3f4f6; color: #1f2937; }
+  .tab-btn.active { background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 100%); color: #fff; border-color: transparent; box-shadow: 0 2px 8px rgba(15,23,42,.18); }
+  .tab-btn .icon { margin-right: 4px; }
+
+  /* ===== TAB CONTENT SWITCHING ===== */
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* ===== TAB AGENDA THEME ===== */
+  .tab-agenda { --brand: #1e3a8a; --brand-soft: #eef2ff; --accent: #0d9488; --accent-soft: #ccfbf1; --warn: #b45309; --warn-soft: #fef3c7; --muted: #6b7280; --ink-mute: #4b5563; --line: #e5e7eb; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
+  .tab-agenda header.cover { background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 100%); }
+  .tab-agenda .box.brand { background: #eef2ff; border-color: #c7d2fe; }
+  .tab-agenda .box.accent { background: #ccfbf1; border-color: #99f6e4; }
+  .tab-agenda .tag.brand { background: #eef2ff; color: #1e3a8a; }
+  .tab-agenda .tag.accent { background: #ccfbf1; color: #065f46; }
+  .tab-agenda .cta { background: linear-gradient(135deg, #0f766e 0%, #1e3a8a 100%); }
+
+  /* ===== TAB RESULT THEME ===== */
+  .tab-result { --brand: #0f766e; --brand-soft: #ccfbf1; --accent: #1e3a8a; --accent-soft: #eef2ff; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e5e7eb; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
+  .tab-result header.cover { background: linear-gradient(135deg, #0f766e 0%, #1e3a8a 100%); }
+  .tab-result .box.brand { background: #ccfbf1; border-color: #99f6e4; }
+  .tab-result .box.accent { background: #eef2ff; border-color: #c7d2fe; }
+  .tab-result .box.ok { background: #d1fae5; border-color: #6ee7b7; }
+  .tab-result .tag.ok { background: #d1fae5; color: #047857; }
+  .tab-result .tag.brand { background: #ccfbf1; color: #0f766e; }
+  .tab-result .cta { background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 100%); }
+
+  /* ===== SHARED ELEMENT STYLES ===== */
+  header.cover { color: #fff; border-radius: 14px; padding: 32px 32px; box-shadow: var(--shadow); }
+  header.cover .eyebrow { font-size: 12px; letter-spacing: .16em; opacity: .8; text-transform: uppercase; }
+  header.cover h1 { font-size: 24px; margin: 8px 0 10px; line-height: 1.4; }
+  header.cover p { margin: 0; opacity: .92; font-size: 14px; }
+  header.cover .meta { margin-top: 16px; display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; opacity: .9; }
+  header.cover .meta span { padding: 4px 10px; background: rgba(255,255,255,.12); border-radius: 999px; }
+
+  section.card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 22px 26px; margin: 20px 0; box-shadow: var(--shadow); }
+  section.card h2 { margin: 0 0 6px; font-size: 18px; color: var(--brand); display: flex; align-items: center; gap: 10px; }
+  section.card h2 .num { display: inline-flex; width: 26px; height: 26px; background: var(--brand); color: #fff; border-radius: 8px; font-size: 13px; align-items: center; justify-content: center; }
+  section.card .lead { color: var(--ink-mute); font-size: 13px; margin: 0 0 14px; }
+  h3 { font-size: 15px; margin: 18px 0 8px; color: #1f2937; border-left: 4px solid var(--brand); padding-left: 10px; }
+  h4 { font-size: 13px; margin: 12px 0 6px; color: var(--brand); }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  @media (max-width: 720px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+  .box { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: #fafafa; }
+  .box h4 { margin-top: 0; }
+  .box.warn { background: var(--warn-soft); border-color: #fde68a; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 4px; font-size: 13px; }
+  th, td { border: 1px solid var(--line); padding: 6px 9px; text-align: left; vertical-align: top; }
+  th { background: #f3f4f6; color: #1f2937; font-weight: 600; font-size: 12px; }
+  tr:nth-child(even) td { background: #fafafa; }
+  ul.clean { margin: 6px 0 6px 18px; padding: 0; }
+  ul.clean li { margin-bottom: 4px; font-size: 13px; }
+  .tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; margin-right: 6px; }
+  .tag.warn { background: #fef3c7; color: #b45309; }
+  .pill { display: inline-block; padding: 3px 10px; background: #fff; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; color: var(--ink-mute); margin: 2px 4px 2px 0; }
+  .pill.opt { color: var(--muted); background: #f9fafb; }
+  .quote { border-left: 3px solid var(--accent); background: #ecfeff; padding: 10px 14px; font-size: 13px; color: var(--ink-mute); margin: 10px 0; border-radius: 0 8px 8px 0; }
+  .note { font-size: 12px; color: var(--muted); }
+  .deck { background: #fff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 12px 14px; font-size: 12px; color: var(--ink-mute); }
+  .layer { display: grid; grid-template-columns: 140px 1fr; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px dashed var(--line); }
+  .layer:last-child { border-bottom: none; }
+  .layer .lname { font-weight: 600; color: var(--brand); font-size: 12px; }
+  .layer .ldesc { font-size: 12px; color: #1f2937; }
+  .cta { color: #fff; border-radius: 12px; padding: 18px 22px; margin-top: 16px; }
+  .cta h3 { color: #fff; border: none; padding: 0; margin: 0 0 6px; font-size: 14px; }
+  .cta ul { margin: 0; padding-left: 20px; }
+  .cta ul li { margin-bottom: 3px; font-size: 13px; }
+  .checklist { list-style: none; padding-left: 4px; margin: 0; }
+  .checklist li { padding-left: 26px; position: relative; margin-bottom: 6px; font-size: 13px; }
+  .checklist li::before { content: "☐"; position: absolute; left: 0; top: 0; color: var(--brand); font-size: 18px; line-height: 1; }
+  .checklist li.done::before { content: "☑"; color: var(--ok); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-left: 6px; }
+  .badge.done { background: #d1fae5; color: #047857; }
+  .badge.pending { background: #fef3c7; color: #b45309; }
+  footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 24px; }
+
+  @media print {
+    .tab-nav-wrap { display: none; }
+    .tab-content { display: block !important; }
+    .tab-content + .tab-content { page-break-before: always; }
+    section.card { page-break-inside: avoid; box-shadow: none; }
+    header.cover { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Sticky Tab Navigation -->
+<div class="tab-nav-wrap">
+  <div class="tab-nav">
+    <span class="title">5/19 ITコンサル検討</span>
+    <button class="tab-btn active" data-tab="agenda"><span class="icon">📋</span>事前アジェンダ（5/19 朝）</button>
+    <button class="tab-btn" data-tab="result"><span class="icon">✅</span>キックオフ結果（10:56〜）</button>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TAB 1: AGENDA (PRE-MEETING)                                    -->
+<!-- ============================================================ -->
+<div id="agenda" class="tab-content tab-agenda active">
+<div class="wrap">
+
+  <header class="cover">
+    <div class="eyebrow">D-Team / IT Consulting Discussion</div>
+    <h1>5/19 ITコンサル検討 打合せアジェンダ<br>— 検討の枠組み合意と、定例設計のキックオフ</h1>
+    <p>5/13管原・小鉢の事前すり合わせと「インフォセンスのコンサルタント定義」スライドを下敷きに、定例の枠組みと役割分担の入口を当日合意するためのアジェンダ。</p>
+    <div class="meta">
+      <span>2026-05-19</span>
+      <span>作成：管原</span>
+      <span>対象：Dチーム関連メンバー</span>
+    </div>
+  </header>
+
+  <!-- 本日の目的 -->
+  <section class="card">
+    <h2><span class="num">0</span>本日のゴール</h2>
+    <p class="lead">この場で次の3つを動かす。深い中身の議論は次回以降の定例に送る。</p>
+    <div class="grid-3">
+      <div class="box brand">
+        <h4>① 上長報告会の日程確定</h4>
+        <p style="font-size:13px;margin:0;">6月〜2027年3月の月1回（火 or 金）枠を仮押さえする</p>
+      </div>
+      <div class="box brand">
+        <h4>② メンバー検討会の日程確定</h4>
+        <p style="font-size:13px;margin:0;">F-UPも加味した頻度・曜日・初回日を決める</p>
+      </div>
+      <div class="box brand">
+        <h4>③ 検討事項と役割分担の認識合わせ</h4>
+        <p style="font-size:13px;margin:0;">現状の整理状況を共有し、誰が何を進めるかを仮置きする</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 議題1：上長報告会 -->
+  <section class="card">
+    <h2><span class="num">1</span>議題① 上長報告会の日程設定</h2>
+    <p class="lead">ITコンサルとしての検討状況を上長へ定期報告する場を、6月から走らせる。</p>
+
+    <table>
+      <tr><th style="width:18%">項目</th><th>内容</th></tr>
+      <tr><td>期間</td><td>2026年6月 〜 2027年3月（計10回）</td></tr>
+      <tr><td>頻度</td><td>月1回</td></tr>
+      <tr><td>曜日候補</td><td>火曜 または 金曜</td></tr>
+      <tr><td>参加者</td><td>管原・北川・小鉢 ＋α（必要に応じて）</td></tr>
+      <tr><td>場所</td><td>会議室（要予約）</td></tr>
+      <tr><td>当日決めること</td><td>10ヶ月分の候補日／曜日固定するかの判断／会議室手配の担当</td></tr>
+    </table>
+
+    <h3>候補日（月別／要すり合わせ）</h3>
+    <table>
+      <tr><th>月</th><th>火曜候補</th><th>金曜候補</th><th>備考</th></tr>
+      <tr><td>2026/06</td><td>6/2・6/9・6/16・6/23・6/30</td><td>6/5・6/12・6/19・6/26</td><td>初回</td></tr>
+      <tr><td>2026/07</td><td>7/7・7/14・7/21・7/28</td><td>7/3・7/10・7/17・7/24・7/31</td><td>—</td></tr>
+      <tr><td>2026/08</td><td>8/4・8/11・8/18・8/25</td><td>8/7・8/14・8/21・8/28</td><td>お盆考慮</td></tr>
+      <tr><td>2026/09</td><td>9/1・9/8・9/15・9/22・9/29</td><td>9/4・9/11・9/18・9/25</td><td>—</td></tr>
+      <tr><td>2026/10</td><td>10/6・10/13・10/20・10/27</td><td>10/2・10/9・10/16・10/23・10/30</td><td>—</td></tr>
+      <tr><td>2026/11</td><td>11/3・11/10・11/17・11/24</td><td>11/6・11/13・11/20・11/27</td><td>祝日考慮</td></tr>
+      <tr><td>2026/12</td><td>12/1・12/8・12/15・12/22</td><td>12/4・12/11・12/18・12/25</td><td>年末</td></tr>
+      <tr><td>2027/01</td><td>1/12・1/19・1/26</td><td>1/8・1/15・1/22・1/29</td><td>松の内明け</td></tr>
+      <tr><td>2027/02</td><td>2/2・2/9・2/16・2/23</td><td>2/5・2/12・2/19・2/26</td><td>—</td></tr>
+      <tr><td>2027/03</td><td>3/2・3/9・3/16・3/23・3/30</td><td>3/5・3/12・3/19・3/26</td><td>年度末</td></tr>
+    </table>
+    <p class="note">※候補は機械的に列挙。当日参加者の予定確認と曜日方針（火or金固定 / 月別変動）を決めた上で確定する。</p>
+  </section>
+
+  <!-- 議題2：メンバー検討会 -->
+  <section class="card">
+    <h2><span class="num">2</span>議題② メンバー検討会の日程設定</h2>
+    <p class="lead">ITコンサルの中身（位置づけ／役割／コア領域／商材／育成）を継続討議する場。</p>
+
+    <h3>参加者（想定）</h3>
+    <div style="margin:6px 0 14px;">
+      <span class="pill">管原 智宏</span>
+      <span class="pill">小鉢 勝範</span>
+      <span class="pill">吉田 実穂</span>
+      <span class="pill">北川 侑樹</span>
+      <span class="pill">喜井 潮</span>
+      <span class="pill">栗田</span>
+      <span class="pill">シド</span>
+      <span class="pill">國重</span>
+    </div>
+    <p class="note" style="margin:-6px 0 10px;">※5/18②打合せ着地点：國重さん・栗田さん・シドさんを次回ミーティングに招集する方針。役割分担／施策統合を協議する。</p>
+
+    <h3>当日決めること</h3>
+    <ul class="clean">
+      <li>頻度（週1／隔週／月1）と所要時間</li>
+      <li>固定曜日／時間帯（F-UP・既存定例とのバッティング回避）</li>
+      <li>初回日と、初回までの宿題</li>
+      <li>議事録／ファシリ役（田原迫さんに2026Dチーム会ファシリを担っていただく方向との整合）</li>
+    </ul>
+
+    <div class="quote">
+      <strong>F-UPとの兼ね合い：</strong>下期F-UPや個別面談スケジュールと重ならないように、月初／月末のいずれかに寄せる方針も含めて検討する。
+    </div>
+  </section>
+
+  <!-- 議題3：今後何を検討するか -->
+  <section class="card">
+    <h2><span class="num">3</span>議題③ 今後の検討事項と役割分担</h2>
+    <p class="lead">5/13管原・小鉢で整理した内容を共有し、各メンバーが今後やっていくこと（役割）を仮置きする。</p>
+
+    <div class="quote">
+      <strong>今期の進め方の軸：</strong>「ITコンサルとは何か」の定義は会社全体でも今後ブレうる前提に立ち、今期は<strong>定義論を一旦外して、影響の少ないスキル・体制強化</strong>を軸に進める。<br>
+      → 定義がブレてもDチームに残る価値（策定スキル／育成施策／案件化プロセス）に絞って積み上げる。
+    </div>
+
+    <h3>3-1. 共通言語としてのレイヤー定義（参照のみ）</h3>
+    <div class="deck">
+      第二版追記「機能別戦略〜人財戦略〜」より。今期は<strong>この定義論そのものは触らず</strong>、共通言語として参照するに留める。
+    </div>
+    <div style="margin-top:10px;">
+      <div class="layer"><div class="lname">戦略コンサル</div><div class="ldesc">企業理念／方針／経営戦略・事業戦略・機能戦略（物流／生産／営販／マーケ／財務／人事）</div></div>
+      <div class="layer"><div class="lname">業務コンサル</div><div class="ldesc">業務改革／改善（手段：IT or IT以外）</div></div>
+      <div class="layer"><div class="lname">ITコンサル</div><div class="ldesc">IT戦略グランドデザイン／要件整理／RFP（製品中立）</div></div>
+      <div class="layer"><div class="lname">IT提案・プリセ</div><div class="ldesc">To-BEを製品（PKG／別製品／別の使い方）で具体化（現状はITコンサルが兼務中）</div></div>
+      <div class="layer"><div class="lname">IT導入 SE/PG</div><div class="ldesc">PMO／要件定義／設計・開発／導入</div></div>
+    </div>
+    <p class="note">※ITコンサル → IT提案／導入への「波及」をどう組織として作っていくかが、本検討の中核論点。</p>
+
+    <h3>3-2. 5/13までの整理（共有用サマリ）</h3>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>▼ ITコンサルの整理</h4>
+        <ul class="clean">
+          <li>中計：ITデザインを作る／ITコンサルとしての提案</li>
+          <li>業務知識は必須、特定の製品知識は前提としない</li>
+          <li>事例：DSR（導入支援依頼／請求関連の課題対応）、アイチ（奉行）</li>
+        </ul>
+      </div>
+      <div class="box brand">
+        <h4>▼ IT提案／プリセの整理</h4>
+        <ul class="clean">
+          <li>To-BEイメージをPKGや別製品で構成するイメージが必要</li>
+          <li>GRA領域はGRAチームに寄せ、それ以外は<br>　└ 別製品（プリセ知識なくてもITコンサル知見で扱える領域）<br>　└ 別の使い方（GRANDIT寄りのプリセ／ソード→プロスペクト 等）<br>　└ 課題の当てこみの信憑性チェック</li>
+          <li>具体案件：シャボン玉、島村（GRA／I／F／BI 等）</li>
+        </ul>
+      </div>
+      <div class="box warn">
+        <h4>▼ 外的要因（構造的論点）</h4>
+        <ul class="clean">
+          <li>他部門に要件定義の対応者が不足→ITコンサルが肩代わりしている状態</li>
+          <li>GRA／奉行／手組み等、部門間の収益構造が課題の要素（施策では解決しきれない領域）</li>
+          <li>ITコンサルの担当外を他社／他部門に振る仕組みづくり</li>
+          <li>波及するためのバリエーション／領域強化（波及先部門の管轄製品・対応工程の把握）</li>
+        </ul>
+        <p class="note" style="margin-top:6px;">例：DSRの請求システム導入でサポートとして入る→波及のためのドアノック</p>
+      </div>
+      <div class="box accent">
+        <h4>▼ IT導入案件の整理</h4>
+        <ul class="clean">
+          <li>役割の明確化（★本来 ／ ☆実態）<br>　・PMO ★☆ ／ PM ☆ ／ 要件定義<br>　・PMO ★☆ ／ PM ☆ ／ 製造<br>　・PMO ★☆ ／ PM ☆ ／ 導入</li>
+          <li>全体推進の担い手が偏っている構造をチームで協議する</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>3-2-b. 5/18 小鉢さん打合せ要約（RFP作成とITグランドデザインの方針整理）</h3>
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>ITグランドデザインの定義（具体化）</h4>
+        <ul class="clean">
+          <li>各業務領域を<strong>製品レベルまで落とし込んだToBeの姿</strong>
+            <br>　例：営業 = ESM／経理 = GRANDIT／勤怠 = 奉行</li>
+          <li>ToBeシステム<strong>全体俯瞰図</strong>＝あるべき姿</li>
+          <li>RFP回答を含めた、<strong>インフォセンスとして提案できる範囲</strong>まで描く</li>
+          <li>戦略的意義：「ここはGRANDIT、ここは奉行」と握ることで、<strong>提案から外してインフォセンスが受注できる領域</strong>を意図的に確保できる</li>
+        </ul>
+      </div>
+      <div class="box brand">
+        <h4>ロードマップは「別軸」</h4>
+        <ul class="clean">
+          <li>グランドデザイン＝<strong>最終構想</strong>のイメージ</li>
+          <li>ロードマップ＝<strong>進め方</strong>。優先順位を付けて段階的に進める設計</li>
+          <li>ロードマップに関わる要素：顧客都合／予算／課題ボリューム／ライフサイクル</li>
+          <li>ロードマップ作成も<strong>ITコンサルスキルの一部</strong>として位置付ける</li>
+        </ul>
+      </div>
+      <div class="box warn">
+        <h4>RFP作成のスコープ整理</h4>
+        <ul class="clean">
+          <li><strong>業務課題</strong>と<strong>システム課題</strong>を明確に分けて整理する</li>
+          <li>業務課題は顧客側で検討、システム課題をRFPとして出す</li>
+          <li>RFP範囲は課題範囲次第（全体／特定領域に特化）</li>
+          <li>いきなりITグランドデザインは作れず、<strong>議事録 → 業務フロー → 鳥観図 → グランドデザイン</strong>のプロセスを経て到達</li>
+          <li>これらをAIと組み合わせて効率化（§3-4の循環設計と整合）</li>
+        </ul>
+      </div>
+      <div class="box warn">
+        <h4>制約条件の取り扱い</h4>
+        <ul class="clean">
+          <li>顧客（中国計器工業）では親会社の都合で、会計システム等グループ全体で決まっているシステムがある</li>
+          <li>既決定システムは置き換え不可 → <strong>制約条件を除いた範囲</strong>でRFP作成</li>
+          <li>制約事項（勤怠／会計 等）を踏まえた上での提案設計が必要（小鉢さん指摘）</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote">
+      <strong>中国計器工業を「実証ケース」として使う：</strong>現在実施中の取り組みに、RFP作成施策の要素をマッピングすることで、漏れややるべきことの理解が深まる。施策をDチーム外で抽象的に進めるより、実案件をなぞって検証する方が学びが大きい。
+    </div>
+
+    <h3>3-2-c. 5/18 小鉢さん②打合せ要約（育成フレームワークと役割統合）</h3>
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>育成フレームワークの方向性</h4>
+        <ul class="clean">
+          <li><strong>第8次中期計画</strong>の施策として継続</li>
+          <li><strong>RFP作成</strong>を最終目標とした育成プロセス</li>
+          <li>従来のOJT中心から、<strong>AI活用 ＋ オフJT</strong> を組み合わせた体系的育成へ転換</li>
+          <li>テンプレート化とプロセス明示化で<strong>再現性</strong>確保</li>
+        </ul>
+        <p class="note" style="margin:6px 0 0;">育成プロセスの流れ：<strong>現状整理 → 要件定義 → ITグランドデザイン作成 → RFP作成</strong></p>
+      </div>
+      <div class="box brand">
+        <h4>今年度は「波及の前段階＝基盤作り」に注力</h4>
+        <ul class="clean">
+          <li>波及候補リストは案件カルテに記載済（§3-4と整合）</li>
+          <li>今年度は<strong>波及そのもの</strong>ではなく、波及を起こせる<strong>基盤</strong>を作る</li>
+          <li>今後の課題：<strong>波及先の部門／対応製品／対応できる工程</strong>の整理</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>Fit-to-Standard の位置付け</h4>
+        <ul class="clean">
+          <li>内田さんから<strong>Fit-to-Standardでの標準導入推進</strong>の指示あり</li>
+          <li>提案段階でFit-to-Standardの考え方を取り入れる検討</li>
+          <li>ただし、本施策（ITコンサル育成）とは<strong>色合いが異なる</strong>可能性を認識</li>
+          <li>Fit-to-Standardで対応できない部分について、<strong>複数システムのコーディネートがITコンサルの価値</strong>になる</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>システム導入PMOとITコンサルの役割分離</h4>
+        <ul class="clean">
+          <li>PMOは<strong>当初要件を知っている人</strong>が継続する位置づけ</li>
+          <li>システム導入PMOの役割とITコンサルの役割を明確に区別</li>
+          <li>ITコンサルは<strong>企画 → ITグランドデザイン → RFP作成までの工程（1〜4）</strong>に注力</li>
+        </ul>
+      </div>
+      <div class="box warn">
+        <h4>各メンバーの施策統合(重複回避と役割分担)</h4>
+        <ul class="clean">
+          <li>國重さんの<strong>人材育成カリキュラム施策</strong>との統合を検討</li>
+          <li>栗田さんの<strong>AI施策</strong>も包含した全体施策として再構成</li>
+          <li>北川さんの<strong>営業プロセス関連の取り組み</strong>も連携</li>
+          <li>各施策の重複を避け、適切な役割分担が必要</li>
+        </ul>
+      </div>
+      <div class="box warn">
+        <h4>議事録・業務フローの全社展開</h4>
+        <ul class="clean">
+          <li>ITコンサルで作成した議事録と業務フローは、<strong>繪柳さんと調整の上、全体へ展開</strong></li>
+          <li><strong>GRAチームへの共有も実施予定</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote">
+      <strong>AI活用方針（特に Claude）：</strong>提案書・RFP作成支援、議事録要約（5/18本打合せもAIで要約済）。受講者はAIの回答を <strong>チェック・指摘できるレベル</strong> を目指す。AIが書いたまま使うのではなく、人間が品質を担保する設計。
+    </div>
+
+    <div class="box" style="margin-top:10px;">
+      <h4>次回ミーティングまでの宿題（5/18②打合せの着地点）</h4>
+      <ul class="clean">
+        <li>國重さん・栗田さん・シドさんを次回ミーティングに招集</li>
+        <li>メンバーでディスカッションし、役割分担を決定</li>
+        <li>各自の<strong>フェーズアップ</strong>への落とし込み</li>
+        <li>推進ギャップ・スキルマップの整理（継続宿題）</li>
+        <li>メンバー協議の上、優先順位を上層部へ相談</li>
+      </ul>
+    </div>
+
+    <h3>3-3. 今期の3本柱（スキル・体制強化に絞る）</h3>
+    <p class="note" style="margin-top:-4px;">定義論を一旦外し、定義がブレても価値が残るテーマだけを積み上げる。</p>
+    <div class="grid-3">
+      <div class="box accent">
+        <h4>① ITグランドデザイン策定スキル</h4>
+        <p style="font-size:13px;margin:0;">策定できるメンバーを<strong>5名</strong>に到達させることを2026年度の到達目標に置く。</p>
+        <p style="font-size:12px;margin:6px 0 0;color:var(--ink-mute);">"策定できる" の中身（5/18定義）：各業務領域を製品レベルまで落とし込んだToBe全体俯瞰図を描けること（営業＝ESM／経理＝GRANDIT／勤怠＝奉行 等）、RFP回答までを含めた提案範囲を描けること、ロードマップ（進め方）も別軸で描けること。</p>
+      </div>
+      <div class="box accent">
+        <h4>② 育成カリキュラム（基礎＋上位の2層／AI活用＋オフJT）</h4>
+        <p style="font-size:13px;margin:0;"><strong>OJT中心から、AI活用 ＋ オフJT</strong> を組み合わせた体系的育成へ転換。<strong>基礎</strong>は國重さんの全社育成施策と融合、<strong>上位</strong>はDチーム独自で構築。</p>
+        <ul class="clean" style="margin-top:6px;">
+          <li><strong>基礎演習</strong>（國重さんと融合 → 繪柳さん経由でGRAチーム等にも横展開）<br>　議事録／鳥観図／業務フロー作成</li>
+          <li><strong>上位演習</strong>（Dチーム独自・新設）<br>　要件整理／RFP作成／グランドデザイン統合</li>
+        </ul>
+        <p class="note" style="margin:4px 0 0;">育成プロセスの流れ：現状整理 → 要件定義 → ITグランドデザイン → RFP作成。<br>上位演習は §3-4「案件カルテ循環」でAI（Claude）と連動運用。</p>
+      </div>
+      <div class="box accent">
+        <h4>③ システム案件化プロセス（今年度は波及の<u>基盤作り</u>）</h4>
+        <p style="font-size:13px;margin:0;">今年度は波及そのものではなく、波及を起こせる<strong>基盤</strong>を作る。ITコンサルは <strong>企画 → ITグランドデザイン → RFP作成</strong>（工程1〜4）に注力。</p>
+        <ul class="clean" style="margin-top:6px;">
+          <li>昨年度の「案件獲得までのプロセス」を土台に、<strong>実案件化</strong>を目指す</li>
+          <li>業務課題（顧客側で検討）／システム課題（RFPで出す）を切り分ける</li>
+          <li>制約条件（既決定システム等）を踏まえた範囲設計を含める</li>
+          <li>波及先の<strong>部門／対応製品／対応できる工程</strong>の整理を今後の課題に</li>
+          <li>PMOは「当初要件を知っている人」が継続。ITコンサルの役割と区別</li>
+          <li><strong>適用先候補：中国計器工業</strong>（現状取り組みに本施策の要素をマッピング）</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>3-4. 3本柱を貫く設計：案件カルテ循環</h3>
+    <p class="note" style="margin-top:-4px;">3本柱を「案件カルテ」1点で統合し、循環で進化させる設計。</p>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>循環の構造</h4>
+        <p style="font-size:12px;margin:0 0 6px;">要件整理 → AI素案 → 品質確認 → インプット改良 → 要件整理…の循環。演習が自分で進化する。</p>
+<pre style="font-size:11px; background:#fff; border:1px solid var(--line); border-radius:8px; padding:10px; margin:0; line-height:1.5; overflow-x:auto; font-family:ui-monospace, 'SFMono-Regular', Menlo, monospace;">[過去提案書・RFP（精度ラベル付き）]
+        │ 学習データ
+        ▼
+[AI素案生成] ←─ [案件カルテ]
+        │             ↑
+        │ 品質確認     │ 不足項目を追加
+        └─────────────┘</pre>
+      </div>
+      <div class="box brand">
+        <h4>インプット側／アウトプット側</h4>
+        <ul class="clean">
+          <li><strong>案件カルテ</strong>＝インプット（人間が書きAIに渡す）</li>
+          <li><strong>ITグランドデザイン</strong>＝アウトプット（AIが返す素案の骨格）
+            <ul style="margin:4px 0 0 16px; padding:0;">
+              <li>各業務領域 × 製品の塗り分け(営業=ESM／経理=GRANDIT／勤怠=奉行 等)</li>
+              <li>ToBe全体俯瞰図／RFP回答範囲</li>
+              <li>波及候補リスト(他部門・他チーム)</li>
+              <li>ロードマップ(別軸：顧客都合／予算／ボリューム／ライフサイクル)</li>
+            </ul>
+          </li>
+        </ul>
+        <p class="note" style="margin:6px 0 0;">①の策定スキルは「両側を扱える力」と定義する。</p>
+      </div>
+    </div>
+
+    <h4 style="margin-top:14px;">案件カルテ（＝要件整理演習の項目）草案</h4>
+    <table>
+      <tr>
+        <th style="width:18%">カテゴリ</th>
+        <th>項目</th>
+        <th style="width:24%">用途</th>
+      </tr>
+      <tr><td>顧客プロファイル</td><td>業界／規模／組織構造／意思決定構造</td><td>類似事例検索</td></tr>
+      <tr><td>業務課題</td><td>AsIsの痛み／業務ボリューム／頻度</td><td>課題セクション生成</td></tr>
+      <tr><td>ToBeイメージ</td><td>実現したい姿／成功指標／優先順位</td><td>提案骨格生成</td></tr>
+      <tr><td>システム前提</td><td>既存システム／連携／予算／時期</td><td>構成案生成</td></tr>
+      <tr><td>重視軸</td><td>価格／納期／品質／関係性の比重</td><td>トーン調整</td></tr>
+      <tr><td>ステークホルダー</td><td>意思決定者／影響者／反対勢力</td><td>説得ロジック構築</td></tr>
+      <tr><td>制約</td><td>技術／契約／コンプライアンス／<strong>親会社・グループ全体で決定済システム</strong>（会計・勤怠 等）</td><td>NG要件の排除／範囲設定</td></tr>
+      <tr><td>ロードマップ要素</td><td>顧客都合／予算／課題ボリューム／ライフサイクル</td><td>進め方（別軸）の生成</td></tr>
+      <tr style="background:#ecfeff;"><td><strong>波及ヒント</strong></td><td><strong>他部門連携意向／現行システムの他部門接点</strong></td><td><strong>③波及候補の抽出</strong></td></tr>
+    </table>
+    <p class="note">※最下段の「波及ヒント」をカルテに最初から組み込むことで、AI素案の段階で③波及候補が自動的にアウトプットに滲み出る。</p>
+
+    <h4 style="margin-top:14px;">3本柱への効果</h4>
+    <div class="grid-3">
+      <div class="box">
+        <h4>① 5名到達の観測項目</h4>
+        <ul class="clean">
+          <li>カルテを書ける（要件整理）</li>
+          <li>AI素案を読み解ける（評価）</li>
+          <li>不足を補える（リファイン）</li>
+          <li>要素を取捨できる（判断）</li>
+          <li>ロードマップを別軸で描ける（進め方設計）</li>
+          <li>ビジュアル・テイストを選べる（顧客文脈理解）</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h4>② カリキュラム形式</h4>
+        <p style="font-size:13px;margin:0;">座学ではなく <strong>カルテ記入 → AI素案 → 振り返り</strong> のハンズオン。「カルテのどこを補えば良かったか」を講師と一緒に確認する。</p>
+        <p class="note" style="margin:6px 0 0;">学習データは過去の提案書・RFP（精度ラベル付き）。</p>
+      </div>
+      <div class="box">
+        <h4>③ 波及への接続</h4>
+        <p style="font-size:13px;margin:0;">カルテの「波及ヒント」項目 → AIが他部門・他チームへの波及候補をハイライト → 引き渡し・案件化プロセスに乗せる。</p>
+        <p class="note" style="margin:6px 0 0;">案件化プロセスは昨年度資産を流用。</p>
+      </div>
+    </div>
+
+    <h4 style="margin-top:14px;">進め方の更新（カルテ循環を前提に）</h4>
+    <table>
+      <tr><th style="width:14%">月</th><th>内容</th></tr>
+      <tr><td>6〜7月</td><td>過去提案書・RFP収集（精度ラベル付け）／案件カルテ初版定義／<strong>中国計器の現状取り組みにRFP作成要素をマッピング（実証ケース）</strong></td></tr>
+      <tr><td>7〜8月</td><td>RAG構築（小規模）／初回素案テスト／カルテ項目の初回改良／中国計器ケースでカルテ記入を試行</td></tr>
+      <tr><td>9〜10月</td><td>リーダー層で演習プロトタイプ（カルテ → 素案 → 振り返り）／中国計器の検証結果をカルテ改良にフィードバック</td></tr>
+      <tr><td>11月〜</td><td>中堅メンバーへ展開／カルテ継続改良／他案件への横展開を検討</td></tr>
+      <tr><td>1〜3月</td><td>スキルマップで①5名到達の現在地を計測／ロードマップ作成スキルも観測対象に</td></tr>
+    </table>
+
+    <h3>3-5. 3本柱を支える分析</h3>
+    <div class="box">
+      <h4>★ 推進力のGAP分析（スキルマップ整備）</h4>
+      <ul class="clean">
+        <li>視点を持ち寄って整理：管原視点／小鉢視点／メンバー視点（複数）</li>
+        <li>スキルマップを作って、①「5名到達」の現在地と不足を可視化する</li>
+        <li>3-4 案件カルテの5観測項目をスキルマップの評価軸に転用する</li>
+      </ul>
+    </div>
+
+    <h3>3-6. 役割分担の仮置き（当日アップデート）</h3>
+    <p class="note" style="margin-top:-4px;">3本柱と案件カルテ循環への関わり方で整理。</p>
+    <table>
+      <tr>
+        <th style="width:14%">メンバー</th>
+        <th>主に関わる柱</th>
+        <th style="width:34%">今後やっていくこと（仮）</th>
+      </tr>
+      <tr>
+        <td>管原</td>
+        <td>全体統括／①②③／上長報告／中国計器実証</td>
+        <td>3本柱の旗振り、國重さんとの基礎演習融合の窓口、案件カルテ初版定義、報告会運営、中国計器ケースの実証窓口</td>
+      </tr>
+      <tr>
+        <td>小鉢</td>
+        <td>① 策定スキル／③ 案件化プロセス／GAP／中国計器実証</td>
+        <td>5名到達のリード、過去提案書・RFPの精度判定（管原と二人）、サブリーダー視点のGAP整理、中国計器ケースで業務／システム課題切り分け実践</td>
+      </tr>
+      <tr>
+        <td>吉田</td>
+        <td>① 策定スキル／部門連動</td>
+        <td>SI／他部門との接続観点、波及候補レビュー会の調整</td>
+      </tr>
+      <tr>
+        <td>北川</td>
+        <td>③ 案件化プロセス／営業プロセス連携／上長報告</td>
+        <td>昨年度プロセス資産→実案件化への適用、営業プロセス施策との重複回避調整、報告会の運営補佐</td>
+      </tr>
+      <tr>
+        <td>喜井</td>
+        <td>① 策定スキル／② カリキュラム</td>
+        <td>上位演習（要件整理・RFP作成）の試行、基礎演習（議事録／鳥観図／業務フロー）の運用</td>
+      </tr>
+      <tr>
+        <td>栗田</td>
+        <td>② カリキュラム（AI観点）／案件カルテ循環</td>
+        <td>RAG基盤構築、過去資産の取り込み、Claudeを用いたAI素案生成の主担当、AI施策全体との統合</td>
+      </tr>
+      <tr>
+        <td>國重</td>
+        <td>② カリキュラム（人材育成施策側）</td>
+        <td>全社の人材育成カリキュラム施策との統合窓口、基礎演習（議事録／鳥観図／業務フロー）の全社合流の擦り合わせ</td>
+      </tr>
+      <tr>
+        <td>シド</td>
+        <td>未定（当日相談）</td>
+        <td>本人の強みが活きる関わり方を一緒に検討</td>
+      </tr>
+    </table>
+    <p class="note">※あくまで仮置き。当日、本人の関心や強みを踏まえてアップデートする。</p>
+  </section>
+
+  <!-- 当日アウトプット -->
+  <section class="card">
+    <h2><span class="num">4</span>当日アウトプット（決めたいこと一覧）</h2>
+    <ul class="clean">
+      <li>上長報告会：6月〜3月の10回分の日程（仮押さえ）／会議室予約の担当</li>
+      <li>メンバー検討会：頻度・曜日・初回日／ファシリ・議事録の役割／<strong>國重さん・栗田さん・シドさんの招集方針</strong></li>
+      <li>今期の進め方の軸の合意（定義論は外し、3本柱に絞る）</li>
+      <li>3本柱の到達イメージの合意（特に①「ITグランドデザイン策定5名到達」の中身は5/18定義に沿う）</li>
+      <li><strong>育成プロセスの流れ</strong>の合意：現状整理 → 要件定義 → ITグランドデザイン → RFP作成</li>
+      <li><strong>今年度は「波及の前段階＝基盤作り」に注力</strong>する方針の合意</li>
+      <li><strong>案件カルテ循環の方針合意</strong>（3-4）：3本柱をカルテで貫く設計を進めるか</li>
+      <li><strong>中国計器工業を実証ケースとして使う方針</strong>の合意（5/18小鉢さん打合せ着地点）</li>
+      <li><strong>Fit-to-Standard 観点の位置付け</strong>合意（内田さん指示／本施策との関係整理）</li>
+      <li><strong>PMOとITコンサルの役割分離</strong>確認：ITコンサルは工程1〜4に注力</li>
+      <li><strong>各メンバー施策の重複回避と役割分担</strong>（國重・栗田・北川）</li>
+      <li>役割分担表（3-6）のアップデート（特に「シド」「栗田」「國重」の関わり方）</li>
+      <li><strong>各自のフェーズアップへの落とし込み</strong>方針（次回ミーティングまでに）</li>
+      <li>次回までの宿題（推進力GAP分析の視点持ち寄り／スキルマップ草案／國重さん施策との擦り合わせ準備／過去提案書・RFP収集方針／中国計器ケースの初回マッピング／繪柳さんとの基礎演習全体展開調整 等）</li>
+    </ul>
+
+    <div class="cta">
+      <h3>本日の狙い</h3>
+      <ul>
+        <li>「何を議論する場をいつ作るか」をまず固める</li>
+        <li>定義論を一旦外し、影響の少ないスキル・体制強化（3本柱）を軸に据える</li>
+        <li>「誰がどこを進めるか」の入口だけ揃え、深掘りは定例に送る</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    参考：5/13 管原・小鉢打合せメモ／5/18【施策】ITコンサル検討_小鉢さん打合せ①②要約（20:45・21:06）／インフォセンス第二版「機能別戦略〜人財戦略〜」P34<br>
+    本資料は討議用のアジェンダであり、日程・役割は当日の議論で確定させます。
+  </footer>
+</div>
+</div>
+<!-- /TAB 1 -->
+
+<!-- ============================================================ -->
+<!-- TAB 2: KICKOFF RESULT (POST-MEETING)                           -->
+<!-- ============================================================ -->
+<div id="result" class="tab-content tab-result">
+<div class="wrap">
+
+  <header class="cover">
+    <div class="eyebrow">D-Team / IT Consulting Discussion — Kickoff Result</div>
+    <h1>5/19 ITコンサル検討キックオフ 打合せ結果サマリ<br>— 日程確定／方向性合意／役割分担と次の動き</h1>
+    <p>5/19 10:56〜のキックオフミーティング結果を整理。日程・方針・アクションアイテムを確定。</p>
+    <div class="meta">
+      <span>2026-05-19 10:56〜</span>
+      <span>記録：管原</span>
+      <span>対象：Dチーム関連メンバー</span>
+      <span>関連：事前アジェンダタブ</span>
+    </div>
+  </header>
+
+  <!-- 0. 今日のゴール（達成） -->
+  <section class="card">
+    <h2><span class="num">0</span>今日のゴール（達成状況）</h2>
+    <div class="grid-3">
+      <div class="box ok">
+        <h4>① 報告会・検討会の日程確定 <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">上長報告会は6月12日を皮切りに月次設定、メンバー検討会は次回6/25確定。</p>
+      </div>
+      <div class="box ok">
+        <h4>② 検討内容・役割分担の認識合わせ <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">3本柱・案件カルテ循環・施策統合の方向性を共有。</p>
+      </div>
+      <div class="box ok">
+        <h4>③ ITコンサル施策の方向性共有 <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">定義論は外し、体制強化に注力。価値を積み上げる方針で合意。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 決定事項：日程 -->
+  <section class="card">
+    <h2><span class="num">1</span>決定事項（日程）</h2>
+
+    <h3>上長報告会（6月〜年度末、月1回・計10回程度）</h3>
+    <p class="note" style="margin-top:-4px;">参加者：現メンバー ＋ 國重さん、シドさん など、必要に応じて全員参加の可能性あり。曜日は火 または 金で調整。</p>
+    <table>
+      <tr><th style="width:14%">月</th><th style="width:30%">日時</th><th>備考</th></tr>
+      <tr><td>2026/06</td><td><strong>6月12日（金）16:00–17:00</strong></td><td>初回。確定。</td></tr>
+      <tr><td>2026/07</td><td><strong>7月10日（金）16:00–17:00</strong></td><td>※当初7/7予定が北川さん訪問と重なるため変更。</td></tr>
+      <tr><td>2026/08</td><td>火曜 17:00–18:00（仮）</td><td>8月以降は時間帯を17–18時に変更。</td></tr>
+      <tr><td>2026/09〜2027/03</td><td>毎月 火曜 17:00–18:00（仮）</td><td>具体日は喜井さんが順次設定。</td></tr>
+    </table>
+
+    <h3>メンバー検討会</h3>
+    <table>
+      <tr><th style="width:18%">項目</th><th>内容</th></tr>
+      <tr><td>次回日時</td><td><strong>6月25日(木)11:00–12:00</strong></td></tr>
+      <tr><td>頻度</td><td>今後の議論次第（隔週程度を想定）</td></tr>
+      <tr><td>参加者</td><td>本日と同じメンバー</td></tr>
+      <tr><td>議題（次回）</td><td>共有資料の疑問点・共感点・アイデアの共有、方針の深掘り</td></tr>
+    </table>
+  </section>
+
+  <!-- 2. ITコンサル検討の方向性（合意事項） -->
+  <section class="card">
+    <h2><span class="num">2</span>ITコンサル検討の方向性（合意事項）</h2>
+
+    <h3>基本方針</h3>
+    <div class="grid-3">
+      <div class="box brand">
+        <h4>定義論は一旦外す</h4>
+        <p style="font-size:13px;margin:0;">ITコンサルの定義はブレうる前提に立ち、影響の少ない範囲で進める。</p>
+      </div>
+      <div class="box brand">
+        <h4>体制強化に注力</h4>
+        <p style="font-size:13px;margin:0;">ブレにくい取り組み（スキル・カリキュラム・プロセス）を軸に据える。</p>
+      </div>
+      <div class="box brand">
+        <h4>価値を積み上げる</h4>
+        <p style="font-size:13px;margin:0;">DチームのITコンサルとしての価値を、定義に依存せず積み上げる。</p>
+      </div>
+    </div>
+
+    <h3>現状整理（5月13日時点の合意）</h3>
+    <div class="grid-2">
+      <div class="box">
+        <h4>ITコンサルの役割</h4>
+        <p style="font-size:13px;margin:0;">提案／導入実行／波及作成</p>
+      </div>
+      <div class="box">
+        <h4>中国計器工業の業務</h4>
+        <p style="font-size:13px;margin:0;">ITグランドデザイン作成／As-Is・To-Be整理／業務知識の習得</p>
+      </div>
+      <div class="box">
+        <h4>プリセ業務</h4>
+        <p style="font-size:13px;margin:0;">To-Beイメージ構築／パッケージ当て込み／ポストモダン型の部分最適化</p>
+      </div>
+      <div class="box warn">
+        <h4>課題</h4>
+        <p style="font-size:13px;margin:0;">SI的な作業やPMO以上の工程を担当している状況。役割分離が必要。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ITグランドデザインの定義（合意） -->
+  <section class="card">
+    <h2><span class="num">3</span>ITグランドデザインの定義（合意）</h2>
+    <div class="grid-2">
+      <div class="box accent">
+        <h4>定義</h4>
+        <ul class="clean">
+          <li>各業務領域のAs-Is/To-Beを<strong>製品レベル</strong>まで落とし込んだ姿</li>
+          <li>例：営業領域 → Salesforce／経理の一部 → GRANDIT 等</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>ロードマップは別軸</h4>
+        <ul class="clean">
+          <li>ロードマップ＝実現ステップを示すもの</li>
+          <li>案件によって<strong>最初に完成する場合</strong>と<strong>段階的に完成する場合</strong>がある</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. RFP作成への注力 -->
+  <section class="card">
+    <h2><span class="num">4</span>RFP作成への注力</h2>
+
+    <h3>背景と目的</h3>
+    <ul class="clean">
+      <li>ITグランドデザイン作成能力の向上を目指す</li>
+      <li>RFP作成スキルはこれまでOJTのみ／体系的な取り組みがなかった</li>
+      <li>RFP作成プロセスの <strong>Off-JT化</strong> を推進</li>
+    </ul>
+
+    <h3>具体的な取り組み内容</h3>
+    <div class="grid-2">
+      <div class="box">
+        <h4>整理の観点</h4>
+        <ul class="clean">
+          <li>業務とシステムの課題を分けて整理</li>
+          <li>特定領域に特化したRFP作成の習得</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h4>AI活用の仕組み</h4>
+        <ul class="clean">
+          <li>過去の資料をAIに読み込ませ、RFPの枠組みを作成</li>
+          <li>人間による判断と改善で完成度を高める</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>実施ステップ（案）</h3>
+    <table>
+      <tr><th style="width:8%">No.</th><th>ステップ</th></tr>
+      <tr><td>1</td><td>過去のRFPや提案書を収集</td></tr>
+      <tr><td>2</td><td>AIに読み込ませ可能な形で整理</td></tr>
+      <tr><td>3</td><td>AIの出力を試行錯誤しながら改善</td></tr>
+      <tr><td>4</td><td>メンバーで展開・活用</td></tr>
+    </table>
+  </section>
+
+  <!-- 5. 他施策との連携 -->
+  <section class="card">
+    <h2><span class="num">5</span>他施策との連携</h2>
+    <div class="grid-3">
+      <div class="box">
+        <h4>國重さん</h4>
+        <p style="font-size:13px;margin:0;">人材育成カリキュラムとの統合検討</p>
+      </div>
+      <div class="box">
+        <h4>栗田さん</h4>
+        <p style="font-size:13px;margin:0;">AI施策との連携</p>
+      </div>
+      <div class="box">
+        <h4>北川さん</h4>
+        <p style="font-size:13px;margin:0;">案件獲得プロセス整理の続きとしての位置づけ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 育成フレームワーク -->
+  <section class="card">
+    <h2><span class="num">6</span>育成フレームワークの構築</h2>
+    <ul class="clean">
+      <li>ITコンサルとしての育成フレームワークを方向性として設定</li>
+      <li>RFP作成スキルは<strong>他領域にも活用可能</strong></li>
+      <li><strong>本年度は波及より基盤作りに注力</strong></li>
+      <li>最終的に<strong>5名が活用できる状態</strong>を目指す</li>
+    </ul>
+  </section>
+
+  <!-- 7. アクションアイテム -->
+  <section class="card">
+    <h2><span class="num">7</span>アクションアイテム</h2>
+    <p class="lead">担当者と期日を明示。完了状況は次回ミーティングで確認。</p>
+
+    <table>
+      <tr><th style="width:14%">担当</th><th>内容</th><th style="width:18%">期日</th></tr>
+      <tr>
+        <td>喜井</td>
+        <td>上長報告会の日程設定（6/12 16-17時確定、7月以降は火 15-16時で仮設定、8月以降は17-18時に変更）</td>
+        <td>順次（〜6/12）</td>
+      </tr>
+      <tr>
+        <td>喜井</td>
+        <td>7/7の報告会を <strong>7/10 16時</strong> に変更</td>
+        <td>速やか</td>
+      </tr>
+      <tr>
+        <td>喜井</td>
+        <td>メンバー検討会の日程設定（次回 <strong>6/25 11-12時</strong>）</td>
+        <td>速やか</td>
+      </tr>
+      <tr>
+        <td>全メンバー</td>
+        <td>共有された資料を確認し、<strong>疑問点・共感点・アイデア</strong>を持ち寄る</td>
+        <td>〜6/25</td>
+      </tr>
+      <tr>
+        <td>チーム</td>
+        <td><strong>過去のRFPや提案書を収集</strong>（AIに読み込ませる学習データ準備）</td>
+        <td>〜6月末</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- 8. 連絡事項 -->
+  <section class="card">
+    <h2><span class="num">8</span>連絡事項</h2>
+    <ul class="clean">
+      <li><strong>グループチャットを作成</strong>し、今後のやり取りはそこで実施</li>
+      <li><strong>施策フォルダを作成</strong>し、アウトプットやワーク資料はそこに保存</li>
+    </ul>
+  </section>
+
+  <!-- 9. 次回ミーティング -->
+  <section class="card">
+    <h2><span class="num">9</span>次回ミーティング</h2>
+    <table>
+      <tr><th style="width:18%">項目</th><th>内容</th></tr>
+      <tr><td>日時</td><td><strong>6月25日(木) 11:00–12:00</strong></td></tr>
+      <tr><td>議題</td><td>資料の疑問点・共感点・アイデアの共有、方針の深掘り</td></tr>
+      <tr><td>参加者</td><td>本日と同じメンバー</td></tr>
+    </table>
+
+    <div class="cta">
+      <h3>キックオフを終えて</h3>
+      <ul>
+        <li>日程は確定。月次の振り返りリズムができた。</li>
+        <li>方向性（定義論を外し、体制強化と価値積み上げに注力）はメンバーで揃った。</li>
+        <li>次回6/25までに、過去資産収集とメンバーの問い・気づきを持ち寄る。</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    参考：5/19 ITコンサル検討キックオフミーティング要約（10:56〜）／5/19打合せアジェンダ（事前タブ）／5/13・5/18 小鉢さん打合せ要約<br>
+    本資料は打合せ結果の整理であり、未確定事項は次回6/25で確認します。
+  </footer>
+</div>
+</div>
+<!-- /TAB 2 -->
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      const el = document.getElementById(target);
+      if (el) el.classList.add('active');
+      window.scrollTo({top: 0, behavior: 'smooth'});
+      try { history.replaceState(null, '', '#' + target); } catch (e) {}
+    });
+  });
+  // Honor hash on load (e.g. #result)
+  if (location.hash) {
+    const target = location.hash.substring(1);
+    const btn = document.querySelector('.tab-btn[data-tab="' + target + '"]');
+    if (btn) btn.click();
+  }
+</script>
+
+</body>
+</html>
