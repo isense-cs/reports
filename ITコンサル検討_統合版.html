@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>ITコンサル検討（統合版）— 5/19 キックオフ＋5/25・6/1 メンバー検討</title>
+<title>ITコンサル検討（統合版）— 5/19 キックオフ＋5/25・6/1・6/9 メンバー検討</title>
 <style>
   /* ===== COMMON RESET / BASE ===== */
   * { box-sizing: border-box; }
@@ -40,6 +40,20 @@
   .tab-result .tag.ok { background: #d1fae5; color: #047857; }
   .tab-result .tag.brand { background: #ccfbf1; color: #0f766e; }
   .tab-result .cta { background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 100%); }
+
+  /* ===== TAB JUN09 THEME ===== */
+  .tab-jun09 { --brand: #be185d; --brand-soft: #fce7f3; --accent: #1e40af; --accent-soft: #dbeafe; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e5e7eb; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
+  .tab-jun09 header.cover { background: linear-gradient(135deg, #be185d 0%, #1e40af 100%); }
+  .tab-jun09 .box.brand { background: #fce7f3; border-color: #f9a8d4; }
+  .tab-jun09 .box.accent { background: #dbeafe; border-color: #93c5fd; }
+  .tab-jun09 .box.ok { background: #d1fae5; border-color: #6ee7b7; }
+  .tab-jun09 .tag.brand { background: #fce7f3; color: #be185d; }
+  .tab-jun09 .tag.accent { background: #dbeafe; color: #1e40af; }
+  .tab-jun09 .tag.ok { background: #d1fae5; color: #047857; }
+  .tab-jun09 .cta { background: linear-gradient(135deg, #1e40af 0%, #be185d 100%); }
+  .tab-jun09 .diagram-card { background: linear-gradient(135deg, #fff 0%, #fafafa 100%); border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin: 14px 0; }
+  .tab-jun09 .diagram-caption { font-size: 12px; color: #6b7280; text-align: center; margin-top: 8px; }
+  .tab-jun09 .diagram-author { display: inline-block; padding: 3px 10px; background: #fce7f3; color: #be185d; border-radius: 999px; font-size: 11px; font-weight: 600; margin-left: 8px; }
 
   /* ===== TAB JUN01 THEME ===== */
   .tab-jun01 { --brand: #c2410c; --brand-soft: #ffedd5; --accent: #4338ca; --accent-soft: #e0e7ff; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e5e7eb; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
@@ -131,7 +145,8 @@
     <button class="tab-btn" data-tab="agenda"><span class="icon">📋</span>事前アジェンダ（5/19 朝）</button>
     <button class="tab-btn" data-tab="result"><span class="icon">✅</span>キックオフ結果（5/19）</button>
     <button class="tab-btn" data-tab="may25"><span class="icon">🟣</span>メンバー検討①結果（5/25）</button>
-    <button class="tab-btn active" data-tab="jun01"><span class="icon">🟠</span>メンバー検討②結果（6/1）</button>
+    <button class="tab-btn" data-tab="jun01"><span class="icon">🟠</span>メンバー検討②結果（6/1）</button>
+    <button class="tab-btn active" data-tab="jun09"><span class="icon">🌸</span>メンバー検討③結果（6/9）</button>
   </div>
 </div>
 
@@ -1225,7 +1240,7 @@
 <!-- ============================================================ -->
 <!-- TAB 4: 6/1 MEMBER DISCUSSION #2 RESULT                          -->
 <!-- ============================================================ -->
-<div id="jun01" class="tab-content tab-jun01 active">
+<div id="jun01" class="tab-content tab-jun01">
 <div class="wrap">
 
   <header class="cover">
@@ -1545,6 +1560,418 @@
 </div>
 </div>
 <!-- /TAB 4 -->
+
+<!-- ============================================================ -->
+<!-- TAB 5: 6/9 MEMBER DISCUSSION #3 RESULT (RFP施策の範囲整理)        -->
+<!-- ============================================================ -->
+<div id="jun09" class="tab-content tab-jun09 active">
+<div class="wrap">
+
+  <header class="cover">
+    <div class="eyebrow">D-Team / IT Consulting — Member Discussion #3 Result</div>
+    <h1>6/9 メンバー検討会③ 結果サマリ<br>— RFP施策の範囲整理と役割マッピング</h1>
+    <p>事前ヒアリング（7名）の意見を踏まえ、施策の焦点（人のスキル強化中心 vs AI活用中心）と対象範囲を議論。北川さん作成のIT工程概念図と、小鉢さん作成のチーム構成図をベースに役割マッピングを共有。事前アンケート再配布で焦点を確定する方針。</p>
+    <div class="meta">
+      <span>2026-06-09（火）11:01〜</span>
+      <span>記録：管原</span>
+      <span>対象：Dチーム関連メンバー</span>
+      <span>関連：5/25・6/1タブ</span>
+    </div>
+  </header>
+
+  <!-- 0. 今日のゴール（達成状況） -->
+  <section class="card">
+    <h2><span class="num">0</span>今日のゴール（達成状況）</h2>
+    <div class="grid-3">
+      <div class="box ok">
+        <h4>① 事前ヒアリング結果の共有 <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">7名分の意見をテーブルで共有。RFP育成テーマ・AIチェック中心・領域絞りの大筋に違和感なし。</p>
+      </div>
+      <div class="box ok">
+        <h4>② 役割マッピングの方向性 <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">小鉢さん作成の3チーム構成図で、各メンバーの担当イメージを可視化・合意。</p>
+      </div>
+      <div class="box ok">
+        <h4>③ 6/15以降の打合せ準備方針 <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">焦点（スキル強化 vs AI活用）と範囲を事前アンケートで確定 → 範囲決定に特化した会議を実施。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 会議の目的 -->
+  <section class="card">
+    <h2><span class="num">1</span>会議の目的</h2>
+    <p class="lead">5月分の振り返りは省略し、参加者の意見収集を優先して議論を進めた。</p>
+
+    <div class="box brand">
+      <h4>今年度の施策として仮でも決めたい4点</h4>
+      <ul class="clean">
+        <li>RFP作成を軸に「<strong>何を目標にするか</strong>」</li>
+        <li>「<strong>AIをどこまで使うか</strong>」</li>
+        <li>「<strong>対象領域をどこに絞るか</strong>」</li>
+        <li>「<strong>どう役割分担するか</strong>」</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. 主な方向性（合意） -->
+  <section class="card">
+    <h2><span class="num">2</span>主な方向性（4点）</h2>
+    <p class="lead">事前ヒアリングと本日の議論で大筋一致した方向性。</p>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>RFP作成を育成テーマにすることは妥当</h4>
+        <ul class="clean">
+          <li>大きな違和感なし、という意見が多数</li>
+          <li>過去のITコンサル業務との接続もあるため、テーマ設定として妥当</li>
+        </ul>
+      </div>
+      <div class="box brand">
+        <h4>若手向けは「部品ごとの演習」で階段設計</h4>
+        <ul class="clean">
+          <li>RFP作成そのものは難しい</li>
+          <li>いきなり本体に入るより、<strong>業務フロー作成・要件整理・システム概要図</strong>など、RFPを構成する部品ごとの演習メニューを充実させる</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>AI活用は「生成」より「チェック・レビュー」優勢</h4>
+        <ul class="clean">
+          <li>差分確認・抜け漏れ確認はAIと相性がよい</li>
+          <li>生成まで踏み込むと、品質のばらつきや技術的難しさが大きい</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>案件カルテは「人が整理する過程」が教育</h4>
+        <ul class="clean">
+          <li>案件カルテやヒアリングシートの土台は、まず人が必要項目を整理して作る</li>
+          <li>その<strong>整理過程自体が教育</strong>という整理</li>
+        </ul>
+      </div>
+      <div class="box ok" style="grid-column:1/-1;">
+        <h4>対象領域は「絞る」で概ね一致</h4>
+        <p style="font-size:13px;margin:0;">全体ではなく、まずは絞って進める方向で大筋一致。ただし「どこに絞るか」は §3 で両論。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 論点ごとの意見 -->
+  <section class="card">
+    <h2><span class="num">3</span>論点ごとの意見</h2>
+
+    <h3>3-1. 対象領域の選定</h3>
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>営業領域（ESM）寄り案</h4>
+        <ul class="clean">
+          <li>会計よりも<strong>営業領域</strong>の方が会社ごとの差が出やすい</li>
+          <li>業務フロー整理や要件整理の<strong>学習材料として扱いやすい</strong></li>
+          <li>営業寄りで絞るのがよいという意見</li>
+        </ul>
+      </div>
+      <div class="box brand">
+        <h4>事例ベース案</h4>
+        <ul class="clean">
+          <li>過去事例が多く<strong>取り組みやすい領域</strong>から始める案</li>
+          <li>または、<strong>今後強化したい領域</strong>に寄せる案</li>
+        </ul>
+      </div>
+      <div class="box accent" style="grid-column:1/-1;">
+        <h4>共通スキル先行案（領域非依存）</h4>
+        <ul class="clean">
+          <li>最初は会計や営業などの個別領域に寄せず、まず<strong>共通スキル</strong>（要件整理／課題整理／ステークホルダー整理）を身につける</li>
+          <li>次年度以降に領域特化する、という考え方</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>3-2. RFP回答書作成の扱い</h3>
+    <div class="box warn">
+      <ul class="clean">
+        <li>RFP作成だけでなく、<strong>回答書作成</strong>も育成テーマに含められるのでは、という意見</li>
+        <li>ただし、<strong>提案力強化の別施策</strong>が走っているため、今回は一旦対象外にする整理が共有された</li>
+      </ul>
+    </div>
+
+    <h3>3-3. AI活用範囲（少数意見）</h3>
+    <div class="box accent">
+      <ul class="clean">
+        <li>少数意見として、AIは<strong>生成からチェックまで</strong>含めて活用してもよいのでは、という声もあった</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. その場で出たメンバー別コメント -->
+  <section class="card">
+    <h2><span class="num">4</span>その場で出たメンバー別コメント</h2>
+    <p class="lead">北川さんの概念図（§5）に対する各メンバーの反応をその場でメモ。</p>
+
+    <table>
+      <tr><th style="width:14%">メンバー</th><th>その場で出たコメント</th></tr>
+      <tr>
+        <td>北川さん</td>
+        <td>ITコンサルの工程概念図（§5）を共有・説明</td>
+      </tr>
+      <tr>
+        <td>國重さん</td>
+        <td>「<strong>①が必須</strong>」（現状把握・整理＝As-Isフェーズの重要性を指摘）</td>
+      </tr>
+      <tr>
+        <td>シドさん</td>
+        <td>「<strong>案件カルテから始める。生成AIは次年度</strong>」（事前アンケートと整合）</td>
+      </tr>
+      <tr>
+        <td>喜井さん</td>
+        <td>「<strong>個人のスキル強化、基準値をAI活用して出す、AIが作ったものをチェックする</strong>」</td>
+      </tr>
+      <tr>
+        <td>小鉢さん</td>
+        <td>3チーム構成図（§6）を共有・役割マッピングを提案</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- 5. 北川さん作成 ITコンサル工程概念図 -->
+  <section class="card">
+    <h2><span class="num">5</span>ITコンサル工程概念図 <span class="diagram-author">北川さん作成</span></h2>
+    <p class="lead">RFP作成までの工程を①現状把握・整理（As-Is） → ②ITグランドデザイン（To-Be） → ③RFP作成 の3層で整理。各工程からヒアリング・整理を経て案件カルテに集約し、最終的に①生成AI活用 ＋ ②OFFJT強化スキルの両輪でRFP作成AI構築を支える構造。</p>
+
+    <div class="diagram-card">
+      <svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:900px;display:block;margin:0 auto;font-family:inherit;">
+        <!-- Title -->
+        <text x="20" y="30" font-size="18" font-weight="700" fill="#be185d">ITコンサル</text>
+        <text x="860" y="30" font-size="12" text-anchor="end" fill="#6b7280">Page.2</text>
+        <line x1="20" y1="40" x2="880" y2="40" stroke="#be185d" stroke-width="2"/>
+
+        <!-- ① As-Is box -->
+        <rect x="20" y="60" width="380" height="140" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+        <text x="210" y="82" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">① 現状把握・整理（As-Is）</text>
+        <rect x="40" y="98" width="160" height="40" rx="4" fill="#fff" stroke="#93c5fd"/>
+        <text x="120" y="123" font-size="12" text-anchor="middle" fill="#1f2937">現行業務の可視化</text>
+        <rect x="220" y="98" width="160" height="40" rx="4" fill="#fff" stroke="#93c5fd"/>
+        <text x="300" y="123" font-size="12" text-anchor="middle" fill="#1f2937">現行システム把握</text>
+        <rect x="40" y="148" width="160" height="40" rx="4" fill="#fff" stroke="#93c5fd"/>
+        <text x="120" y="173" font-size="12" text-anchor="middle" fill="#1f2937">課題・要望の洗い出し</text>
+        <rect x="220" y="148" width="160" height="40" rx="4" fill="#fff" stroke="#93c5fd"/>
+        <text x="300" y="173" font-size="12" text-anchor="middle" fill="#1f2937">制約条件の整理</text>
+
+        <!-- Arrow As-Is → カルテ -->
+        <text x="490" y="120" font-size="11" fill="#1e40af" text-anchor="middle">ヒアリング・整理</text>
+        <line x1="410" y1="130" x2="600" y2="130" stroke="#1e40af" stroke-width="2" marker-end="url(#arrowblue)"/>
+
+        <!-- ② To-Be box -->
+        <rect x="20" y="220" width="380" height="180" rx="8" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1.5"/>
+        <text x="210" y="242" font-size="13" font-weight="700" fill="#047857" text-anchor="middle">② ITグランドデザイン（To-Be）</text>
+        <rect x="40" y="258" width="160" height="34" rx="4" fill="#fff" stroke="#6ee7b7"/>
+        <text x="120" y="279" font-size="12" text-anchor="middle" fill="#1f2937">あるべき業務整理</text>
+        <rect x="220" y="258" width="160" height="34" rx="4" fill="#fff" stroke="#6ee7b7"/>
+        <text x="300" y="279" font-size="11" text-anchor="middle" fill="#1f2937">情報資源・データ連携整理</text>
+        <rect x="40" y="298" width="160" height="34" rx="4" fill="#fff" stroke="#6ee7b7"/>
+        <text x="120" y="319" font-size="11" text-anchor="middle" fill="#1f2937">システム鳥観図・機能配置</text>
+        <rect x="220" y="298" width="160" height="34" rx="4" fill="#fff" stroke="#6ee7b7"/>
+        <text x="300" y="319" font-size="12" text-anchor="middle" fill="#1f2937">基盤・インフラ整理</text>
+        <rect x="40" y="338" width="160" height="34" rx="4" fill="#fff" stroke="#6ee7b7"/>
+        <text x="120" y="359" font-size="12" text-anchor="middle" fill="#1f2937">ロードマップ策定</text>
+        <rect x="220" y="338" width="160" height="34" rx="4" fill="#fff" stroke="#6ee7b7"/>
+        <text x="300" y="359" font-size="12" text-anchor="middle" fill="#1f2937">コスト・ガバナンス整理</text>
+
+        <!-- Arrow To-Be → カルテ -->
+        <text x="490" y="300" font-size="11" fill="#047857" text-anchor="middle">ヒアリング・整理・合意形成</text>
+        <line x1="410" y1="310" x2="600" y2="310" stroke="#047857" stroke-width="2" marker-end="url(#arrowgreen)"/>
+
+        <!-- Case Karte boxes -->
+        <rect x="600" y="100" width="200" height="60" rx="8" fill="#fef3c7" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="700" y="135" font-size="14" font-weight="700" text-anchor="middle" fill="#92400e">案件カルテ</text>
+        <rect x="600" y="280" width="200" height="60" rx="8" fill="#fef3c7" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="700" y="315" font-size="14" font-weight="700" text-anchor="middle" fill="#92400e">案件カルテ</text>
+
+        <!-- カルテ → ③ arrow (down) -->
+        <line x1="700" y1="345" x2="700" y2="430" stroke="#fbbf24" stroke-width="3" marker-end="url(#arroworange)"/>
+
+        <!-- ③ RFP box -->
+        <rect x="20" y="420" width="380" height="140" rx="8" fill="#fce7f3" stroke="#f9a8d4" stroke-width="1.5"/>
+        <text x="210" y="442" font-size="13" font-weight="700" fill="#be185d" text-anchor="middle">③ RFP作成</text>
+        <rect x="40" y="458" width="160" height="40" rx="4" fill="#fff" stroke="#f9a8d4"/>
+        <text x="120" y="483" font-size="12" text-anchor="middle" fill="#1f2937">スコープ定義</text>
+        <rect x="220" y="458" width="160" height="40" rx="4" fill="#fff" stroke="#f9a8d4"/>
+        <text x="300" y="483" font-size="11" text-anchor="middle" fill="#1f2937">要件整理（機能・非機能）</text>
+        <rect x="40" y="508" width="160" height="40" rx="4" fill="#fff" stroke="#f9a8d4"/>
+        <text x="120" y="533" font-size="12" text-anchor="middle" fill="#1f2937">提案依頼事項整理</text>
+        <rect x="220" y="508" width="160" height="40" rx="4" fill="#fff" stroke="#f9a8d4"/>
+        <text x="300" y="533" font-size="12" text-anchor="middle" fill="#1f2937">評価項目整理</text>
+
+        <!-- ② OFFJT callout -->
+        <rect x="430" y="440" width="180" height="100" rx="8" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="520" y="460" font-size="13" font-weight="700" text-anchor="middle" fill="#7c3aed">② OFFJT強化スキル</text>
+        <text x="520" y="500" font-size="12" text-anchor="middle" fill="#7c3aed">補完</text>
+
+        <!-- ① AI callout -->
+        <rect x="640" y="420" width="240" height="140" rx="8" fill="none" stroke="#be185d" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="760" y="442" font-size="12" font-weight="700" text-anchor="middle" fill="#be185d">① 生成AI活用による</text>
+        <text x="760" y="458" font-size="12" font-weight="700" text-anchor="middle" fill="#be185d">標準化＋効率化</text>
+        <rect x="690" y="475" width="140" height="50" rx="6" fill="#fce7f3" stroke="#be185d" stroke-width="1.5"/>
+        <text x="760" y="500" font-size="13" font-weight="700" text-anchor="middle" fill="#be185d">RFP作成AI</text>
+        <text x="760" y="518" font-size="13" font-weight="700" text-anchor="middle" fill="#be185d">構築</text>
+
+        <!-- Connector OFFJT → RFP -->
+        <line x1="430" y1="490" x2="400" y2="490" stroke="#7c3aed" stroke-width="2"/>
+
+        <!-- Arrow markers -->
+        <defs>
+          <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#1e40af"/></marker>
+          <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#047857"/></marker>
+          <marker id="arroworange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#fbbf24"/></marker>
+        </defs>
+      </svg>
+      <div class="diagram-caption">図：ITコンサルの3工程（As-Is／To-Be／RFP作成）と、案件カルテ・OFFJT強化・生成AI構築の関係</div>
+    </div>
+
+    <div class="quote">
+      <strong>國重さんコメント：</strong>「① 現状把握・整理（As-Is）が必須」— RFP作成を考える前に、As-Is理解の徹底が育成の出発点になる。
+    </div>
+  </section>
+
+  <!-- 6. 小鉢さん作成 チーム構成図 -->
+  <section class="card">
+    <h2><span class="num">6</span>チーム構成図 <span class="diagram-author">小鉢さん作成</span></h2>
+    <p class="lead">「RFP作成に向けたスキルUP ＋ AI活用での標準化」を達成する3チーム構成。育成構築・AI構築・精度チェックの3チームを設置し、複数チームに跨る役割（小鉢さん／管原さん）で接続する設計。</p>
+
+    <div class="diagram-card">
+      <svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:800px;display:block;margin:0 auto;font-family:inherit;">
+        <!-- Outer wrap -->
+        <rect x="20" y="40" width="760" height="420" rx="20" fill="#0f4c75" stroke="#0a3554" stroke-width="2"/>
+        <text x="400" y="70" font-size="15" font-weight="700" text-anchor="middle" fill="#fff">ITコンサル施策：RFP作成 に向けたスキルUP ＋ AI活用での標準化</text>
+
+        <!-- 育成構築チーム (pink) - top left -->
+        <rect x="50" y="100" width="380" height="120" rx="14" fill="#d946ef" stroke="#a21caf" stroke-width="2" opacity="0.92"/>
+        <text x="160" y="125" font-size="13" font-weight="700" fill="#fff">育成構築チーム（OFFJT）</text>
+        <rect x="70" y="140" width="78" height="50" rx="6" fill="#fff" stroke="#a21caf"/>
+        <text x="109" y="170" font-size="14" font-weight="700" text-anchor="middle" fill="#1f2937">國重</text>
+        <rect x="160" y="140" width="78" height="50" rx="6" fill="#fff" stroke="#a21caf"/>
+        <text x="199" y="170" font-size="14" font-weight="700" text-anchor="middle" fill="#1f2937">シド</text>
+        <rect x="295" y="155" width="78" height="50" rx="6" fill="#fff" stroke="#a21caf"/>
+        <text x="334" y="185" font-size="14" font-weight="700" text-anchor="middle" fill="#1f2937">小鉢</text>
+
+        <!-- 精度チェックチーム (gray) - right -->
+        <rect x="380" y="130" width="380" height="220" rx="14" fill="#6b7280" stroke="#4b5563" stroke-width="2" opacity="0.92"/>
+        <text x="470" y="155" font-size="13" font-weight="700" fill="#fff">精度チェックチーム</text>
+        <rect x="500" y="180" width="78" height="50" rx="6" fill="#fff" stroke="#4b5563"/>
+        <text x="539" y="210" font-size="14" font-weight="700" text-anchor="middle" fill="#1f2937">吉田</text>
+        <rect x="600" y="180" width="78" height="50" rx="6" fill="#fff" stroke="#4b5563"/>
+        <text x="639" y="210" font-size="14" font-weight="700" text-anchor="middle" fill="#1f2937">北川</text>
+        <rect x="600" y="250" width="78" height="50" rx="6" fill="#fff" stroke="#4b5563"/>
+        <text x="639" y="280" font-size="14" font-weight="700" text-anchor="middle" fill="#1f2937">喜井</text>
+
+        <!-- AI構築チーム (green) - bottom left -->
+        <rect x="50" y="260" width="380" height="120" rx="14" fill="#22c55e" stroke="#15803d" stroke-width="2" opacity="0.92"/>
+        <text x="160" y="285" font-size="13" font-weight="700" fill="#fff">AI構築チーム（OFFJT）</text>
+        <rect x="100" y="305" width="78" height="50" rx="6" fill="#fff" stroke="#15803d"/>
+        <text x="139" y="335" font-size="14" font-weight="700" text-anchor="middle" fill="#1f2937">栗田</text>
+
+        <!-- 管原 - overlap of AI & 精度チェック -->
+        <rect x="345" y="295" width="84" height="50" rx="6" fill="#fff" stroke="#1f2937" stroke-width="1.5"/>
+        <text x="387" y="325" font-size="14" font-weight="700" text-anchor="middle" fill="#1f2937">管原</text>
+
+        <!-- Legend -->
+        <g transform="translate(50,400)">
+          <text x="0" y="0" font-size="11" fill="#fff" font-weight="600">凡例：</text>
+          <rect x="50" y="-12" width="14" height="14" rx="3" fill="#d946ef" opacity="0.92"/>
+          <text x="70" y="0" font-size="11" fill="#fff">育成構築</text>
+          <rect x="140" y="-12" width="14" height="14" rx="3" fill="#22c55e" opacity="0.92"/>
+          <text x="160" y="0" font-size="11" fill="#fff">AI構築</text>
+          <rect x="220" y="-12" width="14" height="14" rx="3" fill="#6b7280" opacity="0.92"/>
+          <text x="240" y="0" font-size="11" fill="#fff">精度チェック</text>
+          <text x="340" y="0" font-size="11" fill="#fff">※ 小鉢＝育成×精度／管原＝AI×精度（チーム間接続役）</text>
+        </g>
+      </svg>
+      <div class="diagram-caption">図：3チーム構成（育成構築・AI構築・精度チェック）と、小鉢さん／管原さんによるチーム間接続</div>
+    </div>
+
+    <div class="grid-2" style="margin-top:14px;">
+      <div class="box brand">
+        <h4>育成構築チーム（OFFJT）</h4>
+        <ul class="clean">
+          <li>メンバー：<strong>國重・シド・小鉢</strong></li>
+          <li>役割：育成カリキュラム設計、OFFJT演習メニューの肉付け、業務フロー作成等のサブ演習設計</li>
+        </ul>
+      </div>
+      <div class="box brand">
+        <h4>AI構築チーム（OFFJT）</h4>
+        <ul class="clean">
+          <li>メンバー：<strong>栗田・管原</strong></li>
+          <li>役割：RFPチェック用AIの構築、案件カルテのAI読み取り可能なフォーマット設計</li>
+        </ul>
+      </div>
+      <div class="box accent" style="grid-column:1/-1;">
+        <h4>精度チェックチーム</h4>
+        <ul class="clean">
+          <li>メンバー：<strong>小鉢・吉田・北川・喜井・管原</strong></li>
+          <li>役割：案件カルテ要素検討、AIアウトプットの精度評価、過去RFP事例の精度ラベル付け、操作感レビュー</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote">
+      <strong>チーム間接続の設計意図：</strong>小鉢さんは「育成構築×精度チェック」の二役で、育成の到達基準と精度評価を接続する。管原さんは「AI構築×精度チェック」の二役で、AI出力の基準値設定と評価実施を接続する。
+    </div>
+  </section>
+
+  <!-- 7. アクションアイテム -->
+  <section class="card">
+    <h2><span class="num">7</span>アクションアイテム</h2>
+
+    <table>
+      <tr><th style="width:14%">担当</th><th>内容</th><th style="width:18%">期日</th></tr>
+      <tr>
+        <td>管原</td>
+        <td>今日の打ち合わせ記録を送付し、<strong>次回までの事前アンケート</strong>を配布する。アンケート結果を踏まえて、<strong>施策の焦点と範囲のたたき台</strong>を整理する。</td>
+        <td>速やか</td>
+      </tr>
+      <tr>
+        <td>参加者</td>
+        <td>事前アンケートに回答し、<strong>施策の焦点（人のスキル強化中心か、AI活用中心か）</strong>と<strong>対象範囲</strong>への意見を出す。</td>
+        <td>次回会議まで</td>
+      </tr>
+      <tr>
+        <td>参加者</td>
+        <td><strong>目標シート</strong>は未確定事項を踏まえつつ、各自で工夫して記入する。</td>
+        <td>順次</td>
+      </tr>
+      <tr>
+        <td>参加者</td>
+        <td>次回会議では<strong>範囲決定に特化</strong>し、その場で結論を出せるよう準備する。</td>
+        <td>次回会議</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- 8. 次回ミーティング -->
+  <section class="card">
+    <h2><span class="num">8</span>次回ミーティング</h2>
+    <table>
+      <tr><th style="width:18%">項目</th><th>内容</th></tr>
+      <tr><td>次回日時</td><td>事前アンケート回収後、別途調整（6/15以降を想定）</td></tr>
+      <tr><td>主な議題</td><td><strong>施策の焦点（スキル強化中心 vs AI活用中心）の確定</strong>／<strong>対象範囲（領域・到達目標）の確定</strong></td></tr>
+      <tr><td>事前準備</td><td>事前アンケートに各自回答／たたき台（管原）／目標シート（各自）</td></tr>
+    </table>
+
+    <div class="cta">
+      <h3>本日の着地点</h3>
+      <ul>
+        <li>RFP作成育成テーマ＋AIチェック中心＋領域絞りの大筋に違和感なし。</li>
+        <li>北川さん概念図で工程を、小鉢さん3チーム図で役割を、メンバー間で可視化・共有完了。</li>
+        <li>焦点（スキル強化 vs AI活用）と範囲を事前アンケートで確定 → 次回は範囲決定に特化。</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    参考：6/9 RFP施策の範囲整理 議事録要約（Notta+Notion）／北川さん作成 ITコンサル工程概念図／小鉢さん作成 チーム構成図／6/1メンバー検討②結果タブ／5/25メンバー検討①結果タブ<br>
+    本資料は打合せ結果の整理であり、未確定事項は事前アンケート結果を踏まえて次回確定します。
+  </footer>
+</div>
+</div>
+<!-- /TAB 5 -->
 
 <script>
   document.querySelectorAll('.tab-btn').forEach(btn => {
