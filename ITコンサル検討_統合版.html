@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>ITコンサル検討（統合版）— 5/19 キックオフ＋5/25・6/1・6/9 メンバー検討</title>
+<title>ITコンサル検討（統合版）— 5/19キックオフ＋5/25・6/1・6/9 メンバー検討＋アンケート結果</title>
 <style>
   /* ===== COMMON RESET / BASE ===== */
   * { box-sizing: border-box; }
@@ -40,6 +40,32 @@
   .tab-result .tag.ok { background: #d1fae5; color: #047857; }
   .tab-result .tag.brand { background: #ccfbf1; color: #0f766e; }
   .tab-result .cta { background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 100%); }
+
+  /* ===== TAB SURVEY THEME ===== */
+  .tab-survey { --brand: #0d9488; --brand-soft: #ccfbf1; --accent: #92400e; --accent-soft: #fef3c7; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e5e7eb; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
+  .tab-survey header.cover { background: linear-gradient(135deg, #0d9488 0%, #92400e 100%); }
+  .tab-survey .box.brand { background: #ccfbf1; border-color: #5eead4; }
+  .tab-survey .box.accent { background: #fef3c7; border-color: #fcd34d; }
+  .tab-survey .tag.brand { background: #ccfbf1; color: #0d9488; }
+  .tab-survey .tag.accent { background: #fef3c7; color: #92400e; }
+  .tab-survey .cta { background: linear-gradient(135deg, #92400e 0%, #0d9488 100%); }
+  .tab-survey .respondent-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; margin: 16px 0; box-shadow: 0 1px 2px rgba(15,23,42,.04); overflow: hidden; }
+  .tab-survey .respondent-head { display: flex; align-items: center; gap: 12px; padding: 14px 20px; background: linear-gradient(135deg, #ccfbf1 0%, #fef3c7 100%); border-bottom: 1px solid #e5e7eb; }
+  .tab-survey .respondent-avatar { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg, #0d9488 0%, #92400e 100%); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; flex-shrink: 0; }
+  .tab-survey .respondent-name { font-size: 16px; font-weight: 700; color: #134e4a; }
+  .tab-survey .respondent-role { font-size: 11px; color: #4b5563; }
+  .tab-survey .respondent-meta { margin-left: auto; font-size: 11px; color: #6b7280; }
+  .tab-survey .respondent-body { padding: 16px 20px 18px; }
+  .tab-survey .q-row { margin-bottom: 14px; border-left: 3px solid #0d9488; padding-left: 12px; }
+  .tab-survey .q-row.empty { border-left-color: #e5e7eb; opacity: 0.55; }
+  .tab-survey .q-label { font-size: 12px; font-weight: 700; color: #0d9488; margin-bottom: 2px; display: flex; align-items: baseline; gap: 8px; }
+  .tab-survey .q-num { display: inline-flex; min-width: 22px; height: 22px; padding: 0 6px; background: #0d9488; color: #fff; border-radius: 6px; font-size: 11px; font-weight: 700; align-items: center; justify-content: center; }
+  .tab-survey .q-text { font-size: 13px; color: #1f2937; white-space: pre-wrap; line-height: 1.65; }
+  .tab-survey .q-text.empty { color: #9ca3af; font-style: italic; }
+  .tab-survey .summary-stat { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 10px 0; }
+  .tab-survey .summary-stat .stat-box { background: #ccfbf1; border: 1px solid #5eead4; border-radius: 10px; padding: 12px; text-align: center; }
+  .tab-survey .summary-stat .stat-num { font-size: 28px; font-weight: 700; color: #0d9488; line-height: 1; }
+  .tab-survey .summary-stat .stat-label { font-size: 11px; color: #134e4a; margin-top: 4px; }
 
   /* ===== TAB JUN09 THEME ===== */
   .tab-jun09 { --brand: #be185d; --brand-soft: #fce7f3; --accent: #1e40af; --accent-soft: #dbeafe; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e5e7eb; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
@@ -146,7 +172,8 @@
     <button class="tab-btn" data-tab="result"><span class="icon">✅</span>キックオフ結果（5/19）</button>
     <button class="tab-btn" data-tab="may25"><span class="icon">🟣</span>メンバー検討①結果（5/25）</button>
     <button class="tab-btn" data-tab="jun01"><span class="icon">🟠</span>メンバー検討②結果（6/1）</button>
-    <button class="tab-btn active" data-tab="jun09"><span class="icon">🌸</span>メンバー検討③結果（6/9）</button>
+    <button class="tab-btn" data-tab="jun09"><span class="icon">🌸</span>メンバー検討③結果（6/9）</button>
+    <button class="tab-btn active" data-tab="survey"><span class="icon">📊</span>アンケート結果（6/9・7名）</button>
   </div>
 </div>
 
@@ -1230,7 +1257,7 @@
   </section>
 
   <footer>
-    参考：5/25【施策】ITコンサル検討_全体_20260525 議事録要約（Notta+Notion）／5/19キックオフ結果タブ／5/19事前アジェンダタブ<br>
+    参考：5/25【施策】ITコンサル検討_全体_20260525 議事録要約（Notta）／5/19キックオフ結果タブ／5/19事前アジェンダタブ<br>
     本資料は打合せ結果の整理であり、未確定事項は6/1・6/8のフォローアップで確認します。
   </footer>
 </div>
@@ -1554,7 +1581,7 @@
   </section>
 
   <footer>
-    参考：6/1【施策】ITコンサル検討20260601 議事録要約（Notta+Notion）／5/25メンバー検討①結果タブ／5/19キックオフ結果タブ／5/19事前アジェンダタブ<br>
+    参考：6/1【施策】ITコンサル検討20260601 議事録要約（Notta）／5/25メンバー検討①結果タブ／5/19キックオフ結果タブ／5/19事前アジェンダタブ<br>
     本資料は打合せ結果の整理であり、未確定事項は6/8のフォローアップで確認します。
   </footer>
 </div>
@@ -1564,7 +1591,7 @@
 <!-- ============================================================ -->
 <!-- TAB 5: 6/9 MEMBER DISCUSSION #3 RESULT (RFP施策の範囲整理)        -->
 <!-- ============================================================ -->
-<div id="jun09" class="tab-content tab-jun09 active">
+<div id="jun09" class="tab-content tab-jun09">
 <div class="wrap">
 
   <header class="cover">
@@ -1966,12 +1993,445 @@
   </section>
 
   <footer>
-    参考：6/9 RFP施策の範囲整理 議事録要約（Notta+Notion）／北川さん作成 ITコンサル工程概念図／小鉢さん作成 チーム構成図／6/1メンバー検討②結果タブ／5/25メンバー検討①結果タブ<br>
+    参考：6/9 RFP施策の範囲整理 議事録要約（Notta）／北川さん作成 ITコンサル工程概念図／小鉢さん作成 チーム構成図／6/1メンバー検討②結果タブ／5/25メンバー検討①結果タブ<br>
     本資料は打合せ結果の整理であり、未確定事項は事前アンケート結果を踏まえて次回確定します。
   </footer>
 </div>
 </div>
 <!-- /TAB 5 -->
+
+<!-- ============================================================ -->
+<!-- TAB 6: SURVEY RESULTS (7 MEMBERS, EXCL. SUGAWARA)               -->
+<!-- ============================================================ -->
+<div id="survey" class="tab-content tab-survey active">
+<div class="wrap">
+
+  <header class="cover">
+    <div class="eyebrow">D-Team / IT Consulting — Member Survey Results</div>
+    <h1>メンバーヒアリング アンケート結果<br>— 7名分の回答</h1>
+    <p>5/25・6/1の議論で出た6論点をベースに、メンバー個別の意見を事前収集。ヒアリングシートHTML（ITコンサル_ヒアリングシート.html）に入力・出力された7名分の回答を埋込形式で表示。各論点の詳細分析は§0サマリを参照。</p>
+    <div class="meta">
+      <span>回答数：7名</span>
+      <span>実施日：2026-06-09</span>
+      <span>場面：自己記入</span>
+      <span>記録：管原</span>
+    </div>
+  </header>
+
+  <!-- 0. サマリ -->
+  <section class="card">
+    <h2><span class="num">0</span>回答サマリ</h2>
+    <p class="lead">7名（小鉢・吉田・北川・喜井・栗田・國重・シド）の回答分布。</p>
+
+    <div class="summary-stat">
+      <div class="stat-box">
+        <div class="stat-num">7</div>
+        <div class="stat-label">回答者数</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">6</div>
+        <div class="stat-label">質問項目数（Q1〜Q6）</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">7</div>
+        <div class="stat-label">対象メンバー</div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:14px;">
+      <div class="box brand">
+        <h4>🟢 強い合意ライン</h4>
+        <ul class="clean">
+          <li><strong>Q1 RFP育成テーマ</strong>：違和感なし＝4名／要確認＝1名／粒度・年度の調整提案＝2名（テーマ自体への否定はゼロ）</li>
+          <li><strong>Q2 AI活用</strong>：チェック中心＝6名／生成も積極＝1名（喜井）</li>
+          <li><strong>Q3 領域</strong>：絞る派＝5名／継続学習で全領域＝1名（小鉢）／共通スキル特化＝1名（シド）</li>
+          <li><strong>Q4 役割</strong>：教育＝國重・シド／AI＝栗田／カルテ要素検討＝全員参加（複数提案）</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>⚠️ 共通の懸念</h4>
+        <ul class="clean">
+          <li><strong>役割の偏り</strong>（吉田・小鉢）</li>
+          <li><strong>目標シートとの接続</strong>（小鉢）</li>
+          <li><strong>本来業務外への流出（GRA問題）</strong>（國重）</li>
+          <li><strong>本人のRFP経験不足感</strong>（喜井）</li>
+          <li><strong>OFFJT教育対象の明確化</strong>（北川 → 別資料あり）</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 小鉢 -->
+  <section class="card" style="padding:0;background:transparent;border:none;box-shadow:none;">
+    <div class="respondent-card">
+      <div class="respondent-head">
+        <div class="respondent-avatar">小</div>
+        <div>
+          <div class="respondent-name">小鉢 勝範</div>
+          <div class="respondent-role">サブリーダー・① 策定スキル ／ ③ 案件化プロセス</div>
+        </div>
+        <div class="respondent-meta">2026-06-09 自己記入</div>
+      </div>
+      <div class="respondent-body">
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q1</span>RFP作成を育成テーマにすることへの違和感・不明点</div>
+          <div class="q-text">RFP作成が育成テーマで良い。</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q2</span>AI活用範囲の意見（生成 / チェック / 案件カルテ）</div>
+          <div class="q-text">AI活用は、チェック。
+案件カルテは、人が検討。</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q3</span>対象領域（会計・販売絞り / 共通スキル）</div>
+          <div class="q-text">絞り込まず、全領域で進めてよいかと考える。
+読み込ませたRFP等により、領域の育ち方はまちまちだが、継続利用で各領域の精度をあげていくことをイメージしてる。</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q4</span>役割分担への意見・希望</div>
+          <div class="q-text">案件カルテは全員
+知見ある→ベース作成
+知見ない→作成したベースに対し、トライアル実行</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q5</span>その他の不安・やりたいこと</div>
+          <div class="q-text">何かしら役割を設け、
+各人の今期目標がしっかりと定まればよいが、、、</div>
+        </div>
+        <div class="q-row empty">
+          <div class="q-label"><span class="q-num">Q6</span>その場で出た発言・質問（自由メモ）</div>
+          <div class="q-text empty">（記入なし）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 吉田 -->
+  <section class="card" style="padding:0;background:transparent;border:none;box-shadow:none;">
+    <div class="respondent-card">
+      <div class="respondent-head">
+        <div class="respondent-avatar">吉</div>
+        <div>
+          <div class="respondent-name">吉田 実穂</div>
+          <div class="respondent-role">① 策定スキル ／ 部門連動</div>
+        </div>
+        <div class="respondent-meta">2026-06-09 自己記入</div>
+      </div>
+      <div class="respondent-body">
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q1</span>RFP作成を育成テーマにすることへの違和感・不明点</div>
+          <div class="q-text">RFP作成に対して違和感なし。
+今までもRFP作成実施していきている。
+作成だけでなく回答も。←提案力強化で実施中　※AIは活用していない</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q2</span>AI活用範囲の意見（生成 / チェック / 案件カルテ）</div>
+          <div class="q-text">案件カルテの要素検討：AI不要と思う
+案件カルテはEXCEL等で必要事項整理（フォーマットに埋める形式で良いのでは）
+埋めることが施策の取り組みになる。
+例えば提案力強化のヒアリングシート作成のような感じ。
+「チェック」はAIに強みあると思うので、活用していきたい。
+「生成」については難しい印象（特に技術的に）</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q3</span>対象領域（会計・販売絞り / 共通スキル）</div>
+          <div class="q-text">過去のRFP事例が多い領域でやっていくのが良いのでは。
+今後の取り組む予定の領域を。
+全体ではなく、まずは絞ってやってみる。</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q4</span>役割分担への意見・希望</div>
+          <div class="q-text">案件カルテの要素検討を全員で実施するとか。
+聞くだけ参加でも勉強になる
+チェックはAIに知見のある方に。評価は全員でレビュー（操作感も）</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q5</span>その他の不安・やりたいこと</div>
+          <div class="q-text">この取り組みで主導する人が偏る気がする
+役割分担をどのように実施するか。</div>
+        </div>
+        <div class="q-row empty">
+          <div class="q-label"><span class="q-num">Q6</span>その場で出た発言・質問（自由メモ）</div>
+          <div class="q-text empty">（記入なし）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 北川 -->
+  <section class="card" style="padding:0;background:transparent;border:none;box-shadow:none;">
+    <div class="respondent-card">
+      <div class="respondent-head">
+        <div class="respondent-avatar">北</div>
+        <div>
+          <div class="respondent-name">北川 侑樹</div>
+          <div class="respondent-role">③ 案件化プロセス ／ 営業プロセス連携</div>
+        </div>
+        <div class="respondent-meta">2026-06-09 自己記入</div>
+      </div>
+      <div class="respondent-body">
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q1</span>RFP作成を育成テーマにすることへの違和感・不明点</div>
+          <div class="q-text">・OFFJT教育 + AI活用の
+→OFFJT教育はどこを対象とするのか？
+→別途資料準備しているので確認したい。</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q2</span>AI活用範囲の意見（生成 / チェック / 案件カルテ）</div>
+          <div class="q-text">・チェックへの活用</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q3</span>対象領域（会計・販売絞り / 共通スキル）</div>
+          <div class="q-text">・絞る。販売。
+→特有業務、顧客要望等多い認識。</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q4</span>役割分担への意見・希望</div>
+          <div class="q-text">・自身：案件カルテに必要な情報の整理等は貢献できそう</div>
+        </div>
+        <div class="q-row empty">
+          <div class="q-label"><span class="q-num">Q5</span>その他の不安・やりたいこと</div>
+          <div class="q-text empty">（記入なし）</div>
+        </div>
+        <div class="q-row empty">
+          <div class="q-label"><span class="q-num">Q6</span>その場で出た発言・質問（自由メモ）</div>
+          <div class="q-text empty">（記入なし）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 喜井 -->
+  <section class="card" style="padding:0;background:transparent;border:none;box-shadow:none;">
+    <div class="respondent-card">
+      <div class="respondent-head">
+        <div class="respondent-avatar">喜</div>
+        <div>
+          <div class="respondent-name">喜井 潮</div>
+          <div class="respondent-role">① 策定スキル ／ ② カリキュラム</div>
+        </div>
+        <div class="respondent-meta">2026-06-09 自己記入</div>
+      </div>
+      <div class="respondent-body">
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q1</span>RFP作成を育成テーマにすることへの違和感・不明点</div>
+          <div class="q-text">違和感・不明点は無し
+RFPにはITコンサルとして必要となるスキルがおおく含まれるので問題ないように思える。</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q2</span>AI活用範囲の意見（生成 / チェック / 案件カルテ）</div>
+          <div class="q-text">生成→チェックまでAIでやればよいと思う
+基準値を人間側で定めてAIにAIの生成物をレビューさせる
+エージェントでサンプルも多く取れば共通して良いとされるポイントが抽出できそう</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q3</span>対象領域（会計・販売絞り / 共通スキル）</div>
+          <div class="q-text">最初は絞るのが良いと思う。
+領域ごとに分けたほうが精度も高いのではないか</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q4</span>役割分担への意見・希望</div>
+          <div class="q-text">検討中</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q5</span>その他の不安・やりたいこと</div>
+          <div class="q-text">RFPに携わった経験少なく、どこまで自分にできるかイメージがついていない</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q6</span>その場で出た発言・質問(自由メモ)</div>
+          <div class="q-text">特に今は無し。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 栗田 -->
+  <section class="card" style="padding:0;background:transparent;border:none;box-shadow:none;">
+    <div class="respondent-card">
+      <div class="respondent-head">
+        <div class="respondent-avatar">栗</div>
+        <div>
+          <div class="respondent-name">栗田 浩輝</div>
+          <div class="respondent-role">② カリキュラム（AI観点）／ 案件カルテ循環</div>
+        </div>
+        <div class="respondent-meta">2026-06-09 自己記入</div>
+      </div>
+      <div class="respondent-body">
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q1</span>RFP作成を育成テーマにすることへの違和感・不明点</div>
+          <div class="q-text">違和感なし</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q2</span>AI活用範囲の意見（生成 / チェック / 案件カルテ）</div>
+          <div class="q-text">チェック中心が良い
+AIが読み取りやすいフォーマットに案件カルテをすることが重要。</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q3</span>対象領域（会計・販売絞り / 共通スキル）</div>
+          <div class="q-text">絞った方がやりやすそう。</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q4</span>役割分担への意見・希望</div>
+          <div class="q-text">AIの部分を中心に担当する。
+インプットしやすいフォーマットにするのが重要なため、その部分でも意見を出したい。</div>
+        </div>
+        <div class="q-row empty">
+          <div class="q-label"><span class="q-num">Q5</span>その他の不安・やりたいこと</div>
+          <div class="q-text empty">（記入なし）</div>
+        </div>
+        <div class="q-row empty">
+          <div class="q-label"><span class="q-num">Q6</span>その場で出た発言・質問（自由メモ）</div>
+          <div class="q-text empty">（記入なし）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 國重 -->
+  <section class="card" style="padding:0;background:transparent;border:none;box-shadow:none;">
+    <div class="respondent-card">
+      <div class="respondent-head">
+        <div class="respondent-avatar">國</div>
+        <div>
+          <div class="respondent-name">國重 恵吾</div>
+          <div class="respondent-role">② カリキュラム（人材育成施策側）</div>
+        </div>
+        <div class="respondent-meta">2026-06-09 自己記入</div>
+      </div>
+      <div class="respondent-body">
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q1</span>RFP作成を育成テーマにすることへの違和感・不明点</div>
+          <div class="q-text">RFP作成が難しいので、若手育成となるともう一段下げる方が良い
+具体的には、業務フロー作成（例）などの演習メニューの肉付け。
+RFP作成に向けた作成すべき資料（RFPの中の一部）</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q2</span>AI活用範囲の意見（生成 / チェック / 案件カルテ）</div>
+          <div class="q-text">AIはチェックを主に活用</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q3</span>対象領域（会計・販売絞り / 共通スキル）</div>
+          <div class="q-text">絞った方が良い
+esmみたいな営業特化した領域
+会計領域が良いと思っていたが、会社間での違いが少ない
+一方で営業領域は会社によって特性があるので、業務フロー整理しがいがある。</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q4</span>役割分担への意見・希望</div>
+          <div class="q-text">教育メニューは、國重、シドにて実施。
+AI活用はほかの方にお願いしたい。</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q5</span>その他の不安・やりたいこと</div>
+          <div class="q-text">以下不安に思っていること
+・現状ITコンサルはGRAの仕事も行ったりしている。
+・本来のITコンサルの仕事を実施できる仕掛けに施策を通じてしていきたい。</div>
+        </div>
+        <div class="q-row empty">
+          <div class="q-label"><span class="q-num">Q6</span>その場で出た発言・質問（自由メモ）</div>
+          <div class="q-text empty">（記入なし）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. シド -->
+  <section class="card" style="padding:0;background:transparent;border:none;box-shadow:none;">
+    <div class="respondent-card">
+      <div class="respondent-head">
+        <div class="respondent-avatar">シ</div>
+        <div>
+          <div class="respondent-name">シド</div>
+          <div class="respondent-role">② カリキュラム（人材育成施策側）</div>
+        </div>
+        <div class="respondent-meta">2026-06-09 自己記入</div>
+      </div>
+      <div class="respondent-body">
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q1</span>RFP作成を育成テーマにすることへの違和感・不明点</div>
+          <div class="q-text">・2026年度は「案件カルテ作成＋AIによる精度チェック」ができる状態を目標とする
+・生成（RFP自動作成）は次年度以降
+理由：
+・学習データ不足のリスクが少ない
+・育成効果を測定しやすい
+・まず品質を見る目を育てられる</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q2</span>AI活用範囲の意見（生成 / チェック / 案件カルテ）</div>
+          <div class="q-text">まずは「生成」より「レビュー支援」を優先する案です。</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q3</span>対象領域（会計・販売絞り / 共通スキル）</div>
+          <div class="q-text">業務領域を限定しない
+・要件整理
+・課題整理
+・ステークホルダー整理
+などの共通スキルに特化
+理由：
+・製品や業務が変わっても使える
+・育成施策として横展開しやすい</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q4</span>役割分担への意見・希望</div>
+          <div class="q-text">役割                    担当イメージ
+育成フレームワーク      國重さん・シド</div>
+        </div>
+        <div class="q-row">
+          <div class="q-label"><span class="q-num">Q5</span>その他の不安・やりたいこと</div>
+          <div class="q-text">特になし。</div>
+        </div>
+        <div class="q-row empty">
+          <div class="q-label"><span class="q-num">Q6</span>その場で出た発言・質問（自由メモ）</div>
+          <div class="q-text empty">（記入なし）</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- まとめ -->
+  <section class="card">
+    <h2><span class="num">∞</span>分析結果（6/9 議論時に共有済）</h2>
+    <p class="lead">7名分の回答を統合した分析。6/9議事録タブの「§2 主な方向性」「§3 論点ごとの意見」と整合。</p>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>🟡 両論統合の3つの鍵</h4>
+        <ul class="clean">
+          <li><strong>A. 「絞る vs 絞らない」</strong>→ 2段階アプローチ（第1：販売 or 営業に絞る → 第2：共通スキル化 → 第3：他領域横展開）</li>
+          <li><strong>B. 「RFP作成 vs 業務フロー作成」</strong>→ 3層階段設計（上＝RFP作成／中＝業務フロー等サブ演習／下＝案件カルテ）</li>
+          <li><strong>C. AI活用の段階設計</strong>→ 基本：レビュー支援AI／並行：喜井案エージェント検証／次年度：本格生成</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>🧑‍🤝‍🧑 役割分担（メンバー自身の意思表明ベース）</h4>
+        <ul class="clean">
+          <li><strong>育成フレームワーク／教育メニュー</strong>：國重・シド</li>
+          <li><strong>AI活用（チェック・フォーマット設計）</strong>：栗田</li>
+          <li><strong>案件カルテ要素検討</strong>：全員参加</li>
+          <li><strong>ベース作成（知見ある層）</strong>：管原・小鉢</li>
+          <li><strong>案件カルテに必要な情報整理</strong>：北川</li>
+          <li><strong>トライアル実行</strong>：吉田・北川・喜井</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cta">
+      <h3>次のステップ</h3>
+      <ul>
+        <li>6/9議事録タブ §7 アクションアイテム で確認の通り、事前アンケート再配布で施策の焦点（スキル強化 vs AI活用）と範囲を確定。</li>
+        <li>次回会議では範囲決定に特化し、その場で結論を出す。</li>
+        <li>追加意見・更新があればヒアリングシートに追記し、6/15以降アジェンダ案に反映。</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    参考：ヒアリングシートHTML（ITコンサル_ヒアリングシート.html、記名・自己記入形式）／5/25メンバー検討①結果タブ／6/1メンバー検討②結果タブ／6/9メンバー検討③結果タブ<br>
+    本タブはヒアリングシートに入力・出力された7名分のアンケート結果を埋め込み表示。最新版はヒアリングシートHTMLを参照。
+  </footer>
+</div>
+</div>
+<!-- /TAB 6 -->
 
 <script>
   document.querySelectorAll('.tab-btn').forEach(btn => {
