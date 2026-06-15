@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>ITコンサル検討（統合版）— 5/19キックオフ＋5/25・6/1・6/9 メンバー検討＋アンケート結果</title>
+<title>ITコンサル検討（統合版）— 5/19キックオフ＋5/25・6/1・6/9・6/15 メンバー検討＋アンケート結果＋位置づけ整理</title>
 <style>
   /* ===== COMMON RESET / BASE ===== */
   * { box-sizing: border-box; }
@@ -40,6 +40,52 @@
   .tab-result .tag.ok { background: #d1fae5; color: #047857; }
   .tab-result .tag.brand { background: #ccfbf1; color: #0f766e; }
   .tab-result .cta { background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 100%); }
+
+  /* ===== TAB SUMMARY THEME (Executive Summary) ===== */
+  .tab-summary { --brand: #1e293b; --brand-soft: #e2e8f0; --accent: #ea580c; --accent-soft: #ffedd5; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e5e7eb; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
+  .tab-summary header.cover { background: linear-gradient(135deg, #1e293b 0%, #ea580c 100%); }
+  .tab-summary .box.brand { background: #e2e8f0; border-color: #94a3b8; }
+  .tab-summary .box.accent { background: #ffedd5; border-color: #fdba74; }
+  .tab-summary .box.ok { background: #d1fae5; border-color: #6ee7b7; }
+  .tab-summary .tag.brand { background: #e2e8f0; color: #1e293b; }
+  .tab-summary .tag.accent { background: #ffedd5; color: #ea580c; }
+  .tab-summary .tag.ok { background: #d1fae5; color: #047857; }
+  .tab-summary .cta { background: linear-gradient(135deg, #ea580c 0%, #1e293b 100%); }
+  .tab-summary .pillar { background: #f8fafc; border: 2px solid #1e293b; border-radius: 12px; padding: 18px 20px; position:relative; }
+  .tab-summary .pillar-num { position:absolute; top:-12px; left:18px; background:#1e293b; color:#fff; padding:4px 12px; border-radius:6px; font-size:12px; font-weight:700; letter-spacing:2px; }
+  .tab-summary .pillar h4 { margin:8px 0 6px; color:#1e293b; font-size:15px; }
+  .tab-summary .step-flow { display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin:14px 0; }
+  @media (max-width:720px) { .tab-summary .step-flow { grid-template-columns: 1fr 1fr; } }
+  .tab-summary .step { background:#fff; border:2px solid #ea580c; border-radius:10px; padding:12px 14px; position:relative; }
+  .tab-summary .step .step-num { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; background:#ea580c; color:#fff; border-radius:50%; font-size:12px; font-weight:700; margin-right:6px; }
+  .tab-summary .step h4 { display:inline; font-size:13px; color:#9a3412; margin:0; }
+  .tab-summary .step p { font-size:11px; color:#1e293b; margin:6px 0 0; }
+  .tab-summary .milestone-rail { display:grid; grid-template-columns: repeat(4, 1fr); gap:8px; margin:14px 0; position:relative; }
+  @media (max-width:720px) { .tab-summary .milestone-rail { grid-template-columns: 1fr 1fr; } }
+  .tab-summary .milestone { background:#f1f5f9; border-left:4px solid #ea580c; border-radius:8px; padding:10px 14px; }
+  .tab-summary .milestone .month { font-size:11px; color:#ea580c; font-weight:700; letter-spacing:2px; }
+  .tab-summary .milestone .body { font-size:12px; color:#1e293b; margin-top:4px; line-height:1.55; }
+
+  /* ===== TAB JUN15 THEME ===== */
+  .tab-jun15 { --brand: #166534; --brand-soft: #dcfce7; --accent: #9a3412; --accent-soft: #fed7aa; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e5e7eb; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
+  .tab-jun15 header.cover { background: linear-gradient(135deg, #166534 0%, #9a3412 100%); }
+  .tab-jun15 .box.brand { background: #dcfce7; border-color: #86efac; }
+  .tab-jun15 .box.accent { background: #fed7aa; border-color: #fdba74; }
+  .tab-jun15 .box.ok { background: #d1fae5; border-color: #6ee7b7; }
+  .tab-jun15 .tag.brand { background: #dcfce7; color: #166534; }
+  .tab-jun15 .tag.accent { background: #fed7aa; color: #9a3412; }
+  .tab-jun15 .tag.ok { background: #d1fae5; color: #047857; }
+  .tab-jun15 .cta { background: linear-gradient(135deg, #9a3412 0%, #166534 100%); }
+  .tab-jun15 .split-card { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 720px) { .tab-jun15 .split-card { grid-template-columns: 1fr; } }
+  .tab-jun15 .split-left { background: #dcfce7; border: 1px solid #86efac; border-radius: 12px; padding: 18px 20px; }
+  .tab-jun15 .split-right { background: #fed7aa; border: 1px solid #fdba74; border-radius: 12px; padding: 18px 20px; }
+  .tab-jun15 .split-head { font-size: 11px; font-weight: 700; letter-spacing: 2px; margin-bottom: 6px; }
+  .tab-jun15 .split-left .split-head { color: #166534; }
+  .tab-jun15 .split-right .split-head { color: #9a3412; }
+  .tab-jun15 .split-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+  .tab-jun15 .split-left .split-title { color: #14532d; }
+  .tab-jun15 .split-right .split-title { color: #7c2d12; }
 
   /* ===== TAB SURVEY THEME ===== */
   .tab-survey { --brand: #0d9488; --brand-soft: #ccfbf1; --accent: #92400e; --accent-soft: #fef3c7; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e5e7eb; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
@@ -173,7 +219,9 @@
     <button class="tab-btn" data-tab="may25"><span class="icon">🟣</span>メンバー検討①結果（5/25）</button>
     <button class="tab-btn" data-tab="jun01"><span class="icon">🟠</span>メンバー検討②結果（6/1）</button>
     <button class="tab-btn" data-tab="jun09"><span class="icon">🌸</span>メンバー検討③結果（6/9）</button>
-    <button class="tab-btn active" data-tab="survey"><span class="icon">📊</span>アンケート結果（6/9・7名）</button>
+    <button class="tab-btn" data-tab="survey"><span class="icon">📊</span>アンケート結果（6/9・7名）</button>
+    <button class="tab-btn" data-tab="jun15"><span class="icon">🌿</span>メンバー検討④結果（6/15）</button>
+    <button class="tab-btn active" data-tab="summary"><span class="icon">📋</span>位置づけ整理（エグゼクティブサマリー）</button>
   </div>
 </div>
 
@@ -2003,7 +2051,7 @@
 <!-- ============================================================ -->
 <!-- TAB 6: SURVEY RESULTS (7 MEMBERS, EXCL. SUGAWARA)               -->
 <!-- ============================================================ -->
-<div id="survey" class="tab-content tab-survey active">
+<div id="survey" class="tab-content tab-survey">
 <div class="wrap">
 
   <header class="cover">
@@ -2432,6 +2480,738 @@ AI活用はほかの方にお願いしたい。</div>
 </div>
 </div>
 <!-- /TAB 6 -->
+
+<!-- ============================================================ -->
+<!-- TAB 7: 6/15 MEMBER DISCUSSION #4 RESULT                         -->
+<!-- RFP効率化・スキル強化方針ミーティング                              -->
+<!-- ============================================================ -->
+<div id="jun15" class="tab-content tab-jun15">
+<div class="wrap">
+
+  <header class="cover">
+    <div class="eyebrow">D-Team / IT Consulting — Member Discussion #4 Result</div>
+    <h1>6/15 メンバー検討会④ 結果サマリ<br>— RFP 効率化（右側）× スキル強化（左側）の方針整理</h1>
+    <p>施策を「左側（個人スキル強化）」と「右側（AIによるRFP効率化）」の二軸で整理。今期は「先にスキル定義 → どのスキルをAIで伸ばすか」の順序で進める方針。スキル候補一覧の整備が次の動き。</p>
+    <div class="meta">
+      <span>2026-06-15（月）11:02〜</span>
+      <span>記録：管原</span>
+      <span>対象：Dチーム関連メンバー</span>
+      <span>関連：6/9タブ</span>
+    </div>
+  </header>
+
+  <!-- 0. 今日のゴール（達成状況） -->
+  <section class="card">
+    <h2><span class="num">0</span>今日のゴール（達成状況）</h2>
+    <div class="grid-3">
+      <div class="box ok">
+        <h4>① 施策の二軸整理 <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">左側＝スキル強化、右側＝AI効率化 という構造で全員の認識を揃えた。</p>
+      </div>
+      <div class="box ok">
+        <h4>② スキル定義の進め方合意 <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">スキル一覧をマトリクス（縦＝RFP構成要素／横＝スキル種別）で整備する流れに合意。</p>
+      </div>
+      <div class="box ok">
+        <h4>③ 次回までの分担確定 <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">國重（スキル一覧整備）・喜井（次回設定）・全員（スキル候補持ち寄り）に持ち帰りタスクを設定。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 施策の全体構造 -->
+  <section class="card">
+    <h2><span class="num">1</span>施策の全体構造（左側 × 右側）</h2>
+    <p class="lead">施策を二軸で整理。両軸は最終的に「RFP作成」という枠組みの中で融合する（左のスキルアップ × 右のAI出力チェック）。</p>
+
+    <div class="split-card">
+      <div class="split-left">
+        <div class="split-head">LEFT  ／  個人スキル強化</div>
+        <div class="split-title">ITコンサルとしての個人スキル強化</div>
+        <ul class="clean">
+          <li>どのスキルをターゲットにするかは<strong>まだ未定</strong></li>
+          <li>RFP作成に特化するか、その前段（<strong>ヒアリング・整理・合意形成</strong>）を強化するかが論点</li>
+          <li>次回までにスキル候補一覧を整備し、現在地を把握する</li>
+        </ul>
+      </div>
+      <div class="split-right">
+        <div class="split-head">RIGHT  ／  AI 効率化</div>
+        <div class="split-title">AI を活用したRFP作成の効率化</div>
+        <ul class="clean">
+          <li>ITコンサル施策チームが<strong>構想化</strong>を担う</li>
+          <li><strong>生成AI構築チーム</strong>が実行・検証・改善を担う</li>
+          <li>AI施策チームのリソース上、追加タスクを乗せるのが難しい点は<strong>課題として残る</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote">
+      <strong>融合のイメージ：</strong>左側でスキルアップした人が、右側のAI出力をチェックする。スキルがあるからこそAIの「足りないところ」を指摘できる、という構造で両軸を1つの育成ループに統合する。
+    </div>
+
+    <h3 style="margin-top:20px;">1-2. 体制図（前回まとめ・本日確認）</h3>
+    <p class="lead" style="margin-top:-4px;">主管＝ITコンサル施策チームが施策の方向づけ・定義を担い、左右に必要に応じて振り分け。実行は教育施策チーム／生成AI構築チームが担い、結果は<strong>現場・チーム</strong>に戻って業務効率化・スキル向上に繋がる。</p>
+
+    <div class="diagram-card" style="background:linear-gradient(135deg,#fff 0%,#fafafa 100%);border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin:14px 0;">
+      <svg viewBox="0 0 900 580" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:900px;display:block;margin:0 auto;font-family:inherit;">
+        <!-- Header -->
+        <text x="20" y="30" font-size="18" font-weight="700" fill="#166534">前回まとめ（体制）</text>
+        <text x="880" y="30" font-size="12" text-anchor="end" fill="#6b7280">Page.1</text>
+        <line x1="20" y1="40" x2="880" y2="40" stroke="#166534" stroke-width="2"/>
+
+        <!-- Two side headers -->
+        <text x="280" y="80" font-size="22" font-weight="700" fill="#94a3b8" text-anchor="middle">スキル強化</text>
+        <text x="630" y="80" font-size="22" font-weight="700" fill="#be185d" text-anchor="middle">効率化</text>
+
+        <!-- Dashed vertical separators (skill side left dashed) -->
+        <line x1="160" y1="55" x2="160" y2="540" stroke="#94a3b8" stroke-width="1" stroke-dasharray="6,4"/>
+        <line x1="460" y1="55" x2="460" y2="540" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="6,4"/>
+        <line x1="760" y1="55" x2="760" y2="540" stroke="#f9a8d4" stroke-width="1" stroke-dasharray="6,4"/>
+
+        <!-- Left margin yellow sticky notes -->
+        <rect x="20" y="90" width="125" height="36" rx="3" fill="#fef9c3" stroke="#facc15" stroke-width="1"/>
+        <text x="82" y="113" font-size="11" font-weight="700" fill="#854d0e" text-anchor="middle" font-style="italic">RFP作成スキル強化？</text>
+
+        <rect x="20" y="138" width="125" height="56" rx="3" fill="#fef9c3" stroke="#facc15" stroke-width="1"/>
+        <text x="82" y="159" font-size="10.5" font-weight="700" fill="#854d0e" text-anchor="middle" font-style="italic">ヒアリング・整理・</text>
+        <text x="82" y="176" font-size="10.5" font-weight="700" fill="#854d0e" text-anchor="middle" font-style="italic">合意形成スキル強化？</text>
+
+        <line x1="82" y1="200" x2="82" y2="248" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrowg)"/>
+
+        <rect x="20" y="260" width="125" height="36" rx="3" fill="#fef9c3" stroke="#facc15" stroke-width="1"/>
+        <text x="82" y="283" font-size="11" font-weight="700" fill="#854d0e" text-anchor="middle" font-style="italic">具体化すると？</text>
+
+        <!-- Right margin pink note -->
+        <text x="870" y="115" font-size="12" font-weight="700" fill="#be185d" text-anchor="end" font-style="italic">生成AI活用による</text>
+        <text x="870" y="135" font-size="12" font-weight="700" fill="#be185d" text-anchor="end" font-style="italic">RFP作成効率化</text>
+
+        <!-- Center top: ITコンサル施策 -->
+        <rect x="350" y="115" width="220" height="70" rx="6" fill="#e0e7ff" stroke="#a5b4fc" stroke-width="1.5"/>
+        <text x="460" y="140" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">ITコンサル施策</text>
+        <text x="460" y="160" font-size="11" fill="#3730a3" text-anchor="middle">施策の方向づけ・定義（主管）</text>
+
+        <!-- Arrows from center to left and right (構想化) -->
+        <text x="280" y="180" font-size="11" font-weight="700" fill="#1f2937" text-anchor="middle">構想化・検証/改善</text>
+        <line x1="350" y1="170" x2="240" y2="240" stroke="#1f2937" stroke-width="1.5" marker-end="url(#arrowd)"/>
+
+        <text x="640" y="180" font-size="11" font-weight="700" fill="#1f2937" text-anchor="middle">構想策定・検証/改善</text>
+        <line x1="570" y1="170" x2="680" y2="240" stroke="#1f2937" stroke-width="1.5" marker-end="url(#arrowd)"/>
+
+        <!-- 必要に応じて振り分け -->
+        <text x="460" y="200" font-size="10" fill="#6b7280" text-anchor="middle">必要に応じて振り分け</text>
+
+        <!-- 実行 labels -->
+        <text x="240" y="235" font-size="11" font-weight="700" fill="#1f2937" text-anchor="middle">実行</text>
+        <text x="680" y="235" font-size="11" font-weight="700" fill="#1f2937" text-anchor="middle">実行</text>
+
+        <!-- Education team box -->
+        <rect x="160" y="250" width="200" height="70" rx="6" fill="#ccfbf1" stroke="#5eead4" stroke-width="1.5"/>
+        <text x="260" y="278" font-size="13" font-weight="700" fill="#0f766e" text-anchor="middle">教育施策チーム</text>
+        <text x="260" y="298" font-size="11" fill="#134e4a" text-anchor="middle">教育メニューの策定</text>
+
+        <!-- AI team box -->
+        <rect x="580" y="250" width="200" height="70" rx="6" fill="#ccfbf1" stroke="#5eead4" stroke-width="1.5"/>
+        <text x="680" y="278" font-size="13" font-weight="700" fill="#0f766e" text-anchor="middle">生成AI構築チーム</text>
+        <text x="680" y="298" font-size="11" fill="#134e4a" text-anchor="middle">生成AIの構築・実装</text>
+
+        <!-- Arrows from both teams down to 現場 -->
+        <line x1="260" y1="320" x2="430" y2="430" stroke="#1f2937" stroke-width="1.5" marker-end="url(#arrowd)"/>
+        <line x1="680" y1="320" x2="510" y2="430" stroke="#1f2937" stroke-width="1.5" marker-end="url(#arrowd)"/>
+
+        <!-- 現場・チーム box -->
+        <rect x="320" y="445" width="280" height="70" rx="6" fill="#e7e5e4" stroke="#a8a29e" stroke-width="1.5"/>
+        <text x="460" y="475" font-size="13" font-weight="700" fill="#44403c" text-anchor="middle">現場・チーム</text>
+        <text x="460" y="496" font-size="11" fill="#57534e" text-anchor="middle">業務効率化・スキル向上</text>
+
+        <!-- Footer -->
+        <text x="20" y="565" font-size="9" fill="#94a3b8" font-style="italic">Copyright Infosense Corp. All rights reserved.</text>
+        <text x="880" y="565" font-size="9" fill="#94a3b8" text-anchor="end">infosense</text>
+
+        <defs>
+          <marker id="arrowd" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#1f2937"/></marker>
+          <marker id="arrowg" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#94a3b8"/></marker>
+        </defs>
+      </svg>
+      <div style="font-size:12px;color:#6b7280;text-align:center;margin-top:8px;">図：前回まとめ（体制図）— スキル強化（左）／効率化（右）の二軸で主管・実行・現場を接続</div>
+    </div>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>左側（スキル強化）の議論</h4>
+        <ul class="clean">
+          <li>「<strong>人のスキル</strong>」の話に集中</li>
+          <li>RFP作成スキル？　ヒアリング・整理・合意形成スキル？</li>
+          <li>具体的にどのスキルを強化するか、次回までに各人が候補を持ち寄る</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>右側（効率化）の議論</h4>
+        <ul class="clean">
+          <li>「<strong>チェックなど品質の観点</strong>」の話</li>
+          <li><strong>AIで実装する前に、何をチェックするか（観点）の検討</strong>から議論を始めた</li>
+          <li>みんなで<strong>RFPのレビューを行う勉強会</strong>から実施するアイデアが浮上</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. スキル強化（左側）の方向性 -->
+  <section class="card">
+    <h2><span class="num">2</span>スキル強化（左側）の方向性</h2>
+
+    <h3>2-1. 重視するスキル候補</h3>
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>コア候補（本日合意）</h4>
+        <ul class="clean">
+          <li><strong>ヒアリングスキル</strong>（顧客の声を引き出す）</li>
+          <li><strong>課題の洗い出し</strong>（顧客が認識していない課題の発見）</li>
+          <li><strong>合意形成スキル</strong></li>
+        </ul>
+        <p class="note" style="margin:6px 0 0;">特定タスク（RFP作成）に決め打ちせず、<strong>全工程にかかる基礎スキル</strong>として捉える方針を推奨。</p>
+      </div>
+      <div class="box brand">
+        <h4>スキル一覧のマトリクス設計</h4>
+        <ul class="clean">
+          <li><strong>縦軸</strong>：RFP構成要素（システム概念図／業務フロー 等）</li>
+          <li><strong>横軸</strong>：スキル種別（ドキュメント／ヒアリング 等）</li>
+          <li>これにより「どこに穴があるか」を可視化</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>2-2. 教材化のアイデア</h3>
+    <div class="grid-2">
+      <div class="box accent">
+        <h4>熟練者ヒアリング動画の教材化</h4>
+        <ul class="clean">
+          <li>熟練者のヒアリング動画を切り取って教材化する案</li>
+          <li><strong>課題</strong>：案件に入っていない人には<strong>意図が伝わりにくい</strong></li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>吉栖さん資料の参考活用</h4>
+        <ul class="clean">
+          <li>吉栖さんが営業向けに作成した<strong>ニーズ分析演習</strong>・<strong>ソリューション営業スキル</strong>のカリキュラム</li>
+          <li>左側スキル強化の参考にする方向</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. AI活用（右側）の方向性 -->
+  <section class="card">
+    <h2><span class="num">3</span>AI 活用（右側）の方向性</h2>
+    <p class="lead">今年度は「生成」より「チェック（品質確認）」に重点を置く方針で再確認。さらに本日の議論で <strong>「AI 実装の前に、チェック観点の検討から議論する」</strong> 順序で進めることに合意。</p>
+
+    <div class="box warn" style="margin-bottom:14px;">
+      <h4>本日の議論の重要ポイント</h4>
+      <ul class="clean">
+        <li><strong>AI でやるよりも前に、「何をチェックするか（チェック観点）」の検討</strong>から議論を始めるべき、という流れ</li>
+        <li>観点が定まっていない状態で AI を実装しても、品質判定の基準そのものが曖昧になる</li>
+        <li>→ 後述 §4 の<strong>RFP レビュー勉強会</strong>で、まずは人の目で「良い・悪い」を見極める力を揃える</li>
+      </ul>
+    </div>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>チェック（品質確認）への活用</h4>
+        <ul class="clean">
+          <li>過去RFPをAIに読み込ませた<strong>品質チェック</strong></li>
+          <li><strong>抜け漏れ指摘ツール</strong>としての活用</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>新しい活用案：想定問答集チェック</h4>
+        <ul class="clean">
+          <li>打合せ前の<strong>想定問答集作成ツール</strong>として</li>
+          <li>質問の<strong>抜け漏れチェック</strong>に使う</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote">
+      <strong>進め方の合意：</strong>先にスキル定義を行い、「<strong>どのスキルをAI活用で伸ばすか</strong>」を整理する流れが望ましい。AI を先に作るのではなく、伸ばしたいスキルが見えてからAIを当てる順序。
+    </div>
+  </section>
+
+  <!-- 4. 勉強会の提案 -->
+  <section class="card">
+    <h2><span class="num">4</span>勉強会の提案 — <strong>右側の第一歩</strong></h2>
+    <p class="lead">「AI に入れる前に、人のスキル・視点を揃える」ことが先決という認識で一致。右側（効率化）の出発点として、まずは<strong>みんなで RFP のレビューを行う勉強会</strong>から実施するアイデアが出た。</p>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>RFP レビュー勉強会（右側の起点）</h4>
+        <ul class="clean">
+          <li>チームでRFPを一緒に読み、「<strong>ここが良い・悪い</strong>」を議論する形式</li>
+          <li>そこで出てきた観点が、後の<strong>AI チェックの判定基準</strong>になる</li>
+          <li>AIに入れる前に<strong>人のスキル・視点を揃える</strong>のが目的</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>OJT → OffJT 化の素材作り</h4>
+        <ul class="clean">
+          <li>OJT で得られる知見を <strong>OffJT 化</strong> するための素材として機能</li>
+          <li>将来的には<strong>全員参加の勉強会形式</strong>も検討</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote">
+      <strong>議論の順序：</strong>① 勉強会でレビュー観点を出す → ② 観点を整理して言語化 → ③ それをAIに学習させる ／チェックリスト化する → ④ 実案件で適用、というステップ。最初から AI ツール開発に飛ばず、人のチェック力を先に育てる。
+    </div>
+  </section>
+
+  <!-- 5. アクションアイテム -->
+  <section class="card">
+    <h2><span class="num">5</span>アクションアイテム</h2>
+    <p class="lead">次回までに各メンバーが持ち帰る具体タスク。</p>
+
+    <table>
+      <tr><th style="width:16%">担当</th><th>内容</th><th style="width:18%">期日</th></tr>
+      <tr>
+        <td>國重</td>
+        <td><strong>スキル候補一覧</strong>（作りかけのものをベース）を整備・更新する</td>
+        <td>次回まで</td>
+      </tr>
+      <tr>
+        <td>喜井</td>
+        <td>来週同時刻でミーティングを設定する</td>
+        <td>速やか</td>
+      </tr>
+      <tr>
+        <td>喜井</td>
+        <td>カレンダー招待の<strong>編集権限を小鉢に付与</strong>する</td>
+        <td>速やか</td>
+      </tr>
+      <tr>
+        <td>管原</td>
+        <td>16日18-19時の会議について、大嶋さんへ参加可否（19時以降への変更等）を確認・調整する</td>
+        <td>速やか</td>
+      </tr>
+      <tr>
+        <td>管原</td>
+        <td>16日の会議：<strong>小鉢さんと管原以外は参加不要（バラシ）</strong>として共有</td>
+        <td>速やか</td>
+      </tr>
+      <tr>
+        <td>全メンバー</td>
+        <td>強化すべき<strong>スキル候補を考えてきて</strong>次回発言する</td>
+        <td>次回まで</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- 6. スケジュール・調整事項 -->
+  <section class="card">
+    <h2><span class="num">6</span>スケジュール・調整事項</h2>
+
+    <h3>次回ミーティング</h3>
+    <table>
+      <tr><th style="width:18%">項目</th><th>内容</th></tr>
+      <tr><td>日時</td><td><strong>来週同時刻（2026年6月22日 月曜 11:00〜 予定）</strong></td></tr>
+      <tr><td>主な議題</td><td>左側スキル強化の方向性ディスカッション ／ 國重さん作成のスキル候補一覧レビュー ／ 各メンバーが持ち寄ったスキル候補の共有</td></tr>
+      <tr><td>事前準備</td><td>各メンバー：強化すべきスキル候補を考えてくる ／ 國重：スキル候補一覧の整備</td></tr>
+    </table>
+
+    <h3>6/16（火）18-19時 会議</h3>
+    <div class="box warn">
+      <ul class="clean">
+        <li><strong>プレゼンリハーサルと重複</strong>しており、内田さん・大嶋さんの参加が不確実</li>
+        <li><strong>小鉢さんと管原以外はバラシ</strong>（参加不要）</li>
+        <li>大嶋さんへ<strong>19時以降での調整</strong>を確認予定</li>
+      </ul>
+    </div>
+
+    <div class="cta">
+      <h3>本日の着地点</h3>
+      <ul>
+        <li>左側（スキル強化）×右側（AI効率化）の二軸構造で全員の認識統一。</li>
+        <li>「先にスキル定義 → そのスキルをAIで伸ばす」順序を合意。</li>
+        <li>次回までに：スキル一覧整備（國重）／ 全員スキル候補持ち寄り。</li>
+        <li>栗田さんのアバナード時代のスキルマトリクス資料は<strong>打合せ内で共有済</strong>。</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    参考：6/15 RFP効率化・スキル強化方針ミーティング 議事録要約（Notta）／6/9メンバー検討③結果タブ／6/1メンバー検討②結果タブ／5/25メンバー検討①結果タブ／アンケート結果タブ<br>
+    本資料は打合せ結果の整理であり、未確定事項は次回6/22ミーティングで確認します。
+  </footer>
+</div>
+</div>
+<!-- /TAB 7 -->
+
+<!-- ============================================================ -->
+<!-- TAB 8: EXECUTIVE SUMMARY — DチームITコンサル位置づけ整理         -->
+<!-- ============================================================ -->
+<div id="summary" class="tab-content tab-summary active">
+<div class="wrap">
+
+  <header class="cover">
+    <div class="eyebrow">D-Team / IT Consulting — Executive Summary</div>
+    <h1>Dチーム ITコンサル 位置づけ整理<br>— 背景と方針の集約版</h1>
+    <p>5/18〜6/15の議論を1つに集約。現状課題（SI肩代わりと曖昧な境界）から、今期方針（3本柱）、体制、二軸育成ループ、段階的進め方、マイルストーンまで、上長報告会・社内共有用にまとめた版。</p>
+    <div class="meta">
+      <span>整理日：2026-06-15</span>
+      <span>整理：管原</span>
+      <span>対象：Dチーム関連メンバー＋上長</span>
+      <span>集約元：5/18〜6/15 議事録</span>
+    </div>
+  </header>
+
+  <!-- 0. このサマリの位置づけ -->
+  <section class="card">
+    <h2><span class="num">0</span>このサマリの位置づけ</h2>
+    <p class="lead">これまで複数のタブで蓄積した議論を、報告・共有に使える形に集約。意思決定の根拠は各議事録タブ（5/19キックオフ／5/25・6/1・6/9・6/15）を参照。</p>
+
+    <div class="grid-3">
+      <div class="box brand">
+        <h4>背景</h4>
+        <p style="font-size:13px;margin:0;">SI肩代わりと役割の境界曖昧化 — 構造的な課題が背景にある。</p>
+      </div>
+      <div class="box accent">
+        <h4>方針</h4>
+        <p style="font-size:13px;margin:0;">定義論を一旦外し、<strong>ブレない価値（スキル・体制）</strong>を積み上げる。</p>
+      </div>
+      <div class="box ok">
+        <h4>進め方</h4>
+        <p style="font-size:13px;margin:0;">勉強会起点で段階的にループを進化。年明けまでに全体展開。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 現状課題と背景 -->
+  <section class="card">
+    <h2><span class="num">1</span>現状課題と背景：<span style="color:var(--accent);">SI肩代わりと曖昧な境界</span></h2>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>🌐 外的要因（構造的論点）</h4>
+        <ul class="clean">
+          <li>他部門の<strong>要件定義不足</strong></li>
+          <li>GRA／奉行／手組み等の<strong>収益構造課題</strong></li>
+          <li>手チーフォーフの傷椥</li>
+          <li>担当外を<strong>他社振りする仕組みの欠如</strong></li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>⚙ 内的GAP（役割・境界の曖昧化）</h4>
+        <ul class="clean">
+          <li>5レイヤー定義：戦略コンサル ／ 業務コンサル ／ <strong>ITコンサル（GD/RFP）</strong> ／ IT提案・プリセ ／ IT導入 SE/PG ／ PMO支援</li>
+          <li><strong>会社全体の定義がブレうる不確実性</strong></li>
+          <li>会社全体のTブレな不確実</li>
+          <li>実態として<strong>SI対応を肩代わり</strong>している</li>
+          <li>境界曖昧、<strong>役割範囲不明確</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote">
+      <strong>核心：</strong>ITコンサルの「定義」は会社全体で固まりきっていないため、定義に依存した施策は将来ブレうる。だから今期は<strong>定義論を外し、ブレない価値の積み上げに注力</strong>する。
+    </div>
+  </section>
+
+  <!-- 2. 今期の方針：3本柱 -->
+  <section class="card">
+    <h2><span class="num">2</span>今期の方針：<span style="color:var(--accent);">ブレない価値（スキル・体制）の積み上げ</span></h2>
+    <p class="lead">3本柱で「定義に依存しない価値」を積み上げる。</p>
+
+    <div class="grid-3" style="gap:20px;margin-top:20px;">
+      <div class="pillar">
+        <div class="pillar-num">柱 Ⅰ</div>
+        <h4>GD策定スキル 5名到達</h4>
+        <ul class="clean">
+          <li><strong>ToBe 全体俯瞰図</strong>を描ける</li>
+          <li><strong>製品レベル当て込み</strong>（営業=ESM／経理=GRANDIT／勤怠=奉行 等）</li>
+          <li><strong>ロードマップ策定</strong>スキル</li>
+        </ul>
+        <p class="note" style="margin:8px 0 0;">部門方針より：策定できる人材を5名に到達させる。</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">柱 Ⅱ</div>
+        <h4>体系的育成カリキュラム</h4>
+        <ul class="clean">
+          <li><strong>基礎</strong>（國重施策融合）：議事録／鳥観図／業務フロー</li>
+          <li><strong>上位</strong>（Dチーム独自）：RFP × GD 結合</li>
+          <li><strong>OJT中心から AI × オフJT へ転換</strong></li>
+        </ul>
+        <p class="note" style="margin:8px 0 0;">繪柳さん経由でGRAチーム等にも横展開。</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">柱 Ⅲ</div>
+        <h4>案件カルテ循環（案件化基盤）</h4>
+        <ul class="clean">
+          <li>過去の提案 → カルテ循環 → 人間品質確認 のループ</li>
+          <li>業務／システム課題切り分け、制約条件踏まえた範囲設計</li>
+          <li><strong>実証ケース：中国計器工業</strong></li>
+        </ul>
+        <p class="note" style="margin:8px 0 0;">案件化プロセスは昨年度資産を土台に。</p>
+      </div>
+    </div>
+
+    <div class="box" style="margin-top:14px;background:#1e293b;color:#fff;border:none;text-align:center;">
+      <h4 style="color:#fff;margin:0 0 4px;">★ 推進力 GAP 分析</h4>
+      <p style="font-size:13px;margin:0;color:#cbd5e1;">管原視点／小鉢視点／メンバー視点 を持ち寄り、スキルマップで5名到達の現在地と不足を可視化。</p>
+    </div>
+  </section>
+
+  <!-- 3. 体制（チーム構成と役割接続） -->
+  <section class="card">
+    <h2><span class="num">3</span>体制：チーム構成と役割接続</h2>
+    <p class="lead">主管＝ITコンサル施策チームが施策の方向づけ・定義を担い、左右の実行チームに振り分け。<strong>小鉢さん（Skills × Check）</strong>と<strong>管原（AI × Check）</strong>がチーム間の接続役。</p>
+
+    <div class="diagram-card" style="background:linear-gradient(135deg,#fff 0%,#fafafa 100%);border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin:14px 0;">
+      <svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:900px;display:block;margin:0 auto;font-family:inherit;">
+        <!-- 主管 (top) -->
+        <rect x="270" y="30" width="360" height="100" rx="10" fill="#1e293b" stroke="#1e293b"/>
+        <text x="450" y="58" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">ITコンサル施策チーム（主管）</text>
+        <text x="450" y="78" font-size="11" fill="#cbd5e1" text-anchor="middle">施策の方向づけ・定義</text>
+        <!-- Members -->
+        <g font-size="11" fill="#1e293b" text-anchor="middle">
+          <rect x="290" y="92" width="60" height="28" rx="4" fill="#fff"/><text x="320" y="110">管原</text>
+          <rect x="360" y="92" width="60" height="28" rx="4" fill="#fff"/><text x="390" y="110">小鉢</text>
+          <rect x="430" y="92" width="60" height="28" rx="4" fill="#fff"/><text x="460" y="110">吉田</text>
+          <rect x="500" y="92" width="60" height="28" rx="4" fill="#fff"/><text x="530" y="110">北川</text>
+          <rect x="570" y="92" width="60" height="28" rx="4" fill="#fff"/><text x="600" y="110">喜井</text>
+        </g>
+
+        <!-- 接続役メモ -->
+        <text x="140" y="170" font-size="11" font-weight="700" fill="#ea580c">小鉢 = Skills × Check</text>
+        <text x="660" y="170" font-size="11" font-weight="700" fill="#ea580c">管原 = AI × Check</text>
+
+        <!-- 矢印 -->
+        <line x1="350" y1="135" x2="240" y2="225" stroke="#1e293b" stroke-width="2" marker-end="url(#arrows)"/>
+        <line x1="550" y1="135" x2="660" y2="225" stroke="#1e293b" stroke-width="2" marker-end="url(#arrows)"/>
+
+        <text x="290" y="200" font-size="11" font-weight="600" fill="#ea580c">構想化・検証/改善</text>
+        <text x="610" y="200" font-size="11" font-weight="600" fill="#ea580c">構想策定・検証/改善</text>
+
+        <!-- 教育施策チーム (left) -->
+        <rect x="80" y="240" width="320" height="100" rx="10" fill="#0f766e" stroke="#0f766e"/>
+        <text x="240" y="268" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">教育施策チーム（実行）</text>
+        <text x="240" y="288" font-size="11" fill="#ccfbf1" text-anchor="middle">教育メニューの策定</text>
+        <g font-size="11" fill="#0f766e" text-anchor="middle">
+          <rect x="120" y="302" width="80" height="28" rx="4" fill="#fff"/><text x="160" y="320">國重</text>
+          <rect x="220" y="302" width="80" height="28" rx="4" fill="#fff"/><text x="260" y="320">シド</text>
+        </g>
+
+        <!-- 生成AI構築チーム (right) -->
+        <rect x="500" y="240" width="320" height="100" rx="10" fill="#ea580c" stroke="#ea580c"/>
+        <text x="660" y="268" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">生成AI構築チーム（実行）</text>
+        <text x="660" y="288" font-size="11" fill="#ffedd5" text-anchor="middle">生成AIの構築・実装</text>
+        <g font-size="11" fill="#ea580c" text-anchor="middle">
+          <rect x="540" y="302" width="80" height="28" rx="4" fill="#fff"/><text x="580" y="320">栗田</text>
+          <rect x="650" y="302" width="80" height="28" rx="4" fill="#fff"/><text x="690" y="320">AI</text>
+        </g>
+
+        <!-- 両者間に Skills ↔ AI -->
+        <text x="450" y="290" font-size="13" font-weight="700" fill="#1e293b" text-anchor="middle">↔</text>
+        <text x="412" y="305" font-size="10" fill="#0f766e" text-anchor="middle">Skills</text>
+        <text x="488" y="305" font-size="10" fill="#ea580c" text-anchor="middle">AI</text>
+
+        <!-- 矢印 to 現場 -->
+        <line x1="240" y1="345" x2="380" y2="420" stroke="#1e293b" stroke-width="2" marker-end="url(#arrows)"/>
+        <line x1="660" y1="345" x2="520" y2="420" stroke="#1e293b" stroke-width="2" marker-end="url(#arrows)"/>
+
+        <!-- 現場・チーム -->
+        <rect x="290" y="430" width="320" height="60" rx="10" fill="#94a3b8" stroke="#64748b"/>
+        <text x="450" y="455" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">現場・チーム</text>
+        <text x="450" y="475" font-size="11" fill="#f1f5f9" text-anchor="middle">業務効率化・スキル向上</text>
+
+        <defs>
+          <marker id="arrows" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#1e293b"/></marker>
+        </defs>
+      </svg>
+      <div style="font-size:12px;color:#6b7280;text-align:center;margin-top:8px;">図：体制（チーム構成と役割接続）— 主管→2実行チーム→現場の流れ</div>
+    </div>
+
+    <div class="grid-3">
+      <div class="box brand">
+        <h4>主管：ITコンサル施策チーム</h4>
+        <p style="font-size:12px;margin:0;">管原・小鉢・吉田・北川・喜井</p>
+      </div>
+      <div class="box accent">
+        <h4>実行：教育施策チーム</h4>
+        <p style="font-size:12px;margin:0;">國重・シド（スキル候補一覧整備など）</p>
+      </div>
+      <div class="box accent">
+        <h4>実行：生成AI構築チーム</h4>
+        <p style="font-size:12px;margin:0;">栗田（RAG設計・AI素案生成）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 二軸による育成ループ -->
+  <section class="card">
+    <h2><span class="num">4</span>二軸による育成ループ — 個人スキル × AI効率化</h2>
+    <p class="lead">基本方針：<strong>定義論を外し、ブレない価値（スキル・体制）強化に注力</strong>。両軸を1つのループで融合させ、スキルアップした人がAI出力をチェック → 足りないところを指摘 → ループが進化。</p>
+
+    <div class="grid-2" style="margin-top:14px;">
+      <div class="box" style="background:#dcfce7;border:1px solid #86efac;border-radius:12px;padding:16px;">
+        <h4 style="color:#14532d;margin-top:0;">個人スキル強化（Left）</h4>
+        <ul class="clean">
+          <li>🎤 <strong>ヒアリング</strong></li>
+          <li>🔍 <strong>課題抽出</strong></li>
+          <li>🤝 <strong>合意形成</strong></li>
+          <li>→ 全工程にかかる<strong>基礎スキル</strong>として位置付け</li>
+        </ul>
+      </div>
+      <div class="box" style="background:#fce7f3;border:1px solid #f9a8d4;border-radius:12px;padding:16px;">
+        <h4 style="color:#831843;margin-top:0;">AI 効率化（Right）</h4>
+        <ul class="clean">
+          <li>✓ <strong>品質チェック</strong></li>
+          <li>⚠ <strong>抜け漏れ指摘</strong></li>
+          <li>🤖 <strong>RFP素案チェック用AI構築</strong></li>
+          <li>→ AIで作る前に<strong>チェック観点の定義</strong>から始める</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cta" style="margin-top:14px;">
+      <h3>融合のループ</h3>
+      <ul>
+        <li>スキルアップした人が AI 出力をチェックする</li>
+        <li>足りないところを指摘 → カルテと AI のインプットに反映</li>
+        <li>カルテと AI が進化 → 次の人の学習教材になる</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. 段階的進め方 -->
+  <section class="card">
+    <h2><span class="num">5</span>段階的進め方（勉強会起点）</h2>
+    <p class="lead">「AI実装の前に、人のチェック力を先に育てる」順序。勉強会を起点に4ステップで進化させる。</p>
+
+    <div class="step-flow">
+      <div class="step">
+        <span class="step-num">1</span><h4>スキル定義</h4>
+        <p>スキル候補一覧の整備（國重さん主導）／全員でスキル候補を持ち寄り合意</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span><h4>勉強会</h4>
+        <p>RFPレビュー勉強会で「ここが良い・悪い」の<strong>観点を抽出</strong>／人のスキル・視点を揃える</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span><h4>AI学習・カルテ定義</h4>
+        <p>抽出した観点を <strong>AIに学習</strong>させる／案件カルテのフォーマット定義</p>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span><h4>実案件適用・ループ進化</h4>
+        <p>実案件に適用し、AIチェックを実運用／結果をループにフィードバック</p>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:14px;">
+      <div class="box brand">
+        <h4>RFP 工程概念図（北川さん）</h4>
+        <p style="font-size:13px;margin:0;">As-Is（現状把握） → To-Be（ITグランドデザイン） → RFP — 案件カルテが各段階を貫く</p>
+      </div>
+      <div class="box accent">
+        <h4>議論の順序（再掲）</h4>
+        <p style="font-size:13px;margin:0;">①勉強会で観点 → ②言語化 → ③AI学習／チェックリスト化 → ④実案件適用</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. マイルストーン -->
+  <section class="card">
+    <h2><span class="num">6</span>今期のマイルストーン</h2>
+
+    <div class="milestone-rail">
+      <div class="milestone">
+        <div class="month">〜 6 月</div>
+        <div class="body">スキル候補一覧／過去RFP収集</div>
+      </div>
+      <div class="milestone">
+        <div class="month">〜 8 月</div>
+        <div class="body">RAG初版／勉強会開始／カルテ更新</div>
+      </div>
+      <div class="milestone">
+        <div class="month">〜 10 月</div>
+        <div class="body">リーダー層プロトタイプ</div>
+      </div>
+      <div class="milestone">
+        <div class="month">〜 3 月</div>
+        <div class="body">全体展開／スキル到達計測</div>
+      </div>
+    </div>
+
+    <p class="note" style="margin-top:8px;">※詳細は5/25タブ §3-4／6/1タブ §4 のタイムラインを参照。</p>
+  </section>
+
+  <!-- 7. 結論・次の動き -->
+  <section class="card">
+    <h2><span class="num">7</span>結論・次の動き</h2>
+
+    <table>
+      <tr><th style="width:18%">担当</th><th>次の動き</th><th style="width:18%">期日</th></tr>
+      <tr>
+        <td>國重</td>
+        <td><strong>スキル候補一覧</strong>を整備</td>
+        <td>次回まで</td>
+      </tr>
+      <tr>
+        <td>喜井</td>
+        <td>次回ミーティング<strong>カレンダー設定</strong>（小鉢に編集権限付与）</td>
+        <td>速やか</td>
+      </tr>
+      <tr>
+        <td>全員</td>
+        <td>強化すべき<strong>スキル候補を持ち寄り</strong>、次回発言</td>
+        <td>次回まで</td>
+      </tr>
+      <tr>
+        <td>栗田</td>
+        <td>アバナード時代のスキルマトリクス資料は<strong>打合せ内で共有済</strong></td>
+        <td>完了</td>
+      </tr>
+    </table>
+
+    <div class="cta">
+      <h3>サマリの結び</h3>
+      <ul>
+        <li>定義論を外し、ブレない価値（スキル・体制）を積み上げる方針で全員一致。</li>
+        <li>3本柱（GD策定スキル ／ 体系的育成カリキュラム ／ 案件カルテ循環）と二軸育成ループで進める。</li>
+        <li>勉強会起点で段階的に AI 化を進め、年明けまでに全体展開・スキル到達を計測する。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. 補足資料（原本画像） -->
+  <section class="card">
+    <h2><span class="num">8</span>補足資料（原本画像）</h2>
+    <p class="lead">管原作成の元サマリ画像をそのまま掲載。本タブの §1〜§7 は下記画像の内容を整理・テキスト化したもの。</p>
+
+    <h3>8-1. 背景と方針のまとめ</h3>
+    <div class="diagram-card" style="background:#fafafa;border:1px solid #e5e7eb;border-radius:12px;padding:16px;margin:14px 0;text-align:center;">
+      <img src="サマリ_背景と方針.png" alt="Dチーム ITコンサル位置づけ検討：背景と方針のまとめ" style="max-width:100%;height:auto;border-radius:6px;box-shadow:0 2px 8px rgba(15,23,42,.10);" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <div style="display:none;padding:40px 20px;background:#fef3c7;border:2px dashed #fbbf24;border-radius:8px;color:#92400e;font-size:13px;">
+        画像ファイルが見つかりません。<br>インフォセンスフォルダに「<strong>サマリ_背景と方針.png</strong>」として保存してください。
+      </div>
+      <div style="font-size:12px;color:#6b7280;text-align:center;margin-top:10px;">原本：Dチーム ITコンサル位置づけ検討：背景と方針のまとめ（管原作成）</div>
+    </div>
+
+    <h3>8-2. ITコンサル施策検討 議論レポート エグゼクティブサマリー</h3>
+    <div class="diagram-card" style="background:#fafafa;border:1px solid #e5e7eb;border-radius:12px;padding:16px;margin:14px 0;text-align:center;">
+      <img src="サマリ_エグゼクティブサマリー.png" alt="ITコンサル施策検討 議論レポート エグゼクティブサマリー" style="max-width:100%;height:auto;border-radius:6px;box-shadow:0 2px 8px rgba(15,23,42,.10);" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+      <div style="display:none;padding:40px 20px;background:#fef3c7;border:2px dashed #fbbf24;border-radius:8px;color:#92400e;font-size:13px;">
+        画像ファイルが見つかりません。<br>インフォセンスフォルダに「<strong>サマリ_エグゼクティブサマリー.png</strong>」として保存してください。
+      </div>
+      <div style="font-size:12px;color:#6b7280;text-align:center;margin-top:10px;">原本：ITコンサル施策検討 議論レポート エグゼクティブサマリー（管原作成）</div>
+    </div>
+
+    <p class="note">※ §1〜§7 のテキスト整理と上記原本に齟齬があれば、原本（画像）を優先。</p>
+  </section>
+
+  <footer>
+    集約元：5/18①② 小鉢さんすり合わせ／5/19 キックオフ／5/25・6/1・6/9・6/15 メンバー検討／7名分アンケート結果<br>
+    本タブは上長報告会・社内共有用のエグゼクティブサマリー。詳細根拠は各タブ参照。
+  </footer>
+</div>
+</div>
+<!-- /TAB 8 -->
 
 <script>
   document.querySelectorAll('.tab-btn').forEach(btn => {
