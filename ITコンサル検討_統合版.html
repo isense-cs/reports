@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>ITコンサル検討（統合版）— 5/19キックオフ＋5/25・6/1・6/9・6/15 メンバー検討＋アンケート結果＋位置づけ整理</title>
+<title>ITコンサル検討（統合版）— 5/19キックオフ＋5/25・6/1・6/9・6/15 メンバー検討＋アンケート結果＋位置づけ整理＋4-6月活動報告</title>
 <style>
   /* ===== COMMON RESET / BASE ===== */
   * { box-sizing: border-box; }
@@ -40,6 +40,26 @@
   .tab-result .tag.ok { background: #d1fae5; color: #047857; }
   .tab-result .tag.brand { background: #ccfbf1; color: #0f766e; }
   .tab-result .cta { background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 100%); }
+
+  /* ===== TAB REPORT THEME (4-6月活動報告) ===== */
+  .tab-report { --brand: #312e81; --brand-soft: #e0e7ff; --accent: #0d9488; --accent-soft: #ccfbf1; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e2e8f0; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
+  .tab-report header.cover { background: linear-gradient(135deg, #312e81 0%, #0d9488 100%); }
+  .tab-report .box.brand { background: #e0e7ff; border-color: #a5b4fc; }
+  .tab-report .box.accent { background: #ccfbf1; border-color: #5eead4; }
+  .tab-report .box.warn { background: #fff7ed; border-color: #fdba74; color: #9a3412; }
+  .tab-report .box.ok { background: #d1fae5; border-color: #6ee7b7; }
+  .tab-report .tag.brand { background: #e0e7ff; color: #312e81; }
+  .tab-report .tag.accent { background: #ccfbf1; color: #0d9488; }
+  .tab-report .cta { background: linear-gradient(135deg, #0d9488 0%, #312e81 100%); }
+  .tab-report .process-map { display: grid; grid-template-columns: 1fr 30px 1fr 30px 1fr; gap: 6px; align-items: center; margin: 18px 0; padding: 18px; background: #eef2ff; border-radius: 12px; border: 1px solid #c7d2fe; }
+  @media (max-width: 720px) { .tab-report .process-map { grid-template-columns: 1fr; } }
+  .tab-report .process-step { background: #fff; border: 2px solid #312e81; border-radius: 10px; padding: 14px 14px; text-align: center; }
+  .tab-report .process-step h4 { margin: 0 0 6px; color: #312e81; font-size: 14px; }
+  .tab-report .process-step p { margin: 0; color: #475569; font-size: 12px; line-height: 1.55; }
+  .tab-report .process-step.final { border-color: #0d9488; }
+  .tab-report .process-step.final h4 { color: #0d9488; }
+  .tab-report .process-arrow { color: #312e81; font-size: 24px; text-align: center; font-weight: 700; }
+  .tab-report .diagram-svg { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; margin: 14px 0; }
 
   /* ===== TAB SUMMARY THEME (Executive Summary) ===== */
   .tab-summary { --brand: #1e293b; --brand-soft: #e2e8f0; --accent: #ea580c; --accent-soft: #ffedd5; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e5e7eb; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
@@ -221,7 +241,8 @@
     <button class="tab-btn" data-tab="jun09"><span class="icon">🌸</span>メンバー検討③結果（6/9）</button>
     <button class="tab-btn" data-tab="survey"><span class="icon">📊</span>アンケート結果（6/9・7名）</button>
     <button class="tab-btn" data-tab="jun15"><span class="icon">🌿</span>メンバー検討④結果（6/15）</button>
-    <button class="tab-btn active" data-tab="summary"><span class="icon">📋</span>位置づけ整理（エグゼクティブサマリー）</button>
+    <button class="tab-btn" data-tab="summary"><span class="icon">📋</span>位置づけ整理（エグゼクティブサマリー）</button>
+    <button class="tab-btn active" data-tab="report"><span class="icon">📈</span>4-6月活動報告サマリー</button>
   </div>
 </div>
 
@@ -2846,7 +2867,7 @@ AI活用はほかの方にお願いしたい。</div>
 <!-- ============================================================ -->
 <!-- TAB 8: EXECUTIVE SUMMARY — DチームITコンサル位置づけ整理         -->
 <!-- ============================================================ -->
-<div id="summary" class="tab-content tab-summary active">
+<div id="summary" class="tab-content tab-summary">
 <div class="wrap">
 
   <header class="cover">
@@ -3212,6 +3233,245 @@ AI活用はほかの方にお願いしたい。</div>
 </div>
 </div>
 <!-- /TAB 8 -->
+
+<!-- ============================================================ -->
+<!-- TAB 9: 4-6月活動報告サマリー                                     -->
+<!-- ============================================================ -->
+<div id="report" class="tab-content tab-report active">
+<div class="wrap">
+
+  <header class="cover">
+    <div class="eyebrow">D-Team / IT Consulting — 4-6 Month Activity Report</div>
+    <h1>ITコンサル検討施策 4-6月活動報告サマリー<br>— 検討プロセスの「広がり」と「収束」、テーマ決定の背景</h1>
+    <p>4月の役割再整理から、5月の「スキル」軸への転換を経て、6月に「RFP作成」という包含テーマに収束するまでの全体プロセス。位置づけ整理を一旦棚上げした理由、AI活用構想のシフト、本質的スキル（型習得）の優先について上長報告用に整理。</p>
+    <div class="meta">
+      <span>4月〜6月 活動報告</span>
+      <span>作成：管原</span>
+      <span>報告先：上長</span>
+      <span>関連：位置づけ整理タブ／6/15議事録タブ</span>
+    </div>
+  </header>
+
+  <!-- 1. 検討プロセスの振り返り -->
+  <section class="card">
+    <h2><span class="num">1</span>検討プロセスの振り返り：広がりと収束</h2>
+    <p class="lead">4月の役割再整理から始まり、様々な要因を検討して、6月の「RFP作成」というテーマ特定に至るプロセス全体。</p>
+
+    <div class="process-map">
+      <div class="process-step">
+        <h4>4月：検討の広がり</h4>
+        <p>位置づけ・役割概念整理を試みる。環境要因により難易度が高いと判断。</p>
+      </div>
+      <div class="process-arrow">➜</div>
+      <div class="process-step">
+        <h4>5月：検討の深掘り</h4>
+        <p>「スキル」軸への転換。AI活用の限界と、本質的スキルの包含関係を認識。</p>
+      </div>
+      <div class="process-arrow">➜</div>
+      <div class="process-step final">
+        <h4>6月：包含テーマの特定</h4>
+        <p>ITグランドデザイン能力やRFP要素の「型」の習得を包含するテーマとして「RFP作成」を特定。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 【広がり】位置づけ整理の棚上げとスキル軸への転換 -->
+  <section class="card">
+    <h2><span class="num">2</span>【広がり】位置づけ整理の棚上げとスキル軸への転換</h2>
+    <p class="lead">当初試みた「位置づけ整理」を一旦方向性として外し、役割実行のための「スキル」を軸にする方針へ転換。</p>
+
+    <div class="grid-2">
+      <div class="box warn">
+        <h4>位置づけ整理の棚上げ原因（複雑な要因）</h4>
+        <ul class="clean">
+          <li>現状の SI 寄りの実態と理想の乖離</li>
+          <li>現状の課題解決を求められる環境</li>
+          <li>直近案件の都合上、変革が困難</li>
+          <li>会社の経営方針や経営その思いの異なり</li>
+        </ul>
+      </div>
+      <div class="box brand">
+        <h4>本来求められる役割を担うためのスキル習得</h4>
+        <p style="font-size:13px;margin:0 0 8px;">そもそも ITコンサルのスキルを身につけていなければ、その役割を実行することが難しい。</p>
+        <ul class="clean">
+          <li>ITグランドデザイン・相手デザイン能力</li>
+          <li>ヒューマンスキル（打ち合わせ観点、進め方）</li>
+          <li>ヒアリングスキル</li>
+          <li>案件実行時の効果、課題解決 VOLUME の伝達力</li>
+          <li>業務整理を手段・商材に落とし込む力</li>
+          <li>RFP 作成に向けた動き（上流工程）</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 【深掘り】RFP作成テーマ決定の重点背景：包含関係 -->
+  <section class="card">
+    <h2><span class="num">3</span>【深掘り・重点】RFP作成テーマ決定の背景：本質的スキルへの回帰</h2>
+    <p class="lead">ITグランドデザインや人のヒューマンスキルなど、上流工程に必要な多様な検討・判断要素を包含するテーマとして「RFP作成」を特定。</p>
+
+    <div class="diagram-svg">
+      <svg viewBox="0 0 600 470" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:600px;display:block;margin:0 auto;font-family:inherit;">
+        <defs>
+          <radialGradient id="grad_rfp" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:#ccfbf1;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#99f6e4;stop-opacity:1" />
+          </radialGradient>
+          <filter id="shadow_rep" x="0" y="0" width="200%" height="200%">
+            <feOffset result="offOut" in="SourceGraphic" dx="2" dy="2" />
+            <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0" />
+            <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+          </filter>
+        </defs>
+
+        <!-- Skill bubbles -->
+        <circle cx="150" cy="120" r="78" fill="#eef2ff" stroke="#c7d2fe" stroke-width="2" filter="url(#shadow_rep)"/>
+        <text x="150" y="116" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">ITデザイン</text>
+        <text x="150" y="134" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">グランドデザイン</text>
+
+        <circle cx="450" cy="120" r="78" fill="#eef2ff" stroke="#c7d2fe" stroke-width="2" filter="url(#shadow_rep)"/>
+        <text x="450" y="116" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">ヒアリング力</text>
+        <text x="450" y="134" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">合意形成スキル</text>
+
+        <circle cx="150" cy="330" r="78" fill="#eef2ff" stroke="#c7d2fe" stroke-width="2" filter="url(#shadow_rep)"/>
+        <text x="150" y="326" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">課題・ボリューム</text>
+        <text x="150" y="344" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">伝達スキル</text>
+
+        <circle cx="450" cy="330" r="78" fill="#eef2ff" stroke="#c7d2fe" stroke-width="2" filter="url(#shadow_rep)"/>
+        <text x="450" y="320" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">業務整理</text>
+        <text x="450" y="338" font-size="11" font-weight="700" fill="#1e3a8a" text-anchor="middle">手段と商材への</text>
+        <text x="450" y="352" font-size="11" font-weight="700" fill="#1e3a8a" text-anchor="middle">落とし込み力</text>
+
+        <!-- Lines to center -->
+        <line x1="195" y1="160" x2="240" y2="195" stroke="#c7d2fe" stroke-width="2" stroke-dasharray="4"/>
+        <line x1="405" y1="160" x2="360" y2="195" stroke="#c7d2fe" stroke-width="2" stroke-dasharray="4"/>
+        <line x1="195" y1="290" x2="240" y2="255" stroke="#c7d2fe" stroke-width="2" stroke-dasharray="4"/>
+        <line x1="405" y1="290" x2="360" y2="255" stroke="#c7d2fe" stroke-width="2" stroke-dasharray="4"/>
+
+        <!-- Center inclusion circle -->
+        <circle cx="300" cy="225" r="105" fill="url(#grad_rfp)" stroke="#0d9488" stroke-width="3" filter="url(#shadow_rep)"/>
+        <text x="300" y="212" font-size="18" font-weight="700" fill="#0f766e" text-anchor="middle">包含テーマ</text>
+        <text x="300" y="245" font-size="24" font-weight="700" fill="#0f766e" text-anchor="middle">RFP 作成</text>
+        <text x="300" y="270" font-size="12" fill="#0f766e" text-anchor="middle">(要素の型定義)</text>
+
+        <!-- Emphasis text -->
+        <rect x="170" y="410" width="260" height="45" rx="8" fill="none" stroke="#fdba74" stroke-width="2" stroke-dasharray="6,4"/>
+        <text x="300" y="438" font-size="14" font-weight="700" fill="#c2410c" text-anchor="middle" font-style="italic">まずは自力で「型」を作成できるスキル</text>
+      </svg>
+      <div style="font-size:12px;color:#6b7280;text-align:center;margin-top:8px;">図：包含関係 — 4つの本質的スキルを束ねる包含テーマとしての「RFP 作成」</div>
+    </div>
+  </section>
+
+  <!-- 4. 【収束】AI活用の構想と、本質的スキル（型習得）への包含 -->
+  <section class="card">
+    <h2><span class="num">4</span>【収束・重点】AI活用の構想と、本質的スキル（型習得）への包含</h2>
+    <p class="lead">当初の AI 活用構想をシフトし、メンバーの本質的なスキル向上（AI 出力を人が判断できるスキル）を最優先する方針へ。</p>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>当初の構想：AI 自動生成、効率化</h4>
+        <ul class="clean">
+          <li>AI に RFP を作成させることで効率化・削減を目指す</li>
+          <li>具体例：中国計器工業案件。課題発生時に AI に RFP 作成させる</li>
+          <li>AI を使ってヒアリングすることも考えた</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>本質的スキルの包含テーマ：RFP 作成</h4>
+        <p style="font-size:13px;margin:0 0 8px;">AI 自動生成よりも、「AI 出力を人が判断できるスキル」の獲得が先決。</p>
+        <ul class="clean">
+          <li>RFP 要素の「型」を顧客ヒアリングを通じて自力習得</li>
+          <li>そのための知識、判断力を身につける</li>
+          <li>AI が出した出力に対して、人がチェックできるスキル</li>
+          <li>人が作ったものに対して、AI がチェックするスキルの活用</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote">
+      <strong>結論：</strong>RFP 要素の「型」を自力で習得するスキルを高めた先に、AI 活用の真の効果が生まれる、という考え方。
+    </div>
+  </section>
+
+  <!-- 5. 今後の取り組み -->
+  <section class="card">
+    <h2><span class="num">5</span>今後の取り組み：RFP作成テーマに向けた具体化</h2>
+    <p class="lead">ITコンサルの本質的なスキル習得、案件実行、ビジネス創出のために「包含テーマ：RFP 作成」を進める。</p>
+
+    <div class="diagram-svg">
+      <svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;max-width:500px;display:block;margin:0 auto;font-family:inherit;">
+        <defs>
+          <filter id="shadow_goals" x="0" y="0" width="200%" height="200%">
+            <feOffset result="offOut" in="SourceGraphic" dx="2" dy="2" />
+            <feColorMatrix result="matrixOut" in="offOut" type="matrix" values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0" />
+            <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+          </filter>
+        </defs>
+
+        <!-- Three Inclusion Goals Circles -->
+        <circle cx="115" cy="100" r="75" fill="#f0fff4" stroke="#86efac" stroke-width="3" filter="url(#shadow_goals)" opacity="0.92"/>
+        <text x="115" y="95" font-size="13" font-weight="700" fill="#047857" text-anchor="middle">本質的スキル獲得</text>
+        <text x="115" y="115" font-size="11" fill="#047857" text-anchor="middle">(RFP 要素の型、判断力)</text>
+
+        <circle cx="250" cy="100" r="75" fill="#fcfaff" stroke="#a5b4fc" stroke-width="3" filter="url(#shadow_goals)" opacity="0.92"/>
+        <text x="250" y="95" font-size="13" font-weight="700" fill="#3730a3" text-anchor="middle">案件実行の</text>
+        <text x="250" y="115" font-size="13" font-weight="700" fill="#3730a3" text-anchor="middle">標準化・効率化</text>
+
+        <circle cx="385" cy="100" r="75" fill="#eef2ff" stroke="#c7d2fe" stroke-width="3" filter="url(#shadow_goals)" opacity="0.92"/>
+        <text x="385" y="95" font-size="13" font-weight="700" fill="#1e3a8a" text-anchor="middle">波及ビジネス創出</text>
+        <text x="385" y="115" font-size="11" fill="#1e3a8a" text-anchor="middle">(上流工程から波及へ)</text>
+
+        <!-- Arrows merging to center -->
+        <path d="M115,175 Q115,210 220,225" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="4"/>
+        <path d="M250,175 Q250,205 250,220" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="4"/>
+        <path d="M385,175 Q385,210 280,225" fill="none" stroke="#0d9488" stroke-width="2" stroke-dasharray="4"/>
+
+        <!-- Inclusion text below -->
+        <rect x="125" y="220" width="250" height="50" rx="10" fill="#fdf2f8" stroke="#f9a8d4" stroke-width="2" filter="url(#shadow_goals)"/>
+        <text x="250" y="250" font-size="16" font-weight="700" fill="#be185d" text-anchor="middle">包含テーマ：RFP 作成へ</text>
+      </svg>
+      <div style="font-size:12px;color:#6b7280;text-align:center;margin-top:8px;">図：3つの取り組みゴールが「RFP 作成」というテーマに集約される</div>
+    </div>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>7月以降のアクション（予定）</h4>
+        <ul class="clean">
+          <li>ヒアリング事項の整理（案件カルテ）</li>
+          <li>アウトプット（RFP 構成要素）の「型」定義</li>
+          <li>必要なスキルの具体化、知識、判断力の習得</li>
+          <li>Off-JT カリキュラムの策定、実施</li>
+          <li>（必要に応じて、提案力強化施策との連携）</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>将来的な AI 活用の形</h4>
+        <ul class="clean">
+          <li>AI が出した出力に対して、人がしっかりとチェックできるスキルの獲得</li>
+          <li>人が作ったものを AI がチェックする仕組みの活用</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cta">
+      <h3>4-6月活動報告のポイント</h3>
+      <ul>
+        <li>4月の位置づけ整理は環境要因により棚上げし、「スキル」軸へ転換。</li>
+        <li>本質的スキル（型習得・判断力）を包含するテーマとして 6月に「RFP 作成」を特定。</li>
+        <li>AI 活用は、人のスキル獲得を先に進めた先で真の効果が生まれる順序とする。</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    集約元：6/15 ミーティング ／ 中国計器工業案件 ／ メンバーアンケート結果（7名分）<br>
+    本タブは上長への 4-6月活動報告サマリー。詳細は位置づけ整理タブ・各議事録タブを参照。
+  </footer>
+</div>
+</div>
+<!-- /TAB 9 -->
 
 <script>
   document.querySelectorAll('.tab-btn').forEach(btn => {
