@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>ITコンサル検討（統合版）— 5/19キックオフ＋5/25・6/1・6/9・6/15・6/22 メンバー検討＋アンケート結果＋位置づけ整理＋4-6月活動報告</title>
+<title>ITコンサル検討（統合版）— 5/19キックオフ＋5/25・6/1・6/9・6/15・6/22・6/29 メンバー検討＋アンケート結果＋位置づけ整理＋4-6月活動報告</title>
 <style>
   /* ===== COMMON RESET / BASE ===== */
   * { box-sizing: border-box; }
@@ -40,6 +40,29 @@
   .tab-result .tag.ok { background: #d1fae5; color: #047857; }
   .tab-result .tag.brand { background: #ccfbf1; color: #0f766e; }
   .tab-result .cta { background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 100%); }
+
+  /* ===== TAB JUN29 THEME (提案素材収集ワーキング) ===== */
+  .tab-jun29 { --brand: #6b21a8; --brand-soft: #f3e8ff; --accent: #15803d; --accent-soft: #bbf7d0; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e2e8f0; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
+  .tab-jun29 header.cover { background: linear-gradient(135deg, #6b21a8 0%, #15803d 100%); }
+  .tab-jun29 .box.brand { background: #f3e8ff; border-color: #d8b4fe; }
+  .tab-jun29 .box.accent { background: #bbf7d0; border-color: #86efac; }
+  .tab-jun29 .box.ok { background: #d1fae5; border-color: #6ee7b7; }
+  .tab-jun29 .tag.brand { background: #f3e8ff; color: #6b21a8; }
+  .tab-jun29 .tag.accent { background: #bbf7d0; color: #15803d; }
+  .tab-jun29 .cta { background: linear-gradient(135deg, #15803d 0%, #6b21a8 100%); }
+  .tab-jun29 .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 14px 0; }
+  @media (max-width: 720px) { .tab-jun29 .case-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 480px) { .tab-jun29 .case-grid { grid-template-columns: 1fr; } }
+  .tab-jun29 .case-card { background: #fff; border: 1px solid #d8b4fe; border-radius: 10px; padding: 12px 14px; }
+  .tab-jun29 .case-card .case-name { font-size: 14px; font-weight: 700; color: #6b21a8; margin-bottom: 4px; }
+  .tab-jun29 .case-card .case-desc { font-size: 11.5px; color: #475569; line-height: 1.55; }
+  .tab-jun29 .case-card.priority { border: 2px solid #15803d; background: #f0fdf4; }
+  .tab-jun29 .case-card.priority .case-name { color: #15803d; }
+  .tab-jun29 .case-card .case-badge { display:inline-block; font-size:9.5px; padding:2px 7px; border-radius:999px; margin-right:4px; }
+  .tab-jun29 .case-card .badge-must { background: #15803d; color: #fff; }
+  .tab-jun29 .case-card .badge-rfp { background: #6b21a8; color: #fff; }
+  .tab-jun29 .case-card .badge-rfi { background: #b45309; color: #fff; }
+  .tab-jun29 .case-card .badge-ext { background: #6b7280; color: #fff; }
 
   /* ===== TAB JUN22 THEME (スキルマップ検討) ===== */
   .tab-jun22 { --brand: #0c4a6e; --brand-soft: #e0f2fe; --accent: #ca8a04; --accent-soft: #fef3c7; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e2e8f0; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
@@ -260,7 +283,8 @@
     <button class="tab-btn" data-tab="jun15"><span class="icon">🌿</span>メンバー検討④結果（6/15）</button>
     <button class="tab-btn" data-tab="summary"><span class="icon">📋</span>位置づけ整理（エグゼクティブサマリー）</button>
     <button class="tab-btn" data-tab="report"><span class="icon">📈</span>4-6月活動報告サマリー</button>
-    <button class="tab-btn active" data-tab="jun22"><span class="icon">🗺️</span>メンバー検討⑤結果（6/22）</button>
+    <button class="tab-btn" data-tab="jun22"><span class="icon">🗺️</span>メンバー検討⑤結果（6/22）</button>
+    <button class="tab-btn active" data-tab="jun29"><span class="icon">📂</span>メンバー検討⑥結果（6/29）</button>
   </div>
 </div>
 
@@ -3494,7 +3518,7 @@ AI活用はほかの方にお願いしたい。</div>
 <!-- ============================================================ -->
 <!-- TAB 10: 6/22 MEMBER DISCUSSION #5 RESULT — スキルマップ検討       -->
 <!-- ============================================================ -->
-<div id="jun22" class="tab-content tab-jun22 active">
+<div id="jun22" class="tab-content tab-jun22">
 <div class="wrap">
 
   <header class="cover">
@@ -3753,6 +3777,339 @@ AI活用はほかの方にお願いしたい。</div>
 </div>
 </div>
 <!-- /TAB 10 -->
+
+<!-- ============================================================ -->
+<!-- TAB 11: 6/29 MEMBER DISCUSSION #6 RESULT — 提案素材収集ワーキング   -->
+<!-- ============================================================ -->
+<div id="jun29" class="tab-content tab-jun29 active">
+<div class="wrap">
+
+  <header class="cover">
+    <div class="eyebrow">D-Team / IT Consulting — Member Discussion #6 Result</div>
+    <h1>6/29 メンバー検討会⑥ 結果サマリ<br>— RFP勉強会準備：提案素材収集ワーキング</h1>
+    <p>当初予定していたRFP勉強会は準備が間に合わず、急遽「過去のRFP・提案素材を収集・リスト化するワーキングセッション」に変更。Excel一覧を全員で作成し、勉強会に使える題材を洗い出した。</p>
+    <div class="meta">
+      <span>2026-06-29（月）09:40〜</span>
+      <span>記録：管原</span>
+      <span>対象：Dチーム関連メンバー</span>
+      <span>関連：6/22タブ</span>
+    </div>
+  </header>
+
+  <!-- 0. 今日のゴール -->
+  <section class="card">
+    <h2><span class="num">0</span>今日のゴール（達成状況）</h2>
+    <div class="grid-3">
+      <div class="box ok">
+        <h4>① 勉強会題材の洗い出し <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">過去案件のRFP・提案書をExcel一覧化。10件超の候補案件をリストアップ。</p>
+      </div>
+      <div class="box ok">
+        <h4>② 収集方針の合意 <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">提案素材フォルダを設置し、コピー方式でファイル集約する方針を確定。</p>
+      </div>
+      <div class="box ok">
+        <h4>③ 題材選定の基準合意 <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">RFP＋回答書がセットで揃った質の高い題材を優先する基準で合意。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 会議の目的・経緯 -->
+  <section class="card">
+    <h2><span class="num">1</span>会議の目的・経緯</h2>
+
+    <div class="box brand">
+      <h4>方針変更</h4>
+      <ul class="clean">
+        <li>本来はRFP回答の観点を学ぶ<strong>勉強会</strong>として企画されていたが、<strong>活用素材探しへ変更</strong></li>
+        <li>過去のRFP・提案素材を<strong>収集・リスト化するワーキングセッション</strong>として実施</li>
+        <li>スキルマップ検討（シド・國重担当）は別途進行中</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 2. スキルマップ進捗 -->
+  <section class="card">
+    <h2><span class="num">2</span>スキルマップ進捗（並行作業）</h2>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>スキルマップ作業（シド・國重）</h4>
+        <ul class="clean">
+          <li>シド・國重が検討を進行中</li>
+          <li><strong>7月6日または7日に中間報告</strong>予定</li>
+          <li><strong>7月7日に詳細報告</strong>の場を設ける予定</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>上長への施策共有</h4>
+        <ul class="clean">
+          <li>内田さん・大嶋さんへの施策共有はまだできていない</li>
+          <li><strong>方針確認が必要</strong> → 7月7日に内田・大嶋へITコンサル施策の内容を共有し、方針ブレがないか確認</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 提案素材収集の進め方 -->
+  <section class="card">
+    <h2><span class="num">3</span>提案素材収集の進め方</h2>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>フォルダ・ファイル運用</h4>
+        <ul class="clean">
+          <li>ITコンサルフォルダ配下に<strong>提案素材フォルダ</strong>を設置</li>
+          <li>過去案件のRFP・RFI・提案書等を集約</li>
+          <li><strong>ファイルのコピー</strong>または<strong>パスをExcelリストに記入</strong>する方式</li>
+          <li>※ ショートカットは事故リスクがあるため<strong>コピー推奨</strong></li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>Excel一覧の列構成</h4>
+        <ul class="clean">
+          <li>案件名</li>
+          <li>パス</li>
+          <li>領域</li>
+          <li>誰が作成したか（自社／他社コンサル／顧客）</li>
+          <li>RFP／RFI 区分</li>
+        </ul>
+        <p class="note" style="margin:6px 0 0;">複数の保管場所（顧客管理／営業案件／コンサル）を横断して探索。</p>
+      </div>
+    </div>
+
+    <!-- 補足資料: 本日作成のExcel一覧（HTML表で再現） -->
+    <h3 style="margin-top:18px;">3-1. 補足資料：本日作成のExcel一覧（RFP一覧.xlsx）</h3>
+    <p class="note" style="margin-top:-4px;">Excelの内容をHTMLテーブルで再現。色付きセル・★印・赤字注記もそのまま反映。</p>
+
+    <div style="overflow-x:auto;margin:14px 0;background:#fff;border:1px solid #d1d5db;border-radius:6px;">
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px;font-family:'Meiryo UI','Yu Gothic','Hiragino Kaku Gothic ProN',sans-serif;min-width:1000px;">
+        <thead>
+          <tr style="background:#f3f4f6;border-bottom:2px solid #d1d5db;">
+            <th style="padding:6px 8px;text-align:center;border-right:1px solid #d1d5db;width:36px;">#</th>
+            <th style="padding:6px 8px;text-align:left;border-right:1px solid #d1d5db;width:200px;">案件名</th>
+            <th style="padding:6px 8px;text-align:left;border-right:1px solid #d1d5db;">取得元フォルダ</th>
+            <th style="padding:6px 8px;text-align:left;border-right:1px solid #d1d5db;width:160px;">配置フォルダ名</th>
+            <th style="padding:6px 8px;text-align:center;border-right:1px solid #d1d5db;width:64px;">担当者</th>
+            <th style="padding:6px 8px;text-align:left;border-right:1px solid #d1d5db;width:140px;">RFP作成者<br><span style="font-size:9.5px;color:#6b7280;font-weight:normal;">※自社、他社</span></th>
+            <th style="padding:6px 8px;text-align:left;border-right:1px solid #d1d5db;width:120px;">インフォセンス対応</th>
+            <th style="padding:6px 8px;text-align:left;border-right:1px solid #d1d5db;width:130px;">提案領域</th>
+            <th style="padding:6px 8px;text-align:center;width:72px;">説明可否有無</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">1</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">DSR</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥プロジェクト¥オ-DSR</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">小鉢</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">インフォセンス</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹、物流</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;">★</td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">2</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">関家具</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥組織¥ビジネス¥ 関家具</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">小鉢</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">他社（トーマツ？）</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">3</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">久原本家</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥プロジェクト¥オ-久原本家</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">小鉢</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">他社</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">4</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">トリゼンフーズ</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥組織¥ビジネス¥ トリゼンフーズ</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">小鉢</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">インフォセンス</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;color:#dc2626;font-weight:700;">※他社作成回答ある</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">5</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">マルカイ</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">喜井</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">6</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">アイチ物流</td><td style="padding:4px 8px;background:#fde047;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;font-weight:700;">要確認</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">小鉢</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP無しっ→改善ヒアリング</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">提案</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">物流、バックオフィス</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">7</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">日鉄エンジ</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">喜井</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">8</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">町田食品</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">9</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">PILOT</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥組織¥ビジネス¥ PILOT</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">小鉢</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">インフォセンス</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">10</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">アバナード：シーシーアイホールディングス株式</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥組織¥ビジネス¥ アバナード</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">管原</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">11</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">向島ドック</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥組織¥ビジネス¥ 向島ドック</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">管原</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">12</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">向島ドック</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥組織¥ビジネス¥ 向島ドック¥回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">管原</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">13</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">KDDI</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥組織¥ビジネス¥ KDDI</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">管原</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">14</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">九雑（ワーク）</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥組織¥ビジネス¥九雑ワーク</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">北川</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">15</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">大阪ガス</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥組織¥全社員¥大阪ガス_RFI回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">北川</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">インフォセンス</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">16</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">鈴廣蒲鉾</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥プロジェクト¥オ-鈴廣蒲鉾_RFP</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">北川</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">17</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">中国計器工業</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥組織¥ビジネスソリューション事業本部¥基幹業務ソリュ..</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">シド</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">上流整理</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">18</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">シャボン玉石けん</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥プロジェクト¥オープン¥パッケージ¥GRANDIT¥営業業</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">シド</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">19</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">福岡ソフトバンクホークス_2026</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥組織¥全社員: 福岡ソフトバンクホークス_2026</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">國重</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">20</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">福岡ソフトバンクホークス_2013</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥プロジェクト¥オ- 福岡ソフトバンクホークス_2013</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">國重</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">21</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">美和ロック</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">22</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">FY21_トラストHD</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">23</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">FY21_日鉄エンジ</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">24</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">東電物流</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">栗田</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">25</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">FY22_ヒガシ21（関電送配電）</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">インフォセンス</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">RFP回答</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">基幹</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">26</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">FY23_井上定</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">BI</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">27</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">FY24_サンエス</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥組織¥ビジネス: サンエス</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">管原</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">BI</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">28</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">FY24_サンエス</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥プロジェクト¥オ- サンエス</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">管原</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">BI</td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">29</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">テラスエナジー（ワーク）</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">ローカル</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">テラスエナジー様_ビジネスモデル整理.</td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">北川</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-bottom:1px solid #e5e7eb;"></td></tr>
+          <tr><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">30</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">テラスエナジー</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">¥¥ifile¥プロジェクト¥オ- テラスエナジー_20.提案書</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;">北川</td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb;"></td><td style="padding:4px 8px;text-align:center;">　</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">本日みんなで作成した提案素材リスト（RFP一覧.xlsx）の内容を画像ではなくHTMLテーブルで埋め込み。後から編集・コピー・検索が可能。</p>
+  </section>
+
+  <!-- 4. 収集候補案件 -->
+  <section class="card">
+    <h2><span class="num">4</span>収集候補案件</h2>
+    <p class="lead">本日のディスカッションで挙がった主な案件。緑枠＝おすすめ題材。</p>
+
+    <div class="case-grid">
+      <div class="case-card priority">
+        <span class="case-badge badge-must">おすすめ</span>
+        <span class="case-badge badge-rfp">RFP+回答</span>
+        <div class="case-name">ヒガシ21案件</div>
+        <div class="case-desc">RFPおよびRFP回答書あり。ボリュームも十分でおすすめ題材。</div>
+      </div>
+      <div class="case-card priority">
+        <span class="case-badge badge-must">お手本</span>
+        <span class="case-badge badge-rfp">RFP</span>
+        <div class="case-name">関家具</div>
+        <div class="case-desc">提案力強化の観点でお手本となるRFP案件として挙げられる。</div>
+      </div>
+      <div class="case-card">
+        <span class="case-badge badge-rfi">RFI</span>
+        <div class="case-name">大阪ガス</div>
+        <div class="case-desc">RFIとして届いたが、ほぼRFPに近い内容で回答した案件。</div>
+      </div>
+      <div class="case-card">
+        <span class="case-badge badge-rfp">整理済</span>
+        <div class="case-name">テラスエナジー</div>
+        <div class="case-desc">2023年10〜11月頃実施。北川さんが整理資料を作成済み。</div>
+      </div>
+      <div class="case-card priority">
+        <span class="case-badge badge-must">高品質</span>
+        <div class="case-name">PILOT</div>
+        <div class="case-desc">質が高いと評価されている。場所は確認済み。</div>
+      </div>
+      <div class="case-card">
+        <span class="case-badge badge-rfp">DSR+RFP</span>
+        <div class="case-name">KDDI</div>
+        <div class="case-desc">DSRあり、RFPも存在する。</div>
+      </div>
+      <div class="case-card">
+        <span class="case-badge badge-rfp">作成側</span>
+        <div class="case-name">トリゼンフーズ</div>
+        <div class="case-desc">RFP作成側の勉強素材として有用な可能性あり。</div>
+      </div>
+      <div class="case-card">
+        <span class="case-badge badge-ext">候補</span>
+        <div class="case-name">町田食品</div>
+        <div class="case-desc">候補として挙がる。</div>
+      </div>
+      <div class="case-card">
+        <span class="case-badge badge-ext">候補</span>
+        <div class="case-name">シャボン玉石けん</div>
+        <div class="case-desc">候補として挙がる（過去議論でも言及あり）。</div>
+      </div>
+      <div class="case-card">
+        <span class="case-badge badge-ext">候補</span>
+        <div class="case-name">サンエス</div>
+        <div class="case-desc">候補として挙がる（FY24_サンエス）。</div>
+      </div>
+      <div class="case-card">
+        <span class="case-badge badge-ext">候補</span>
+        <div class="case-name">マルカイ</div>
+        <div class="case-desc">候補として挙がる。</div>
+      </div>
+      <div class="case-card">
+        <span class="case-badge badge-ext">候補</span>
+        <div class="case-name">アイチ</div>
+        <div class="case-desc">候補として挙がる（アイチ物流）。</div>
+      </div>
+      <div class="case-card">
+        <span class="case-badge badge-ext">他社</span>
+        <div class="case-name">SWCC 等（他社コンサル）</div>
+        <div class="case-desc">他社コンサル作成のRFPも参考素材として収集対象。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 題材選定の方針 -->
+  <section class="card">
+    <h2><span class="num">5</span>題材選定の方針</h2>
+    <p class="lead">勉強会での使用を想定し、以下の優先順位で題材を選定する。</p>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>優先する2種類</h4>
+        <ul class="clean">
+          <li><strong>① 実際にRFPを受けて提案まで対応した案件</strong></li>
+          <li><strong>② しっかりと記載・整理されている案件</strong></li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>理想の組み合わせ</h4>
+        <ul class="clean">
+          <li>RFP + 回答書がセットで揃っているもの</li>
+          <li>「RFP作成」を目指すスキルアップ施策の観点から、<strong>題材の質を重視</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. アクションアイテム -->
+  <section class="card">
+    <h2><span class="num">6</span>アクションアイテム</h2>
+
+    <table>
+      <tr><th style="width:20%">担当</th><th>内容</th><th style="width:18%">期日</th></tr>
+      <tr>
+        <td>各担当者</td>
+        <td>自分が関わった案件の<strong>RFP・提案書等のファイルパス</strong>をExcel一覧（提案素材リスト）に追記する</td>
+        <td>速やか</td>
+      </tr>
+      <tr>
+        <td>國重 ／ シド</td>
+        <td><strong>スキルマップの中間報告</strong>を7月6日または7日に向けて準備する</td>
+        <td>〜7/7</td>
+      </tr>
+      <tr>
+        <td>小鉢（管原）</td>
+        <td><strong>7月7日に内田・大嶋へITコンサル施策の内容を共有</strong>し、方針ブレがないか確認する</td>
+        <td>7/7</td>
+      </tr>
+      <tr>
+        <td>小鉢（管原）</td>
+        <td>提案素材Excelリストをメンテナンスし、<strong>案件名・パス・領域・作成者等の列を整理</strong>する</td>
+        <td>速やか</td>
+      </tr>
+      <tr>
+        <td>各担当者</td>
+        <td>次回ミーティングまでに、<strong>空欄・色付き箇所（パス未確認など）をチャット等で補完</strong>する</td>
+        <td>次回まで</td>
+      </tr>
+      <tr>
+        <td>小鉢（管原）</td>
+        <td>提案素材リストを整理後、<strong>次回か次々回ミーティングで内容を展開・共有</strong>する</td>
+        <td>次回 or 次々回</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- 7. 次回ミーティング予定 -->
+  <section class="card">
+    <h2><span class="num">7</span>次回ミーティング予定</h2>
+
+    <table>
+      <tr><th style="width:22%">項目</th><th>内容</th></tr>
+      <tr>
+        <td><strong>メインテーマ</strong></td>
+        <td><strong>スキルマップの共有</strong>（國重・シドより）</td>
+      </tr>
+      <tr>
+        <td>サブテーマ（時間が余れば）</td>
+        <td>今回作成した提案素材リストをもとに、<strong>RFP勉強会の検討を継続</strong></td>
+      </tr>
+      <tr>
+        <td>次々回（再来週頃）</td>
+        <td><strong>RFP勉強会本番</strong>を実施できればと想定</td>
+      </tr>
+    </table>
+
+    <div class="cta">
+      <h3>本日の着地点</h3>
+      <ul>
+        <li>勉強会準備が間に合わず、急遽<strong>提案素材収集ワーキング</strong>に変更したが、10件超の候補案件をリスト化できた。</li>
+        <li>整理方針：<strong>提案素材フォルダ</strong>に過去案件のRFP・提案書をコピー集約 ＋ Excel一覧で管理。</li>
+        <li>次回はスキルマップ共有がメイン、次々回でRFP勉強会本番を目指す。</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    参考：6/29 RFP勉強会準備・提案素材収集ミーティング 議事録要約（Notta）／6/22メンバー検討⑤結果タブ／6/15メンバー検討④結果タブ<br>
+    本資料は打合せ結果の整理であり、未確定事項は7/6・7/7 打合せで確認します。
+  </footer>
+</div>
+</div>
+<!-- /TAB 11 -->
 
 <script>
   document.querySelectorAll('.tab-btn').forEach(btn => {
