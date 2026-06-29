@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>ITコンサル検討（統合版）— 5/19キックオフ＋5/25・6/1・6/9・6/15 メンバー検討＋アンケート結果＋位置づけ整理＋4-6月活動報告</title>
+<title>ITコンサル検討（統合版）— 5/19キックオフ＋5/25・6/1・6/9・6/15・6/22 メンバー検討＋アンケート結果＋位置づけ整理＋4-6月活動報告</title>
 <style>
   /* ===== COMMON RESET / BASE ===== */
   * { box-sizing: border-box; }
@@ -40,6 +40,23 @@
   .tab-result .tag.ok { background: #d1fae5; color: #047857; }
   .tab-result .tag.brand { background: #ccfbf1; color: #0f766e; }
   .tab-result .cta { background: linear-gradient(135deg, #1e3a8a 0%, #0f766e 100%); }
+
+  /* ===== TAB JUN22 THEME (スキルマップ検討) ===== */
+  .tab-jun22 { --brand: #0c4a6e; --brand-soft: #e0f2fe; --accent: #ca8a04; --accent-soft: #fef3c7; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e2e8f0; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
+  .tab-jun22 header.cover { background: linear-gradient(135deg, #0c4a6e 0%, #ca8a04 100%); }
+  .tab-jun22 .box.brand { background: #e0f2fe; border-color: #7dd3fc; }
+  .tab-jun22 .box.accent { background: #fef3c7; border-color: #fcd34d; }
+  .tab-jun22 .box.ok { background: #d1fae5; border-color: #6ee7b7; }
+  .tab-jun22 .tag.brand { background: #e0f2fe; color: #0c4a6e; }
+  .tab-jun22 .tag.accent { background: #fef3c7; color: #ca8a04; }
+  .tab-jun22 .cta { background: linear-gradient(135deg, #ca8a04 0%, #0c4a6e 100%); }
+  .tab-jun22 .phase-rail { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 14px 0; }
+  @media (max-width: 720px) { .tab-jun22 .phase-rail { grid-template-columns: 1fr 1fr; } }
+  .tab-jun22 .phase { background:#fff; border:2px solid #0c4a6e; border-radius:10px; padding:10px 12px; text-align:center; position:relative; }
+  .tab-jun22 .phase .ph-num { display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; background:#0c4a6e; color:#fff; border-radius:50%; font-size:11px; font-weight:700; margin-bottom:4px; }
+  .tab-jun22 .phase h4 { margin:4px 0; font-size:12px; color:#0c4a6e; }
+  .tab-jun22 .phase.ghost { border-color:#9ca3af; border-style:dashed; background:#f3f4f6; opacity:0.85; }
+  .tab-jun22 .phase.ghost h4 { color:#6b7280; }
 
   /* ===== TAB REPORT THEME (4-6月活動報告) ===== */
   .tab-report { --brand: #312e81; --brand-soft: #e0e7ff; --accent: #0d9488; --accent-soft: #ccfbf1; --warn: #b45309; --warn-soft: #fef3c7; --ok: #047857; --ok-soft: #d1fae5; --muted: #6b7280; --ink-mute: #4b5563; --line: #e2e8f0; --shadow: 0 1px 2px rgba(15,23,42,.04), 0 4px 12px rgba(15,23,42,.06); }
@@ -242,7 +259,8 @@
     <button class="tab-btn" data-tab="survey"><span class="icon">📊</span>アンケート結果（6/9・7名）</button>
     <button class="tab-btn" data-tab="jun15"><span class="icon">🌿</span>メンバー検討④結果（6/15）</button>
     <button class="tab-btn" data-tab="summary"><span class="icon">📋</span>位置づけ整理（エグゼクティブサマリー）</button>
-    <button class="tab-btn active" data-tab="report"><span class="icon">📈</span>4-6月活動報告サマリー</button>
+    <button class="tab-btn" data-tab="report"><span class="icon">📈</span>4-6月活動報告サマリー</button>
+    <button class="tab-btn active" data-tab="jun22"><span class="icon">🗺️</span>メンバー検討⑤結果（6/22）</button>
   </div>
 </div>
 
@@ -3237,7 +3255,7 @@ AI活用はほかの方にお願いしたい。</div>
 <!-- ============================================================ -->
 <!-- TAB 9: 4-6月活動報告サマリー                                     -->
 <!-- ============================================================ -->
-<div id="report" class="tab-content tab-report active">
+<div id="report" class="tab-content tab-report">
 <div class="wrap">
 
   <header class="cover">
@@ -3472,6 +3490,269 @@ AI活用はほかの方にお願いしたい。</div>
 </div>
 </div>
 <!-- /TAB 9 -->
+
+<!-- ============================================================ -->
+<!-- TAB 10: 6/22 MEMBER DISCUSSION #5 RESULT — スキルマップ検討       -->
+<!-- ============================================================ -->
+<div id="jun22" class="tab-content tab-jun22 active">
+<div class="wrap">
+
+  <header class="cover">
+    <div class="eyebrow">D-Team / IT Consulting — Member Discussion #5 Result</div>
+    <h1>6/22 メンバー検討会⑤ 結果サマリ<br>— スキルマップたたき台レビュー（コンサル商材5フェーズ × タスク × スキル）</h1>
+    <p>國重さん・シドさん作成のスキルマップたたき台をベースに、コンサル商材5フェーズ構成、タスク具体例、必要スキルの定義、AI付加価値列（G列）の論点を議論。整理方針は <strong>アウトプットベース</strong> で合意。</p>
+    <div class="meta">
+      <span>2026-06-22（月）10:59〜</span>
+      <span>記録：管原</span>
+      <span>対象：Dチーム関連メンバー</span>
+      <span>関連：6/15タブ</span>
+    </div>
+  </header>
+
+  <!-- 0. 今日のゴール（達成状況） -->
+  <section class="card">
+    <h2><span class="num">0</span>今日のゴール（達成状況）</h2>
+    <div class="grid-3">
+      <div class="box ok">
+        <h4>① たたき台レビュー <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">5フェーズ構成（現状把握 → ITグランドデザイン(ToBe) → ベンダー選定 → RFP作成 → ベンダー決定支援）を確認。</p>
+      </div>
+      <div class="box ok">
+        <h4>② 整理方針の合意 <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;"><strong>アウトプットベース</strong>で整理、まず「いる・いらない」から議論する方針に合意。</p>
+      </div>
+      <div class="box ok">
+        <h4>③ 次回スケジュール確定 <span class="badge done">達成</span></h4>
+        <p style="font-size:13px;margin:0;">7/6 打合せ／6/29 全体勉強会の日程を設定。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 振り返り -->
+  <section class="card">
+    <h2><span class="num">1</span>振り返り（5/19〜6/15 の経緯）</h2>
+    <p class="lead">5/19キックオフから 6/15 まで AI でサマリ化した資料を共有。スキル系にフォーカスする方針を再確認。</p>
+
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>これまでの合意</h4>
+        <ul class="clean">
+          <li>ITコンサル定義論は<strong>いったん止める</strong></li>
+          <li><strong>スキル系の話にフォーカス</strong>する方針</li>
+          <li>前回までの議論：スキルを「主観」と「実行」に分けるかどうか</li>
+          <li>→ まず「スキルとは何か」から整理する方向</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>今後のマイルストーン</h4>
+        <ul class="clean">
+          <li>① スキル整理</li>
+          <li>② 過去 RFP 収集</li>
+          <li>③ RAG の仕組み構築</li>
+          <li>④ 勉強会の実施</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. スキルマップ検討（メイントピック） -->
+  <section class="card">
+    <h2><span class="num">2</span>スキルマップ検討（メイントピック）</h2>
+
+    <h3>2-1. フェーズ・タスク構成の整理</h3>
+    <p class="note" style="margin-top:-4px;">國重さん・シドさんでたたき台を作成。コンサル商材（縦軸）を5フェーズに分類。</p>
+
+    <div class="phase-rail">
+      <div class="phase ghost">
+        <span class="ph-num">0</span>
+        <h4>提案書・見積もり作成</h4>
+        <p style="font-size:10.5px;margin:0;color:#6b7280;">支援開始前 — 今回対象外（列としては記載）</p>
+      </div>
+      <div class="phase">
+        <span class="ph-num">1</span>
+        <h4>現状把握</h4>
+      </div>
+      <div class="phase">
+        <span class="ph-num">2</span>
+        <h4>ITグランドデザイン<br>(ToBe)</h4>
+      </div>
+      <div class="phase">
+        <span class="ph-num">3</span>
+        <h4>ベンダー選定</h4>
+      </div>
+      <div class="phase">
+        <span class="ph-num">4</span>
+        <h4>RFP 作成</h4>
+      </div>
+    </div>
+    <div class="phase-rail" style="grid-template-columns: 1fr;">
+      <div class="phase" style="text-align:left;padding:12px 16px;">
+        <span class="ph-num">5</span>
+        <h4 style="display:inline;margin-left:6px;">ベンダー決定支援</h4>
+        <p style="font-size:11px;margin:6px 0 0;color:#475569;">※「ベンダー選定」フェーズ内の候補出し（31〜34行目）はベンダー決定支援（35行目以降）のサブ工程と整理。</p>
+      </div>
+    </div>
+
+    <div class="box warn" style="margin-top:14px;">
+      <h4>本日の重要合意</h4>
+      <ul class="clean">
+        <li>提案書・見積もり作成フェーズが<strong>漏れている</strong>と指摘 → 今回の対象外としつつも、<strong>列として記載</strong>しておく方針</li>
+        <li>タスクの粒度はこの場では確定せず、まず<strong>全フェーズを通して「いる・いらない」</strong>から話し合う方針へ</li>
+      </ul>
+    </div>
+
+    <h3>2-2. タスク具体例の議論（現状把握フェーズ中心）</h3>
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>追加すべきタスク（候補）</h4>
+        <ul class="clean">
+          <li>資料受領・読み込み</li>
+          <li>打ち合わせ準備</li>
+          <li>ヒアリング設計</li>
+          <li>議事録作成・レビュー</li>
+          <li>用語集作成</li>
+          <li>日程調整</li>
+          <li>マスターデータ一覧作成</li>
+          <li>非機能要件整理</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>追加論点</h4>
+        <ul class="clean">
+          <li><strong>ヒアリングカルテ的なテンプレート</strong>の必要性<br>（どの観点で何を確認するかを体系化）</li>
+          <li>社内 IT プロジェクト経験者から「タスクは大体網羅できている」とのコメントあり</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>2-3. 必要スキルの定義に関する論点</h3>
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>「スキル」の境界線</h4>
+        <ul class="clean">
+          <li>「読解力」「業界知識」などは<strong>1回言われれば分かるレベル</strong>のものか、<strong>訓練で身につくスキル</strong>かの区別が難しい</li>
+          <li>業界知識を含め出すと <strong>ITSS のように膨大</strong>になる</li>
+          <li>→ まずは業界知識を除いて進める方向</li>
+        </ul>
+      </div>
+      <div class="box accent">
+        <h4>含めるスコープ・懸念</h4>
+        <ul class="clean">
+          <li>新人のチェック・評価に使うことを念頭に、<strong>打ち合わせ資料作成・議事録作成</strong>なども含める方針</li>
+          <li>コミュニケーション・人脈・顧客折衝など<strong>ヒューマンスキル系が現状漏れている</strong>という懸念も提起</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>2-4. スキルマップの整理方針（合意）</h3>
+    <div class="box brand">
+      <h4>✓ アウトプットベースで整理</h4>
+      <ul class="clean">
+        <li>整理の優先順位は<strong>アウトプットベース</strong>で合意</li>
+        <li><strong>タスク（D列）× 必要スキル（E列）のマッピング</strong>を完成させることを次のステップとする</li>
+        <li>ハードスキル・ソフトスキルの区分などは<strong>別シートで検討</strong>予定</li>
+      </ul>
+    </div>
+
+    <h3>2-5. G列（AI付加価値）について</h3>
+    <div class="grid-2">
+      <div class="box brand">
+        <h4>G列の位置付け</h4>
+        <ul class="clean">
+          <li>AI に担わせるタスクと人が担うタスクを区別する<strong>G列の設置を検討</strong></li>
+          <li>定義・評価基準はチームで協議</li>
+        </ul>
+      </div>
+      <div class="box warn">
+        <h4>参加者から挙がった懸念（2点）</h4>
+        <ul class="clean">
+          <li>① ツールや人によって<strong>得意・不得意が異なり評価基準が難しい</strong></li>
+          <li>② <strong>意味のない使い方</strong>（人間が大幅修正が必要なケース）は効果がないため、定義をしっかり決めるべき</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. アクションアイテム -->
+  <section class="card">
+    <h2><span class="num">3</span>アクションアイテム</h2>
+
+    <table>
+      <tr><th style="width:18%">担当</th><th>内容</th><th style="width:18%">期日</th></tr>
+      <tr>
+        <td>國重 ／ シド</td>
+        <td>RFP作成支援の<strong>タスク一覧を再度見直し・追記</strong>し、<strong>スキル列を埋める</strong>（チャットで更新を連絡）</td>
+        <td>〜7/6 目安</td>
+      </tr>
+      <tr>
+        <td>國重 ／ シド</td>
+        <td><strong>アウトプットベース</strong>でのスキルマップ整理方針に沿い、シートを仕上げる</td>
+        <td>〜7/6 目安</td>
+      </tr>
+      <tr>
+        <td>チーム全体</td>
+        <td>G列（AI付加価値列）の<strong>定義・評価基準を協議</strong>する</td>
+        <td>次回打合せ</td>
+      </tr>
+      <tr>
+        <td>小鉢（管原）</td>
+        <td>喜井さんに<strong>7月6日同時刻での打合せ枠</strong>を設定依頼</td>
+        <td>速やか</td>
+      </tr>
+      <tr>
+        <td>小鉢（管原）</td>
+        <td><strong>6月29日に全体勉強会</strong>（RFP事例・観点共有）を設定</td>
+        <td>速やか</td>
+      </tr>
+      <tr>
+        <td>小鉢（管原）</td>
+        <td>大嶋さん・内田さん向けの<strong>共有資料（4〜6月の検討経緯まとめ）</strong>を確認しておく</td>
+        <td>速やか</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- 4. 今後のスケジュール -->
+  <section class="card">
+    <h2><span class="num">4</span>今後のスケジュール</h2>
+
+    <table>
+      <tr><th style="width:22%">時期</th><th>内容</th></tr>
+      <tr>
+        <td><strong>〜 7月6日 目安</strong></td>
+        <td>國重さん・シドさんで<strong>タスクリスト見直し・スキル埋め作業</strong>を裏で進め、チャットで連絡</td>
+      </tr>
+      <tr>
+        <td><strong>7月6日（月）</strong></td>
+        <td>小鉢さんも交えて<strong>スキルマップ作業の打合せ</strong>設定予定</td>
+      </tr>
+      <tr>
+        <td><strong>6月29日</strong></td>
+        <td><strong>RFP事例・観点共有の勉強会</strong>を全体で実施<br>（RFPを読む際に気をつけている観点や実際の取り組み事例を共有）</td>
+      </tr>
+      <tr>
+        <td><strong>2週間後 目処</strong></td>
+        <td>他メンバーへの共有（目標シートへの反映含む）を報告予定</td>
+      </tr>
+    </table>
+
+    <div class="cta">
+      <h3>本日の着地点</h3>
+      <ul>
+        <li>5フェーズ構成（現状把握 → ITグランドデザイン → ベンダー選定 → RFP作成 → ベンダー決定支援）でたたき台を確認。</li>
+        <li>整理方針は <strong>アウトプットベース</strong>。まず「いる・いらない」から議論し、粒度は後で詰める。</li>
+        <li>7/6 にスキルマップ作業打合せ、6/29 に全体勉強会、2週間後に他メンバーへ共有。</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    参考：6/22 スキルマップ検討 議事録要約（Notta）／6/15メンバー検討④結果タブ／位置づけ整理タブ／4-6月活動報告サマリータブ<br>
+    本資料は打合せ結果の整理であり、未確定事項は7/6 打合せで確認します。
+  </footer>
+</div>
+</div>
+<!-- /TAB 10 -->
 
 <script>
   document.querySelectorAll('.tab-btn').forEach(btn => {
